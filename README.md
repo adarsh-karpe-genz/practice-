@@ -16,6 +16,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **01** | **Palindrome Checker** | Slicing, Two Pointers, String Methods | [palindrome_checker.py](01-palindrome-checker/palindrome_checker.py) | ✅ Solved |
 | **02** | **Reverse a String** | Slicing, Loops, In-place List Reversal | [reverse_string.py](02-reverse-string/reverse_string.py) | ✅ Solved |
 | **03** | **FizzBuzz Classic** | Modulo (%), Conditionals, List Building | [fizzbuzz.py](03-fizzbuzz/fizzbuzz.py) | ✅ Solved |
+| **04** | **Count Vowels & Consonants** | Sets, Membership Testing, Dictionaries | [count_vowels.py](04-count-vowels-and-consonants/count_vowels.py) | ✅ Solved |
 
 ---
 
@@ -25,4 +26,5 @@ A curated collection of beginner-friendly everyday Python practice problems with
 python 01-palindrome-checker/palindrome_checker.py
 python 02-reverse-string/reverse_string.py
 python 03-fizzbuzz/fizzbuzz.py
+python 04-count-vowels-and-consonants/count_vowels.py
 ```
