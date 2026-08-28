@@ -1,44 +1,24 @@
-# 🐍 Python Problem Solving & DSA Daily Streak
+# 🐍 Beginner Python Problem Solving Practice
 
-[![Language-Python](https://img.shields.io/badge/Language-Python%203.10%2B-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
-[![Streak](https://img.shields.io/badge/Daily%20Streak-Day%201%20Active-brightgreen.svg)]()
-[![Status](https://img.shields.io/badge/Status-1%20Problem%20Per%20Day-blue.svg)]()
+[![Language-Python](https://img.shields.io/badge/Language-Python%203.x-3776AB.svg?logo=python&logoColor=white)](https://www.python.org/)
+[![Difficulty](https://img.shields.io/badge/Level-Beginner%20Friendly-brightgreen.svg)]()
+[![Daily Contributions](https://img.shields.io/badge/Daily%20Pushes-3--4%20Problems%2FDay-blue.svg)]()
 [![License](https://img.shields.io/badge/License-MIT-green.svg)]()
 
-Welcome to my daily **Python Problem Solving & Data Structures (DSA)** repository!
-
-🎯 **Goal:** Solve & commit **1 problem statement a day** in Python to build strong algorithmic intuition and maintain a consistent green GitHub contribution graph.
+A curated collection of beginner-friendly everyday Python practice problems with clean code, comments, and built-in tests.
 
 ---
 
-## 📅 Daily Problem Progress
+## 📚 Problem Tracker
 
-| Day | Date | Problem | Difficulty | Topics | Solution | Status |
-|:---:|:---:|---|:---:|---|:---:|:---:|
-| **Day 01** | Today | **Two Sum** | 🟢 Easy | Array, Hash Table | [two_sum.py](day-01-two-sum/two_sum.py) | ✅ Solved |
-
----
-
-## 📂 Repository Structure
-
-```tree
-practice/
-├── .gitignore
-├── README.md
-└── day-01-two-sum/
-    └── two_sum.py       # Problem Statement, Optimal Solution & Test Cases
-```
+| # | Problem | Key Concepts | Solution | Status |
+|:---:|---|---|:---:|:---:|
+| **01** | **Palindrome Checker** | Slicing, Two Pointers, String Methods | [palindrome_checker.py](01-palindrome-checker/palindrome_checker.py) | ✅ Solved |
 
 ---
 
-## ⚡ How to Run
-
-Each day's solution is self-contained with built-in test assertions:
+## 🚀 How to Run
 
 ```bash
-python day-01-two-sum/two_sum.py
+python 01-palindrome-checker/palindrome_checker.py
 ```
-
----
-
-*One problem a day keeps the bugs away! 🚀*
