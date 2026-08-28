@@ -14,6 +14,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | # | Problem | Key Concepts | Solution | Status |
 |:---:|---|---|:---:|:---:|
 | **01** | **Palindrome Checker** | Slicing, Two Pointers, String Methods | [palindrome_checker.py](01-palindrome-checker/palindrome_checker.py) | ✅ Solved |
+| **02** | **Reverse a String** | Slicing, Loops, In-place List Reversal | [reverse_string.py](02-reverse-string/reverse_string.py) | ✅ Solved |
 
 ---
 
@@ -21,4 +22,5 @@ A curated collection of beginner-friendly everyday Python practice problems with
 
 ```bash
 python 01-palindrome-checker/palindrome_checker.py
+python 02-reverse-string/reverse_string.py
 ```
