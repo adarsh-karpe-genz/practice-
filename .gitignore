@@ -1,34 +1,18 @@
-# Build and Object files
-*.o
-*.obj
-*.exe
-*.out
-*.app
-*.dSYM/
-
-# Java Bytecode
-*.class
-*.jar
-*.war
-*.ear
-*.nar
-.build/
-
-# Python Bytecode and Environments
+# Python bytecode & cache
 __pycache__/
 *.py[cod]
-*.class
-*.so
-.env
-venv/
-env/
-.pytest_cache/
+*$py.class
 
-# IDE & OS Files
+# Environments
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE & OS
 .vscode/
 .idea/
 *.swp
-*.swo
-*~
 .DS_Store
 Thumbs.db
