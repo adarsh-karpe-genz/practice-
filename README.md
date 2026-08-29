@@ -19,6 +19,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **04** | **Count Vowels & Consonants** | Sets, Membership Testing, Dictionaries | [count_vowels.py](04-count-vowels-and-consonants/count_vowels.py) | ✅ Solved |
 | **05** | **Factorial Calculator** | Loops, Recursion, Edge Cases | [factorial.py](05-factorial-calculator/factorial.py) | ✅ Solved |
 | **06** | **Even or Odd Checker** | Modulo (%), Bitwise AND (&) | [even_or_odd.py](06-even-or-odd/even_or_odd.py) | ✅ Solved |
+| **07** | **Find Max & Min in List** | List Iteration, Min/Max Tracking | [find_max_min.py](07-find-max-min/find_max_min.py) | ✅ Solved |
 
 ---
 
@@ -26,4 +27,5 @@ A curated collection of beginner-friendly everyday Python practice problems with
 
 ```bash
 python 06-even-or-odd/even_or_odd.py
+python 07-find-max-min/find_max_min.py
 ```
