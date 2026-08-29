@@ -18,15 +18,12 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **03** | **FizzBuzz Classic** | Modulo (%), Conditionals, List Building | [fizzbuzz.py](03-fizzbuzz/fizzbuzz.py) | ✅ Solved |
 | **04** | **Count Vowels & Consonants** | Sets, Membership Testing, Dictionaries | [count_vowels.py](04-count-vowels-and-consonants/count_vowels.py) | ✅ Solved |
 | **05** | **Factorial Calculator** | Loops, Recursion, Edge Cases | [factorial.py](05-factorial-calculator/factorial.py) | ✅ Solved |
+| **06** | **Even or Odd Checker** | Modulo (%), Bitwise AND (&) | [even_or_odd.py](06-even-or-odd/even_or_odd.py) | ✅ Solved |
 
 ---
 
 ## 🚀 How to Run
 
 ```bash
-python 01-palindrome-checker/palindrome_checker.py
-python 02-reverse-string/reverse_string.py
-python 03-fizzbuzz/fizzbuzz.py
-python 04-count-vowels-and-consonants/count_vowels.py
-python 05-factorial-calculator/factorial.py
+python 06-even-or-odd/even_or_odd.py
 ```
