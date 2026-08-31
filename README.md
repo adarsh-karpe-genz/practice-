@@ -20,12 +20,13 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **05** | **Factorial Calculator** | Loops, Recursion, Edge Cases | [factorial.py](05-factorial-calculator/factorial.py) | ✅ Solved |
 | **06** | **Even or Odd Checker** | Modulo (%), Bitwise AND (&) | [even_or_odd.py](06-even-or-odd/even_or_odd.py) | ✅ Solved |
 | **07** | **Find Max & Min in List** | List Iteration, Min/Max Tracking | [find_max_min.py](07-find-max-min/find_max_min.py) | ✅ Solved |
-| **08** | **Fibonacci Sequence** | Loops, Tuple Unpacking, Recursion | [fibonacci.py](08-fibonacci-sequence/fibonacci.py) | ✅ Solved |
+| **08** | **Fibonacci Sequence** | Loops, Memoization, Recursion | [fibonacci.py](08-fibonacci-sequence/fibonacci.py) | ✅ Solved |
+| **09** | **Sum of Digits** | Modulo (%), Integer Division (//), String Sum | [sum_of_digits.py](09-sum-of-digits/sum_of_digits.py) | ✅ Solved |
 
 ---
 
 ## 🚀 How to Run
 
 ```bash
-python 08-fibonacci-sequence/fibonacci.py
+python 09-sum-of-digits/sum_of_digits.py
 ```
