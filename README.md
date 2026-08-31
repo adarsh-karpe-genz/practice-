@@ -22,6 +22,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **07** | **Find Max & Min in List** | List Iteration, Min/Max Tracking | [find_max_min.py](07-find-max-min/find_max_min.py) | ✅ Solved |
 | **08** | **Fibonacci Sequence** | Loops, Memoization, Recursion | [fibonacci.py](08-fibonacci-sequence/fibonacci.py) | ✅ Solved |
 | **09** | **Sum of Digits** | Modulo (%), Integer Division (//), String Sum | [sum_of_digits.py](09-sum-of-digits/sum_of_digits.py) | ✅ Solved |
+| **10** | **Check Prime Number** | Trial Division O(sqrt(N)), Math, Edge Cases | [check_prime.py](10-check-prime/check_prime.py) | ✅ Solved |
 
 ---
 
@@ -29,4 +30,5 @@ A curated collection of beginner-friendly everyday Python practice problems with
 
 ```bash
 python 09-sum-of-digits/sum_of_digits.py
+python 10-check-prime/check_prime.py
 ```
