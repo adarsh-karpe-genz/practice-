@@ -23,12 +23,12 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **08** | **Fibonacci Sequence** | Loops, Memoization, Recursion | [fibonacci.py](08-fibonacci-sequence/fibonacci.py) | ✅ Solved |
 | **09** | **Sum of Digits** | Modulo (%), Integer Division (//), String Sum | [sum_of_digits.py](09-sum-of-digits/sum_of_digits.py) | ✅ Solved |
 | **10** | **Check Prime Number** | Trial Division O(sqrt(N)), Math, Edge Cases | [check_prime.py](10-check-prime/check_prime.py) | ✅ Solved |
+| **11** | **Valid Anagram** | Sorting, Frequency Counter, Hash Maps | [valid_anagram.py](11-valid-anagram/valid_anagram.py) | ✅ Solved |
 
 ---
 
 ## 🚀 How to Run
 
 ```bash
-python 09-sum-of-digits/sum_of_digits.py
-python 10-check-prime/check_prime.py
+python 11-valid-anagram/valid_anagram.py
 ```
