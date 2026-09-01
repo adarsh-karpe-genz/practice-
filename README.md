@@ -26,6 +26,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **11** | **Valid Anagram** | Sorting, Frequency Counter, Hash Maps | [valid_anagram.py](11-valid-anagram/valid_anagram.py) | ✅ Solved |
 | **12** | **Word Frequency Counter** | String Tokenization, Dict Accumulation | [word_frequency.py](12-word-frequency/word_frequency.py) | ✅ Solved |
 | **13** | **Remove Duplicates** | Sets, Order Preservation, Dict Keys | [remove_duplicates.py](13-remove-duplicates/remove_duplicates.py) | ✅ Solved |
+| **14** | **Capitalize Words** | String Methods, List Comprehension | [capitalize_words.py](14-capitalize-words/capitalize_words.py) | ✅ Solved |
 
 ---
 
