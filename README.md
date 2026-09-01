@@ -24,11 +24,12 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **09** | **Sum of Digits** | Modulo (%), Integer Division (//), String Sum | [sum_of_digits.py](09-sum-of-digits/sum_of_digits.py) | ✅ Solved |
 | **10** | **Check Prime Number** | Trial Division O(sqrt(N)), Math, Edge Cases | [check_prime.py](10-check-prime/check_prime.py) | ✅ Solved |
 | **11** | **Valid Anagram** | Sorting, Frequency Counter, Hash Maps | [valid_anagram.py](11-valid-anagram/valid_anagram.py) | ✅ Solved |
+| **12** | **Word Frequency Counter** | String Tokenization, Dict Accumulation | [word_frequency.py](12-word-frequency/word_frequency.py) | ✅ Solved |
 
 ---
 
 ## 🚀 How to Run
 
 ```bash
-python 11-valid-anagram/valid_anagram.py
+python 12-word-frequency/word_frequency.py
 ```
