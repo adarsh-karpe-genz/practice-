@@ -29,6 +29,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **14** | **Capitalize Words** | String Methods, List Comprehension | [capitalize_words.py](14-capitalize-words/capitalize_words.py) | ✅ Solved |
 | **15** | **Second Largest Number** | List Traversal, Min/Max Tracking | [second_largest.py](15-second-largest/second_largest.py) | ✅ Solved |
 | **16** | **Character Count** | Dictionaries, String Iteration | [char_count.py](16-char-count/char_count.py) | ✅ Solved |
+| **17** | **Flatten Nested List** | Nested Loops, Recursion | [flatten_list.py](17-flatten-list/flatten_list.py) | ✅ Solved |
 
 ---
 
