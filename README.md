@@ -28,6 +28,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **13** | **Remove Duplicates** | Sets, Order Preservation, Dict Keys | [remove_duplicates.py](13-remove-duplicates/remove_duplicates.py) | ✅ Solved |
 | **14** | **Capitalize Words** | String Methods, List Comprehension | [capitalize_words.py](14-capitalize-words/capitalize_words.py) | ✅ Solved |
 | **15** | **Second Largest Number** | List Traversal, Min/Max Tracking | [second_largest.py](15-second-largest/second_largest.py) | ✅ Solved |
+| **16** | **Character Count** | Dictionaries, String Iteration | [char_count.py](16-char-count/char_count.py) | ✅ Solved |
 
 ---
 
