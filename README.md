@@ -31,6 +31,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **16** | **Character Count** | Dictionaries, String Iteration | [char_count.py](16-char-count/char_count.py) | ✅ Solved |
 | **17** | **Flatten Nested List** | Nested Loops, Recursion | [flatten_list.py](17-flatten-list/flatten_list.py) | ✅ Solved |
 | **18** | **GCD & LCM Calculator** | Euclidean Algorithm, Modulo, Math | [gcd_lcm.py](18-gcd-and-lcm/gcd_lcm.py) | ✅ Solved |
+| **19** | **Armstrong Number Checker** | Math, Power Sum, Digit Extraction | [armstrong_number.py](19-armstrong-number/armstrong_number.py) | ✅ Solved |
 
 ---
 
