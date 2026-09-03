@@ -30,6 +30,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **15** | **Second Largest Number** | List Traversal, Min/Max Tracking | [second_largest.py](15-second-largest/second_largest.py) | ✅ Solved |
 | **16** | **Character Count** | Dictionaries, String Iteration | [char_count.py](16-char-count/char_count.py) | ✅ Solved |
 | **17** | **Flatten Nested List** | Nested Loops, Recursion | [flatten_list.py](17-flatten-list/flatten_list.py) | ✅ Solved |
+| **18** | **GCD & LCM Calculator** | Euclidean Algorithm, Modulo, Math | [gcd_lcm.py](18-gcd-and-lcm/gcd_lcm.py) | ✅ Solved |
 
 ---
 
