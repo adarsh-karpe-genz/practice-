@@ -36,6 +36,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **21** | **Sum of List Elements** | Accumulator Loop, Recursion, sum() | [sum_of_list.py](21-sum-of-list/sum_of_list.py) | ✅ Solved |
 | **22** | **Count List Element Frequency** | Dictionaries, dict.get(), Counter | [list_frequency.py](22-list-frequency/list_frequency.py) | ✅ Solved |
 | **23** | **Linear Search Algorithm** | Sequential Traversal, enumerate(), Early Exit | [linear_search.py](23-linear-search/linear_search.py) | ✅ Solved |
+| **24** | **Reverse Words in Sentence** | String split(), List Reversal, join() | [reverse_words.py](24-reverse-words/reverse_words.py) | ✅ Solved |
 
 ---
 
