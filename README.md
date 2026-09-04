@@ -35,6 +35,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **20** | **Leap Year Checker** | Compound Conditionals, Boolean Logic | [leap_year.py](20-leap-year/leap_year.py) | ✅ Solved |
 | **21** | **Sum of List Elements** | Accumulator Loop, Recursion, sum() | [sum_of_list.py](21-sum-of-list/sum_of_list.py) | ✅ Solved |
 | **22** | **Count List Element Frequency** | Dictionaries, dict.get(), Counter | [list_frequency.py](22-list-frequency/list_frequency.py) | ✅ Solved |
+| **23** | **Linear Search Algorithm** | Sequential Traversal, enumerate(), Early Exit | [linear_search.py](23-linear-search/linear_search.py) | ✅ Solved |
 
 ---
 
