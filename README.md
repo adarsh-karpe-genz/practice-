@@ -32,6 +32,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **17** | **Flatten Nested List** | Nested Loops, Recursion | [flatten_list.py](17-flatten-list/flatten_list.py) | ✅ Solved |
 | **18** | **GCD & LCM Calculator** | Euclidean Algorithm, Modulo, Math | [gcd_lcm.py](18-gcd-and-lcm/gcd_lcm.py) | ✅ Solved |
 | **19** | **Armstrong Number Checker** | Math, Power Sum, Digit Extraction | [armstrong_number.py](19-armstrong-number/armstrong_number.py) | ✅ Solved |
+| **20** | **Leap Year Checker** | Compound Conditionals, Boolean Logic | [leap_year.py](20-leap-year/leap_year.py) | ✅ Solved |
 
 ---
 
