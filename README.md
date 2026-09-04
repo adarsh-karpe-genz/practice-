@@ -34,6 +34,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **19** | **Armstrong Number Checker** | Math, Power Sum, Digit Extraction | [armstrong_number.py](19-armstrong-number/armstrong_number.py) | ✅ Solved |
 | **20** | **Leap Year Checker** | Compound Conditionals, Boolean Logic | [leap_year.py](20-leap-year/leap_year.py) | ✅ Solved |
 | **21** | **Sum of List Elements** | Accumulator Loop, Recursion, sum() | [sum_of_list.py](21-sum-of-list/sum_of_list.py) | ✅ Solved |
+| **22** | **Count List Element Frequency** | Dictionaries, dict.get(), Counter | [list_frequency.py](22-list-frequency/list_frequency.py) | ✅ Solved |
 
 ---
 
