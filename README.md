@@ -39,6 +39,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **24** | **Reverse Words in Sentence** | String split(), List Reversal, join() | [reverse_words.py](24-reverse-words/reverse_words.py) | ✅ Solved |
 | **25** | **Binary Search Algorithm** | Divide & Conquer, O(log N), Iterative & Recursive | [binary_search.py](25-binary-search/binary_search.py) | ✅ Solved |
 | **26** | **Balanced Parentheses** | Stack (LIFO), List.append/pop, Dict Mapping | [balanced_parentheses.py](26-balanced-parentheses/balanced_parentheses.py) | ✅ Solved |
+| **27** | **Bubble Sort** | Nested Loops, Adjacent Swaps, Early Exit Optimization | [bubble_sort.py](27-bubble-sort/bubble_sort.py) | ✅ Solved |
 
 ---
 
