@@ -44,6 +44,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **29** | **Reverse a Number** | Modulo, Integer Division, Sign Handling | [reverse_number.py](29-reverse-number/reverse_number.py) | ✅ Solved |
 | **30** | **Perfect Number Checker** | Divisors, O(sqrt(N)) Loop, Pair Trick | [perfect_number.py](30-perfect-number/perfect_number.py) | ✅ Solved |
 | **31** | **Find Missing Number** | Gauss Formula, XOR Trick, Set Difference | [missing_number.py](31-missing-number/missing_number.py) | ✅ Solved |
+| **32** | **Collatz Conjecture Steps** | While Loop, Even/Odd, Step Counting | [collatz_steps.py](32-collatz-steps/collatz_steps.py) | ✅ Solved |
 
 ---
 
