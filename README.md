@@ -42,6 +42,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **27** | **Bubble Sort** | Nested Loops, Adjacent Swaps, Early Exit Optimization | [bubble_sort.py](27-bubble-sort/bubble_sort.py) | ✅ Solved |
 | **28** | **Count Upper/Lowercase Letters** | String Methods, isupper/islower, Dict | [upper_lower_count.py](28-upper-lower-count/upper_lower_count.py) | ✅ Solved |
 | **29** | **Reverse a Number** | Modulo, Integer Division, Sign Handling | [reverse_number.py](29-reverse-number/reverse_number.py) | ✅ Solved |
+| **30** | **Perfect Number Checker** | Divisors, O(sqrt(N)) Loop, Pair Trick | [perfect_number.py](30-perfect-number/perfect_number.py) | ✅ Solved |
 
 ---
 
