@@ -45,6 +45,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **30** | **Perfect Number Checker** | Divisors, O(sqrt(N)) Loop, Pair Trick | [perfect_number.py](30-perfect-number/perfect_number.py) | ✅ Solved |
 | **31** | **Find Missing Number** | Gauss Formula, XOR Trick, Set Difference | [missing_number.py](31-missing-number/missing_number.py) | ✅ Solved |
 | **32** | **Collatz Conjecture Steps** | While Loop, Even/Odd, Step Counting | [collatz_steps.py](32-collatz-steps/collatz_steps.py) | ✅ Solved |
+| **33** | **Find Pairs with Given Sum** | Hash Set, Complement Lookup, O(N) Time | [pairs_with_sum.py](33-pairs-with-sum/pairs_with_sum.py) | ✅ Solved |
 
 ---
 
