@@ -49,6 +49,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **34** | **Number to Words (1-999)** | Lookup Tables, Integer Division, Modulo | [number_to_words.py](34-number-to-words/number_to_words.py) | Solved |
 | **35** | **Rotate List by K Positions** | Slicing, Modulo, Three-Reversal Algorithm | [rotate_list.py](35-rotate-list/rotate_list.py) | Solved |
 | **36** | **Merge Two Sorted Lists** | Two Pointers, O(M+N) Merge, Extend | [merge_sorted_lists.py](36-merge-sorted-lists/merge_sorted_lists.py) | Solved |
+| **37** | **Count Digits in a Number** | Division Loop, log10 Formula, str() | [count_digits.py](37-count-digits/count_digits.py) | Solved |
 
 ---
 
