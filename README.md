@@ -46,6 +46,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **31** | **Find Missing Number** | Gauss Formula, XOR Trick, Set Difference | [missing_number.py](31-missing-number/missing_number.py) | ✅ Solved |
 | **32** | **Collatz Conjecture Steps** | While Loop, Even/Odd, Step Counting | [collatz_steps.py](32-collatz-steps/collatz_steps.py) | ✅ Solved |
 | **33** | **Find Pairs with Given Sum** | Hash Set, Complement Lookup, O(N) Time | [pairs_with_sum.py](33-pairs-with-sum/pairs_with_sum.py) | ✅ Solved |
+| **34** | **Number to Words (1-999)** | Lookup Tables, Integer Division, Modulo | [number_to_words.py](34-number-to-words/number_to_words.py) | Solved |
 
 ---
 
