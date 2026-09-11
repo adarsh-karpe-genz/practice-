@@ -51,6 +51,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **36** | **Merge Two Sorted Lists** | Two Pointers, O(M+N) Merge, Extend | [merge_sorted_lists.py](36-merge-sorted-lists/merge_sorted_lists.py) | Solved |
 | **37** | **Count Digits in a Number** | Division Loop, log10 Formula, str() | [count_digits.py](37-count-digits/count_digits.py) | Solved |
 | **38** | **Selection Sort** | Nested Loops, Min Index Tracking, Swap | [selection_sort.py](38-selection-sort/selection_sort.py) | Solved |
+| **39** | **Insertion Sort** | Key Element, Backward Shift, While Loop | [insertion_sort.py](39-insertion-sort/insertion_sort.py) | Solved |
 
 ---
 
