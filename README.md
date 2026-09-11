@@ -52,6 +52,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **37** | **Count Digits in a Number** | Division Loop, log10 Formula, str() | [count_digits.py](37-count-digits/count_digits.py) | Solved |
 | **38** | **Selection Sort** | Nested Loops, Min Index Tracking, Swap | [selection_sort.py](38-selection-sort/selection_sort.py) | Solved |
 | **39** | **Insertion Sort** | Key Element, Backward Shift, While Loop | [insertion_sort.py](39-insertion-sort/insertion_sort.py) | Solved |
+| **40** | **String Rotation Check** | Concatenation Trick, Substring `in`, Length Guard | [string_rotation.py](40-string-rotation/string_rotation.py) | Solved |
 
 ---
 
