@@ -30,7 +30,7 @@ if __name__ == "__main__":
         ("AEIOUaeiou", ""),
         ("xyz", "xyz"),
         ("", ""),
-        ("Artificial Intelligence", "rtfcl Ntllgnc"),
+        ("Artificial Intelligence", "rtfcl ntllgnc"),
     ]
 
     for s, expected in test_cases:
