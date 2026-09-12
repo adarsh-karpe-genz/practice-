@@ -55,6 +55,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **40** | **String Rotation Check** | Concatenation Trick, Substring `in`, Length Guard | [string_rotation.py](40-string-rotation/string_rotation.py) | Solved |
 | **41** | **Power of Two Checker** | Bit Manipulation (n & n-1), Division Loop | [power_of_two.py](41-power-of-two/power_of_two.py) | Solved |
 | **42** | **List Intersection & Union** | Set Operations (&, |), sorted(), Deduplication | [list_intersection_union.py](42-list-intersection-union/list_intersection_union.py) | Solved |
+| **43** | **Longest Word in Sentence** | max(key=len), String Cleaning, split() | [longest_word.py](43-longest-word/longest_word.py) | Solved |
 
 ---
 
