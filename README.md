@@ -58,6 +58,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **43** | **Longest Word in Sentence** | max(key=len), String Cleaning, split() | [longest_word.py](43-longest-word/longest_word.py) | Solved |
 | **44** | **Temperature Converter** | Arithmetic Formulas, Rounding, Conversions | [temperature_converter.py](44-temperature-converter/temperature_converter.py) | Solved |
 | **45** | **Check if List is Sorted** | Adjacent Pair Comparison, all(), Early Exit | [check_sorted.py](45-check-sorted-list/check_sorted.py) | Solved |
+| **46** | **Remove Vowels from String** | Set Membership, Generator, str.join() | [remove_vowels.py](46-remove-vowels/remove_vowels.py) | Solved |
 
 ---
 
