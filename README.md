@@ -63,6 +63,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **48** | **Multiplication Table** | Loops, range(), F-strings, List Comprehension | [multiplication_table.py](48-multiplication-table/multiplication_table.py) | Solved |
 | **49** | **Matrix Transpose** | 2D Lists, zip(*matrix), List Comprehension | [matrix_transpose.py](49-matrix-transpose/matrix_transpose.py) | Solved |
 | **50** | **Decimal to Binary Converter** | Base-2 Conversion, Modulo, Bit Strings | [binary_decimal.py](50-binary-decimal-converter/binary_decimal.py) | Solved |
+| **51** | **String Compression (RLE)** | Run-Length Encoding, Consecutive Counts | [string_compression.py](51-string-compression/string_compression.py) | Solved |
 
 ---
 
