@@ -65,6 +65,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **50** | **Decimal to Binary Converter** | Base-2 Conversion, Modulo, Bit Strings | [binary_decimal.py](50-binary-decimal-converter/binary_decimal.py) | Solved |
 | **51** | **String Compression (RLE)** | Run-Length Encoding, Consecutive Counts | [string_compression.py](51-string-compression/string_compression.py) | Solved |
 | **52** | **Check Pangram** | Alphabet Sets, issubset(), String Filtering | [check_pangram.py](52-check-pangram/check_pangram.py) | Solved |
+| **53** | **Majority Element** | Boyer-Moore Voting Algorithm, O(1) Space | [majority_element.py](53-majority-element/majority_element.py) | Solved |
 
 ---
 
