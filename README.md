@@ -61,6 +61,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **46** | **Remove Vowels from String** | Set Membership, Generator, str.join() | [remove_vowels.py](46-remove-vowels/remove_vowels.py) | Solved |
 | **47** | **Common in Three Lists** | Multi-Set Intersection (&), sorted() | [common_three.py](47-common-in-three-lists/common_three.py) | Solved |
 | **48** | **Multiplication Table** | Loops, range(), F-strings, List Comprehension | [multiplication_table.py](48-multiplication-table/multiplication_table.py) | Solved |
+| **49** | **Matrix Transpose** | 2D Lists, zip(*matrix), List Comprehension | [matrix_transpose.py](49-matrix-transpose/matrix_transpose.py) | Solved |
 
 ---
 
