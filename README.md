@@ -68,6 +68,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **53** | **Majority Element** | Boyer-Moore Voting Algorithm, O(1) Space | [majority_element.py](53-majority-element/majority_element.py) | Solved |
 | **54** | **Roman Numeral to Integer** | Dictionary Mapping, Subtractive Rules | [roman_to_int.py](54-roman-to-integer/roman_to_int.py) | Solved |
 | **55** | **Cumulative Sum (Prefix Sum)** | Accumulator Loop, itertools.accumulate | [cumulative_sum.py](55-cumulative-sum/cumulative_sum.py) | Solved |
+| **56** | **Check Sparse Matrix** | 2D Traversal, Counting Zeros, Threshold Logic | [sparse_matrix.py](56-sparse-matrix/sparse_matrix.py) | Solved |
 
 ---
 
