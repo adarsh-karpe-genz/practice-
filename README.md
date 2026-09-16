@@ -67,6 +67,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **52** | **Check Pangram** | Alphabet Sets, issubset(), String Filtering | [check_pangram.py](52-check-pangram/check_pangram.py) | Solved |
 | **53** | **Majority Element** | Boyer-Moore Voting Algorithm, O(1) Space | [majority_element.py](53-majority-element/majority_element.py) | Solved |
 | **54** | **Roman Numeral to Integer** | Dictionary Mapping, Subtractive Rules | [roman_to_int.py](54-roman-to-integer/roman_to_int.py) | Solved |
+| **55** | **Cumulative Sum (Prefix Sum)** | Accumulator Loop, itertools.accumulate | [cumulative_sum.py](55-cumulative-sum/cumulative_sum.py) | Solved |
 
 ---
 
