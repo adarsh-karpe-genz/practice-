@@ -66,6 +66,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **51** | **String Compression (RLE)** | Run-Length Encoding, Consecutive Counts | [string_compression.py](51-string-compression/string_compression.py) | Solved |
 | **52** | **Check Pangram** | Alphabet Sets, issubset(), String Filtering | [check_pangram.py](52-check-pangram/check_pangram.py) | Solved |
 | **53** | **Majority Element** | Boyer-Moore Voting Algorithm, O(1) Space | [majority_element.py](53-majority-element/majority_element.py) | Solved |
+| **54** | **Roman Numeral to Integer** | Dictionary Mapping, Subtractive Rules | [roman_to_int.py](54-roman-to-integer/roman_to_int.py) | Solved |
 
 ---
 
