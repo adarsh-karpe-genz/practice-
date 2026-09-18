@@ -72,6 +72,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **57** | **Move Zeroes to End** | Two-Pointer In-Place, Relative Order Preservation | [move_zeroes.py](57-move-zeroes/move_zeroes.py) | Solved |
 | **58** | **Check Disjoint Sets** | Set isdisjoint(), Hash Lookups, Intersection | [check_disjoint.py](58-check-disjoint-sets/check_disjoint.py) | Solved |
 | **59** | **Calculate Average of Numbers** | sum(), len(), Arithmetic Mean | [calculate_average.py](59-average-of-list/calculate_average.py) | Solved |
+| **60** | **Check Subsequence** | Two Pointers, Character Matching, Relative Order | [check_subsequence.py](60-check-subsequence/check_subsequence.py) | Solved |
 
 ---
 
