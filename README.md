@@ -74,6 +74,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **59** | **Calculate Average of Numbers** | sum(), len(), Arithmetic Mean | [calculate_average.py](59-average-of-list/calculate_average.py) | Solved |
 | **60** | **Check Subsequence** | Two Pointers, Character Matching, Relative Order | [check_subsequence.py](60-check-subsequence/check_subsequence.py) | Solved |
 | **61** | **Count Inversions** | Nested Loops, Array Order Measure | [count_inversions.py](61-count-inversions/count_inversions.py) | Solved |
+| **62** | **Sum of First N Natural Numbers** | Gauss Formula N(N+1)//2, O(1) vs O(N) | [sum_natural.py](62-sum-of-natural-numbers/sum_natural.py) | Solved |
 
 ---
 
