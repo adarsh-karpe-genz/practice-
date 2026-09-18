@@ -76,6 +76,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **61** | **Count Inversions** | Nested Loops, Array Order Measure | [count_inversions.py](61-count-inversions/count_inversions.py) | Solved |
 | **62** | **Sum of First N Natural Numbers** | Gauss Formula N(N+1)//2, O(1) vs O(N) | [sum_natural.py](62-sum-of-natural-numbers/sum_natural.py) | Solved |
 | **63** | **First Non-Repeating Character** | Frequency Map, Two-Pass Traversal, Counter | [first_unique_char.py](63-first-non-repeating-char/first_unique_char.py) | Solved |
+| **64** | **Symmetric Difference** | Set Operations (^), Deduplication, sorted() | [symmetric_difference.py](64-symmetric-difference/symmetric_difference.py) | Solved |
 
 ---
 
