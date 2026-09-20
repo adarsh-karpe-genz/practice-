@@ -80,6 +80,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **65** | **Harshad Number Checker** | Digit Summation, Divisibility Check | [harshad_number.py](65-harshad-number/harshad_number.py) | Solved |
 | **66** | **Count Words in String** | str.split(), Whitespace Normalization | [count_words.py](66-count-words/count_words.py) | Solved |
 | **67** | **List Difference (A - B)** | Set Subtraction (-), Deduplication, sorted() | [list_difference.py](67-list-difference/list_difference.py) | Solved |
+| **68** | **Automorphic Number Checker** | Square Calculation, String endswith() | [automorphic_number.py](68-automorphic-number/automorphic_number.py) | Solved |
 
 ---
 
