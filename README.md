@@ -77,6 +77,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **62** | **Sum of First N Natural Numbers** | Gauss Formula N(N+1)//2, O(1) vs O(N) | [sum_natural.py](62-sum-of-natural-numbers/sum_natural.py) | Solved |
 | **63** | **First Non-Repeating Character** | Frequency Map, Two-Pass Traversal, Counter | [first_unique_char.py](63-first-non-repeating-char/first_unique_char.py) | Solved |
 | **64** | **Symmetric Difference** | Set Operations (^), Deduplication, sorted() | [symmetric_difference.py](64-symmetric-difference/symmetric_difference.py) | Solved |
+| **65** | **Harshad Number Checker** | Digit Summation, Divisibility Check | [harshad_number.py](65-harshad-number/harshad_number.py) | Solved |
 
 ---
 
