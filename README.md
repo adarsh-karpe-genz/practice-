@@ -78,6 +78,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **63** | **First Non-Repeating Character** | Frequency Map, Two-Pass Traversal, Counter | [first_unique_char.py](63-first-non-repeating-char/first_unique_char.py) | Solved |
 | **64** | **Symmetric Difference** | Set Operations (^), Deduplication, sorted() | [symmetric_difference.py](64-symmetric-difference/symmetric_difference.py) | Solved |
 | **65** | **Harshad Number Checker** | Digit Summation, Divisibility Check | [harshad_number.py](65-harshad-number/harshad_number.py) | Solved |
+| **66** | **Count Words in String** | str.split(), Whitespace Normalization | [count_words.py](66-count-words/count_words.py) | Solved |
 
 ---
 
