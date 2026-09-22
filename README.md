@@ -82,6 +82,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **67** | **List Difference (A - B)** | Set Subtraction (-), Deduplication, sorted() | [list_difference.py](67-list-difference/list_difference.py) | Solved |
 | **68** | **Automorphic Number Checker** | Square Calculation, String endswith() | [automorphic_number.py](68-automorphic-number/automorphic_number.py) | Solved |
 | **69** | **Spy Number Checker** | Digit Sum & Product Accumulation, Modulo | [spy_number.py](69-spy-number/spy_number.py) | Solved |
+| **70** | **Find Missing & Duplicate** | Frequency Counting, Set Mismatch 1..N | [missing_duplicate.py](70-missing-and-duplicate/missing_duplicate.py) | Solved |
 
 ---
 
