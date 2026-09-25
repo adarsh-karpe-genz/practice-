@@ -86,6 +86,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **71** | **Neon Number Checker** | Square Digit Summation, Equality Test | [neon_number.py](71-neon-number/neon_number.py) | Solved |
 | **72** | **Sunny Number Checker** | Perfect Square Check, math.isqrt() | [sunny_number.py](72-sunny-number/sunny_number.py) | Solved |
 | **73** | **Trimorphic Number Checker** | Cube Calculation, String endswith() | [trimorphic_number.py](73-trimorphic-number/trimorphic_number.py) | Solved |
+| **74** | **Evil Number Checker** | Binary Parity, Set Bits Counting, bin().count() | [evil_number.py](74-evil-number/evil_number.py) | Solved |
 
 ---
 
