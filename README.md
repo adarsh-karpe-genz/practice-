@@ -93,6 +93,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
 | **79** | **Fascinating Number Checker** | Concatenation with Multiples, Digits 1-9 Check | [fascinating_number.py](79-fascinating-number/fascinating_number.py) | Solved |
 | **80** | **Magic Number Checker** | Digital Root, Recursive Digit Sum | [magic_number.py](80-magic-number/magic_number.py) | Solved |
+| **81** | **Happy Number Checker** | Sum of Squared Digits, Cycle Detection Set | [happy_number.py](81-happy-number/happy_number.py) | Solved |
 
 ---
 
