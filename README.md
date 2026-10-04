@@ -92,6 +92,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
 | **79** | **Fascinating Number Checker** | Concatenation with Multiples, Digits 1-9 Check | [fascinating_number.py](79-fascinating-number/fascinating_number.py) | Solved |
+| **80** | **Magic Number Checker** | Digital Root, Recursive Digit Sum | [magic_number.py](80-magic-number/magic_number.py) | Solved |
 
 ---
 
