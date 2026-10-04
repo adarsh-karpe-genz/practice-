@@ -95,6 +95,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **80** | **Magic Number Checker** | Digital Root, Recursive Digit Sum | [magic_number.py](80-magic-number/magic_number.py) | Solved |
 | **81** | **Happy Number Checker** | Sum of Squared Digits, Cycle Detection Set | [happy_number.py](81-happy-number/happy_number.py) | Solved |
 | **82** | **Keith Number Checker** | Fibonacci-like Sequence from Digits, Rolling Sum | [keith_number.py](82-keith-number/keith_number.py) | Solved |
+| **83** | **Strontio Number Checker** | 4-Digit Multiplication, Tens/Hundreds Extraction | [strontio_number.py](83-strontio-number/strontio_number.py) | Solved |
 
 ---
 
