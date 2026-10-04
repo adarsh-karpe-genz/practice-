@@ -90,6 +90,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **75** | **Disarium Number Checker** | Positional Exponentiation, enumerate() | [disarium_number.py](75-disarium-number/disarium_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Products, math.isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors, O(sqrt(N)) Summation | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
+| **78** | **Deficient Number Checker** | Proper Divisors Sum < n | [deficient_number.py](78-deficient-number/deficient_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
