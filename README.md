@@ -94,6 +94,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **79** | **Strong Number Checker** | Factorial of Digits Summation | [strong_number.py](79-strong-number/strong_number.py) | Solved |
 | **80** | **Duck Number Checker** | String Representation, Internal Zero Check | [duck_number.py](80-duck-number/duck_number.py) | Solved |
 | **81** | **Fascinating Number Checker** | Concatenated Multiples, Digits 1-9 Sorting | [fascinating_number.py](81-fascinating-number/fascinating_number.py) | Solved |
+| **82** | **Tech Number Checker** | Even Digit Split, Sum of Halves Squared | [tech_number.py](82-tech-number/tech_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
