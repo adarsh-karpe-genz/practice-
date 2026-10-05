@@ -101,6 +101,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **86** | **Catalan Number Generator** | Factorial Formula, Combinatorics | [catalan_number.py](86-catalan-number/catalan_number.py) | Solved |
 | **87** | **Kaprekar Number Checker** | Square Digit Splitting, Number Theory | [kaprekar_number.py](87-kaprekar-number/kaprekar_number.py) | Solved |
 | **88** | **Mersenne Prime Checker** | Primality, Power of Two, 2^p - 1 Form | [mersenne_prime.py](88-mersenne-prime/mersenne_prime.py) | Solved |
+| **89** | **Smith Number Checker** | Prime Factorization, Digit Sum Equality | [smith_number.py](89-smith-number/smith_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
