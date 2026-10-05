@@ -99,6 +99,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **84** | **Happy Number Checker** | Sum of Squared Digits, Cycle Detection Set | [happy_number.py](84-happy-number/happy_number.py) | Solved |
 | **85** | **Ugly Number Checker** | Prime Factors Reduction (2, 3, 5) | [ugly_number.py](85-ugly-number/ugly_number.py) | Solved |
 | **86** | **Catalan Number Generator** | Factorial Formula, Combinatorics | [catalan_number.py](86-catalan-number/catalan_number.py) | Solved |
+| **87** | **Kaprekar Number Checker** | Square Digit Splitting, Number Theory | [kaprekar_number.py](87-kaprekar-number/kaprekar_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
