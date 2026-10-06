@@ -105,6 +105,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **90** | **Lucas Number Generator** | Sequence Generation, Custom Base Cases | [lucas_number.py](90-lucas-number/lucas_number.py) | Solved |
 | **91** | **Mersenne Number Checker** | Form 2^k - 1, Bitwise Power of Two | [mersenne_number.py](91-mersenne-number/mersenne_number.py) | Solved |
 | **92** | **Woodall Number Checker** | Form n * 2^n - 1, Sequence Traversal | [woodall_number.py](92-woodall-number/woodall_number.py) | Solved |
+| **93** | **Cullen Number Checker** | Form n * 2^n + 1, Sequence Search | [cullen_number.py](93-cullen-number/cullen_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
