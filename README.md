@@ -110,6 +110,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **95** | **Bell Number Calculator** | Bell Triangle, Set Partitions, 2D DP | [bell_number.py](95-bell-number/bell_number.py) | Solved |
 | **96** | **Perrin Number Generator** | Third-Order Recurrence P(n-2)+P(n-3) | [perrin_number.py](96-perrin-number/perrin_number.py) | Solved |
 | **97** | **Padovan Number Generator** | Plastic Constant, Third-Order Recurrence | [padovan_number.py](97-padovan-number/padovan_number.py) | Solved |
+| **98** | **Tribonacci Number Generator** | Sum of Three Terms, Recurrence | [tribonacci_number.py](98-tribonacci-number/tribonacci_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
