@@ -107,6 +107,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **92** | **Woodall Number Checker** | Form n * 2^n - 1, Sequence Traversal | [woodall_number.py](92-woodall-number/woodall_number.py) | Solved |
 | **93** | **Cullen Number Checker** | Form n * 2^n + 1, Sequence Search | [cullen_number.py](93-cullen-number/cullen_number.py) | Solved |
 | **94** | **Fermat Number Checker** | Form 2^(2^n) + 1, Double Exponentiation | [fermat_number.py](94-fermat-number/fermat_number.py) | Solved |
+| **95** | **Bell Number Calculator** | Bell Triangle, Set Partitions, 2D DP | [bell_number.py](95-bell-number/bell_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
