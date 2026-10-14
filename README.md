@@ -112,6 +112,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **97** | **Padovan Number Generator** | Plastic Constant, Third-Order Recurrence | [padovan_number.py](97-padovan-number/padovan_number.py) | Solved |
 | **98** | **Tribonacci Number Generator** | Sum of Three Terms, Recurrence | [tribonacci_number.py](98-tribonacci-number/tribonacci_number.py) | Solved |
 | **99** | **Motzkin Number Calculator** | Combinatorics, Chords on Circle, 1D DP | [motzkin_number.py](99-motzkin-number/motzkin_number.py) | Solved |
+| **100** | **Centered Triangular Number** | Figurate Numbers, Quadratic Inverse Solver | [centered_triangular.py](100-centered-triangular-number/centered_triangular.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
