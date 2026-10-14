@@ -114,6 +114,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **99** | **Motzkin Number Calculator** | Combinatorics, Chords on Circle, 1D DP | [motzkin_number.py](99-motzkin-number/motzkin_number.py) | Solved |
 | **100** | **Centered Triangular Number** | Figurate Numbers, Quadratic Inverse Solver | [centered_triangular.py](100-centered-triangular-number/centered_triangular.py) | Solved |
 | **101** | **Centered Square Number** | Figurate Square, Consecutive Squares Sum | [centered_square.py](101-centered-square-number/centered_square.py) | Solved |
+| **102** | **Centered Hexagonal Number** | Hex Lattice, Consecutive Cubes Difference | [centered_hexagonal.py](102-centered-hexagonal-number/centered_hexagonal.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
