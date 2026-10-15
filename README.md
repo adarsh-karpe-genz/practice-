@@ -118,6 +118,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **103** | **Star Number Checker** | Centered Hexagram, Pronic Relation 6n(n-1)+1 | [star_number.py](103-star-number/star_number.py) | Solved |
 | **104** | **Octagonal Number Checker** | Figurate 8-gon, Formula 3n^2 - 2n | [octagonal_number.py](104-octagonal-number/octagonal_number.py) | Solved |
 | **105** | **Heptagonal Number Checker** | Figurate 7-gon, Formula (5n^2 - 3n)//2 | [heptagonal_number.py](105-heptagonal-number/heptagonal_number.py) | Solved |
+| **106** | **Hexagonal Number Checker** | Figurate 6-gon, Formula 2n^2 - n | [hexagonal_number.py](106-hexagonal-number/hexagonal_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
