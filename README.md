@@ -122,6 +122,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **107** | **Pentagonal Number Checker** | Figurate 5-gon, Formula (3n^2 - n)//2 | [pentagonal_number.py](107-pentagonal-number/pentagonal_number.py) | Solved |
 | **108** | **Triangular Number Checker** | Gauss Summation, Figurate 3-gon, Formula n(n+1)//2 | [triangular_number.py](108-triangular-number/triangular_number.py) | Solved |
 | **109** | **Square Pyramidal Number** | Sum of Squares, Formula n(n+1)(2n+1)//6 | [square_pyramidal.py](109-square-pyramidal-number/square_pyramidal.py) | Solved |
+| **110** | **Tetrahedral Number Checker** | Sum of Triangular Numbers, n(n+1)(n+2)//6 | [tetrahedral_number.py](110-tetrahedral-number/tetrahedral_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
