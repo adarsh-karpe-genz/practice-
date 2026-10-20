@@ -127,6 +127,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **112** | **Stella Octangula Number** | 3D Star Figurate, Formula n(2n^2 - 1) | [stella_octangula.py](112-stella-octangula-number/stella_octangula.py) | Solved |
 | **113** | **Octahedral Number Checker** | Polyhedral Sphere Packing, n(2n^2 + 1)//3 | [octahedral_number.py](113-octahedral-number/octahedral_number.py) | Solved |
 | **114** | **Dodecahedral Number Checker** | Platonic Solid, Formula n(3n-1)(3n-2)//2 | [dodecahedral_number.py](114-dodecahedral-number/dodecahedral_number.py) | Solved |
+| **115** | **Icosahedral Number Checker** | Platonic 20-gon, Formula n(5n^2 - 5n + 2)//2 | [icosahedral_number.py](115-icosahedral-number/icosahedral_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
