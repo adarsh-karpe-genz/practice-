@@ -131,6 +131,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **116** | **Truncated Triangular Number** | 3 * Triangular Number, (3n^2 - 3n)//2 | [truncated_triangular.py](116-truncated-triangular-number/truncated_triangular.py) | Solved |
 | **117** | **Nonagonal Number Checker** | Figurate 9-gon, Formula n(7n - 5)//2 | [nonagonal_number.py](117-nonagonal-number/nonagonal_number.py) | Solved |
 | **118** | **Decagonal Number Checker** | Figurate 10-gon, Formula 4n^2 - 3n | [decagonal_number.py](118-decagonal-number/decagonal_number.py) | Solved |
+| **119** | **Centered Pentagonal Number** | Centered 5-gon, (5n^2 - 5n + 2)//2 | [centered_pentagonal.py](119-centered-pentagonal-number/centered_pentagonal.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
