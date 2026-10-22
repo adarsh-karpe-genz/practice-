@@ -129,6 +129,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **114** | **Dodecahedral Number Checker** | Platonic Solid, Formula n(3n-1)(3n-2)//2 | [dodecahedral_number.py](114-dodecahedral-number/dodecahedral_number.py) | Solved |
 | **115** | **Icosahedral Number Checker** | Platonic 20-gon, Formula n(5n^2 - 5n + 2)//2 | [icosahedral_number.py](115-icosahedral-number/icosahedral_number.py) | Solved |
 | **116** | **Truncated Triangular Number** | 3 * Triangular Number, (3n^2 - 3n)//2 | [truncated_triangular.py](116-truncated-triangular-number/truncated_triangular.py) | Solved |
+| **117** | **Nonagonal Number Checker** | Figurate 9-gon, Formula n(7n - 5)//2 | [nonagonal_number.py](117-nonagonal-number/nonagonal_number.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
