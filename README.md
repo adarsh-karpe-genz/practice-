@@ -135,6 +135,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **120** | **Centered Heptagonal Number** | Centered 7-gon, (7n^2 - 7n + 2)//2 | [centered_heptagonal.py](120-centered-heptagonal-number/centered_heptagonal.py) | Solved |
 | **121** | **Centered Octagonal Number** | Odd Perfect Square Identity (2n-1)^2 | [centered_octagonal.py](121-centered-octagonal-number/centered_octagonal.py) | Solved |
 | **122** | **Centered Nonagonal Number** | Centered 9-gon, (9n^2 - 9n + 2)//2 | [centered_nonagonal.py](122-centered-nonagonal-number/centered_nonagonal.py) | Solved |
+| **123** | **Centered Decagonal Number** | Centered 10-gon, 5n(n - 1) + 1 | [centered_decagonal.py](123-centered-decagonal-number/centered_decagonal.py) | Solved |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
