@@ -148,6 +148,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **133** | [k-Almost Prime Checker](./133-almost-prime/almost_prime.py) | `Number Theory / Factorization` | `Medium` | [Solution](./133-almost-prime/almost_prime.py) |
 | **134** | [Highly Composite Number Checker](./134-highly-composite-number/highly_composite_number.py) | `Number Theory / Divisors` | `Medium` | [Solution](./134-highly-composite-number/highly_composite_number.py) |
 | **135** | [Superabundant Number Checker](./135-superabundant-number/superabundant_number.py) | `Number Theory / Divisor Function` | `Medium` | [Solution](./135-superabundant-number/superabundant_number.py) |
+| **136** | [Abundancy Index and Classification](./136-abundancy-index/abundancy_index.py) | `Number Theory / Divisor Analysis` | `Easy` | [Solution](./136-abundancy-index/abundancy_index.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
