@@ -142,6 +142,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **127** | [Quintic Number Checker and Generator](./127-quintic-number/quintic_number.py) | `Math / Powers` | `Easy` | [Solution](./127-quintic-number/quintic_number.py) |
 | **128** | [Powerful Number Checker](./128-powerful-number/powerful_number.py) | `Number Theory / Prime Factorization` | `Easy` | [Solution](./128-powerful-number/powerful_number.py) |
 | **129** | [Square-Free Number Checker](./129-square-free-number/square_free_number.py) | `Number Theory / Divisibility` | `Easy` | [Solution](./129-square-free-number/square_free_number.py) |
+| **130** | [Möbius Function Calculator](./130-mobius-function/mobius_function.py) | `Number Theory / Arithmetic Functions` | `Medium` | [Solution](./130-mobius-function/mobius_function.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
