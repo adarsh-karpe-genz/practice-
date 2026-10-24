@@ -139,6 +139,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **124** | **Hendecagonal Number Checker** | Figurate 11-gon, Formula (9n^2 - 7n)//2 | [hendecagonal_number.py](124-hendecagonal-number/hendecagonal_number.py) | Solved |
 | **125** | **Dodecagonal Number Checker** | Figurate 12-gon, Formula 5n^2 - 4n | [dodecagonal_number.py](125-dodecagonal-number/dodecagonal_number.py) | Solved |
 | **126** | **Quartic Number Checker** | Fourth Power n^4, Nested isqrt() | [quartic_number.py](126-quartic-number/quartic_number.py) | Solved |
+| **127** | [Quintic Number Checker and Generator](./127-quintic-number/quintic_number.py) | `Math / Powers` | `Easy` | [Solution](./127-quintic-number/quintic_number.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
