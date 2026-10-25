@@ -158,6 +158,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **143** | [Extravagant Number Checker](./143-extravagant-number/extravagant_number.py) | `Recreational Math / Prime Factorization` | `Easy` | [Solution](./143-extravagant-number/extravagant_number.py) |
 | **144** | [Giuga Number Checker](./144-giuga-number/giuga_number.py) | `Number Theory / Composite Residues` | `Medium` | [Solution](./144-giuga-number/giuga_number.py) |
 | **145** | [Zeisel Number Checker](./145-zeisel-number/zeisel_number.py) | `Number Theory / Square-Free Factors` | `Medium` | [Solution](./145-zeisel-number/zeisel_number.py) |
+| **146** | [Carmichael Function (Reduced Totient)](./146-carmichael-function/carmichael_function.py) | `Number Theory / Modular Arithmetic` | `Medium` | [Solution](./146-carmichael-function/carmichael_function.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
