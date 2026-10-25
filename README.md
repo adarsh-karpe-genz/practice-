@@ -156,6 +156,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **141** | [Frugal Number Checker](./141-frugal-number/frugal_number.py) | `Recreational Math / Prime Factorization` | `Easy` | [Solution](./141-frugal-number/frugal_number.py) |
 | **142** | [Equidigital Number Checker](./142-equidigital-number/equidigital_number.py) | `Recreational Math / Prime Factorization` | `Easy` | [Solution](./142-equidigital-number/equidigital_number.py) |
 | **143** | [Extravagant Number Checker](./143-extravagant-number/extravagant_number.py) | `Recreational Math / Prime Factorization` | `Easy` | [Solution](./143-extravagant-number/extravagant_number.py) |
+| **144** | [Giuga Number Checker](./144-giuga-number/giuga_number.py) | `Number Theory / Composite Residues` | `Medium` | [Solution](./144-giuga-number/giuga_number.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
