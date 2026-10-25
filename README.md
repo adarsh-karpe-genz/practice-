@@ -153,6 +153,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **138** | [Untouchable Number Checker](./138-untouchable-number/untouchable_number.py) | `Number Theory / Aliquot Sum` | `Medium` | [Solution](./138-untouchable-number/untouchable_number.py) |
 | **139** | [Aliquot Sequence Generator](./139-aliquot-sequence/aliquot_sequence.py) | `Number Theory / Dynamic Sequences` | `Easy` | [Solution](./139-aliquot-sequence/aliquot_sequence.py) |
 | **140** | [Sociable Numbers Cycle Checker](./140-sociable-numbers/sociable_numbers.py) | `Number Theory / Aliquot Cycles` | `Medium` | [Solution](./140-sociable-numbers/sociable_numbers.py) |
+| **141** | [Frugal Number Checker](./141-frugal-number/frugal_number.py) | `Recreational Math / Prime Factorization` | `Easy` | [Solution](./141-frugal-number/frugal_number.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
