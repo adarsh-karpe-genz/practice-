@@ -171,6 +171,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **156** | [Sylvester's Sequence Generator](./156-sylvester-sequence/sylvester_sequence.py) | `Sequences / Rapidly Growing Sequences` | `Medium` | [Solution](./156-sylvester-sequence/sylvester_sequence.py) |
 | **157** | [Stern-Brocot (Stern's Diatomic) Sequence](./157-stern-brocot-sequence/stern_brocot.py) | `Number Theory / Tree Traversal` | `Easy` | [Solution](./157-stern-brocot-sequence/stern_brocot.py) |
 | **158** | [Farey Sequence Generator](./158-farey-sequence/farey_sequence.py) | `Number Theory / Fractions` | `Medium` | [Solution](./158-farey-sequence/farey_sequence.py) |
+| **159** | [Look-and-Say Sequence (Conway's Sequence)](./159-look-and-say-sequence/look_and_say.py) | `String Manipulation / Algorithms` | `Easy` | [Solution](./159-look-and-say-sequence/look_and_say.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
