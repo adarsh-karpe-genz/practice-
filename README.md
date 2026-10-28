@@ -178,6 +178,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **163** | [Ulam Numbers Generator](./163-ulam-numbers/ulam_numbers.py) | `Combinatorics / Sequences` | `Medium` | [Solution](./163-ulam-numbers/ulam_numbers.py) |
 | **164** | [Calkin-Wilf Sequence Generator](./164-calkin-wilf-sequence/calkin_wilf.py) | `Number Theory / Tree Traversal` | `Medium` | [Solution](./164-calkin-wilf-sequence/calkin_wilf.py) |
 | **165** | [Van Eck's Sequence Generator](./165-van-eck-sequence/van_eck_sequence.py) | `Sequences / Memory and Distances` | `Easy` | [Solution](./165-van-eck-sequence/van_eck_sequence.py) |
+| **166** | [Kolakoski Sequence Generator](./166-kolakoski-sequence/kolakoski_sequence.py) | `Sequences / Run-Length Self-Generation` | `Medium` | [Solution](./166-kolakoski-sequence/kolakoski_sequence.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
