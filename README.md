@@ -165,6 +165,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **150** | [Lucas Sequence Generator](./150-lucas-sequence/lucas_sequence.py) | `Sequences / Recurrence Relations` | `Easy` | [Solution](./150-lucas-sequence/lucas_sequence.py) |
 | **151** | [Pell Sequence Generator](./151-pell-sequence/pell_sequence.py) | `Sequences / Recurrence Relations` | `Easy` | [Solution](./151-pell-sequence/pell_sequence.py) |
 | **152** | [Jacobsthal Number Generator](./152-jacobsthal-number/jacobsthal_number.py) | `Sequences / Recurrence Relations` | `Easy` | [Solution](./152-jacobsthal-number/jacobsthal_number.py) |
+| **153** | [Perrin Number Generator](./153-perrin-number/perrin_number.py) | `Sequences / Recurrence Relations` | `Easy` | [Solution](./153-perrin-number/perrin_number.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
