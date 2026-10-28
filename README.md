@@ -161,6 +161,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **146** | [Carmichael Function (Reduced Totient)](./146-carmichael-function/carmichael_function.py) | `Number Theory / Modular Arithmetic` | `Medium` | [Solution](./146-carmichael-function/carmichael_function.py) |
 | **147** | [Modular Exponentiation (Binary Exponentiation)](./147-modular-exponentiation/modular_exponentiation.py) | `Algorithms / Math` | `Easy` | [Solution](./147-modular-exponentiation/modular_exponentiation.py) |
 | **148** | [Extended Euclidean Algorithm](./148-extended-euclidean-algorithm/extended_euclid.py) | `Number Theory / Diophantine Equations` | `Medium` | [Solution](./148-extended-euclidean-algorithm/extended_euclid.py) |
+| **149** | [Chinese Remainder Theorem Solver](./149-chinese-remainder-theorem/chinese_remainder_theorem.py) | `Number Theory / Modular Systems` | `Medium` | [Solution](./149-chinese-remainder-theorem/chinese_remainder_theorem.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
