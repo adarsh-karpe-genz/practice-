@@ -176,6 +176,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **161** | [Hofstadter Q-Sequence Generator](./161-hofstadter-q-sequence/hofstadter_q.py) | `Recursion / Meta-Fibonacci Sequences` | `Easy` | [Solution](./161-hofstadter-q-sequence/hofstadter_q.py) |
 | **162** | [Recamán's Sequence Generator](./162-reman-number/reman_number.py) | `Sequences / Self-Avoiding Hops` | `Easy` | [Solution](./162-reman-number/reman_number.py) |
 | **163** | [Ulam Numbers Generator](./163-ulam-numbers/ulam_numbers.py) | `Combinatorics / Sequences` | `Medium` | [Solution](./163-ulam-numbers/ulam_numbers.py) |
+| **164** | [Calkin-Wilf Sequence Generator](./164-calkin-wilf-sequence/calkin_wilf.py) | `Number Theory / Tree Traversal` | `Medium` | [Solution](./164-calkin-wilf-sequence/calkin_wilf.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
