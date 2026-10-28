@@ -168,6 +168,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **153** | [Perrin Number Generator](./153-perrin-number/perrin_number.py) | `Sequences / Recurrence Relations` | `Easy` | [Solution](./153-perrin-number/perrin_number.py) |
 | **154** | [Padovan Sequence Generator](./154-padovan-sequence/padovan_sequence.py) | `Sequences / Recurrence Relations` | `Easy` | [Solution](./154-padovan-sequence/padovan_sequence.py) |
 | **155** | [Narayana's Cows Sequence Generator](./155-narayana-cows-sequence/narayana_cows.py) | `Sequences / Recurrence Relations` | `Easy` | [Solution](./155-narayana-cows-sequence/narayana_cows.py) |
+| **156** | [Sylvester's Sequence Generator](./156-sylvester-sequence/sylvester_sequence.py) | `Sequences / Rapidly Growing Sequences` | `Medium` | [Solution](./156-sylvester-sequence/sylvester_sequence.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
