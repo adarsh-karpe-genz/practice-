@@ -174,6 +174,7 @@ A curated collection of beginner-friendly everyday Python practice problems with
 | **159** | [Look-and-Say Sequence (Conway's Sequence)](./159-look-and-say-sequence/look_and_say.py) | `String Manipulation / Algorithms` | `Easy` | [Solution](./159-look-and-say-sequence/look_and_say.py) |
 | **160** | [Golomb Sequence Generator](./160-golomb-sequence/golomb_sequence.py) | `Sequences / Self-Describing Sequences` | `Medium` | [Solution](./160-golomb-sequence/golomb_sequence.py) |
 | **161** | [Hofstadter Q-Sequence Generator](./161-hofstadter-q-sequence/hofstadter_q.py) | `Recursion / Meta-Fibonacci Sequences` | `Easy` | [Solution](./161-hofstadter-q-sequence/hofstadter_q.py) |
+| **162** | [Recamán's Sequence Generator](./162-reman-number/reman_number.py) | `Sequences / Self-Avoiding Hops` | `Easy` | [Solution](./162-reman-number/reman_number.py) |
 | **76** | **Pronic Number Checker** | Consecutive Integer Product k*(k+1), isqrt() | [pronic_number.py](76-pronic-number/pronic_number.py) | Solved |
 | **77** | **Abundant Number Checker** | Proper Divisors Summation, Abundance Logic | [abundant_number.py](77-abundant-number/abundant_number.py) | Solved |
 | **78** | **Duck Number Checker** | Zero Occurrence without Leading Zeros | [duck_number.py](78-duck-number/duck_number.py) | Solved |
