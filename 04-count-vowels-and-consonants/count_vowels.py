@@ -30,6 +30,16 @@ def count_vowels_and_consonants(text: str) -> Dict[str, int]:
     return counts
 
 
+def count_vowel_frequencies(text: str) -> dict[str, int]:
+    """Calculate frequency breakdown for each individual vowel (a, e, i, o, u)."""
+    vowels = "aeiou"
+    counts = {v: 0 for v in vowels}
+    for ch in text.lower():
+        if ch in counts:
+            counts[ch] += 1
+    return counts
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 04: Count Vowels Tests")
@@ -43,5 +53,7 @@ if __name__ == "__main__":
     # 'Hello World' -> vowels: e, o, o (3) | consonants: H, l, l, W, r, l, d (7)
     assert result["vowels"] == 3
     assert result["consonants"] == 7
+    v_freq = count_vowel_frequencies(sample)
+    assert sum(v_freq.values()) == result["vowels"]
 
     print("\n[PASS] All Count Vowels tests passed successfully!")
