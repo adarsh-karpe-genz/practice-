@@ -22,6 +22,13 @@ def is_even_bitwise(n: int) -> bool:
     return (n & 1) == 0
 
 
+def partition_even_odd(numbers: list[int]) -> tuple[list[int], list[int]]:
+    """Partition a list of integers into (evens, odds)."""
+    evens = [x for x in numbers if is_even_bitwise(x)]
+    odds = [x for x in numbers if not is_even_bitwise(x)]
+    return evens, odds
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 06: Even or Odd Tests")
@@ -42,4 +49,7 @@ if __name__ == "__main__":
         assert res1 == expected
         assert res2 == expected
 
+    evens, odds = partition_even_odd([1, 2, 3, 4, 5, 6])
+    assert evens == [2, 4, 6]
+    assert odds == [1, 3, 5]
     print("\n[PASS] All Even/Odd tests passed successfully!")
