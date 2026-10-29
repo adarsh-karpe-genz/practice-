@@ -63,6 +63,15 @@ def nth_fibonacci_memo(n: int, memo: Dict[int, int] = None) -> int:
 # ==============================================================================
 # Comprehensive Unit Test Harness
 # ==============================================================================
+def nth_fibonacci_binet(n: int) -> int:
+    """Compute nth Fibonacci number in O(1) time via Binet's golden ratio formula."""
+    if n < 0:
+        raise ValueError("n must be non-negative")
+    phi = (1 + 5**0.5) / 2
+    psi = (1 - 5**0.5) / 2
+    return round((phi**n - psi**n) / (5**0.5))
+
+
 if __name__ == "__main__":
     print("=" * 55)
     print("Running Problem 08: Fibonacci Sequence Tests")
@@ -104,4 +113,6 @@ if __name__ == "__main__":
     except ValueError:
         print("\nNegative index validation test: [PASS]")
 
+    for n_val, expected in nth_tests:
+        assert nth_fibonacci_binet(n_val) == expected
     print("\n[PASS] All Fibonacci tests passed successfully!")
