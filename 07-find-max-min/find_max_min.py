@@ -40,6 +40,24 @@ def find_max_min_builtin(numbers: List[int]) -> Tuple[int, int]:
     return max(numbers), min(numbers)
 
 
+def find_min_max_divide_and_conquer(numbers: list[int | float]) -> tuple[int | float, int | float]:
+    """Find max and min using tournament divide-and-conquer in 3n/2 - 2 comparisons."""
+    if not numbers:
+        raise ValueError("numbers list cannot be empty")
+    def _helper(low: int, high: int):
+        if low == high:
+            return numbers[low], numbers[low]
+        if high == low + 1:
+            if numbers[low] > numbers[high]:
+                return numbers[low], numbers[high]
+            return numbers[high], numbers[low]
+        mid = (low + high) // 2
+        max1, min1 = _helper(low, mid)
+        max2, min2 = _helper(mid + 1, high)
+        return max(max1, max2), min(min1, min2)
+    return _helper(0, len(numbers) - 1)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 07: Find Max and Min Tests")
@@ -58,5 +76,7 @@ if __name__ == "__main__":
         print(f"List: {nums} -> (Max, Min): {res1} | Expected: {expected}")
         assert res1 == expected
         assert res2 == expected
+        res3 = find_min_max_divide_and_conquer(nums)
+        assert res3 == expected
 
     print("\n[PASS] All Max/Min tests passed successfully!")
