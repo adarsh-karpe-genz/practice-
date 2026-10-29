@@ -28,6 +28,14 @@ def sum_of_digits_string(n: int) -> int:
     return sum(int(digit) for digit in str(abs(n)))
 
 
+def digital_root(n: int) -> int:
+    """Repeatedly sum digits until single digit remains (digital root)."""
+    n = abs(n)
+    if n == 0:
+        return 0
+    return 1 + (n - 1) % 9
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 09: Sum of Digits Tests")
@@ -49,4 +57,7 @@ if __name__ == "__main__":
         assert res1 == expected, f"Math method failed for {num}"
         assert res2 == expected, f"String method failed for {num}"
 
+    assert digital_root(38) == 2  # 3+8=11 -> 1+1=2
+    assert digital_root(0) == 0
+    assert digital_root(493193) == 2
     print("\n[PASS] All Sum of Digits tests passed successfully!")
