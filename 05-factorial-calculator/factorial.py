@@ -33,6 +33,18 @@ def factorial_recursive(n: int) -> int:
     return n * factorial_recursive(n - 1)
 
 
+def count_trailing_zeros(n: int) -> int:
+    """Compute number of trailing zeros in n! using Legendre's formula."""
+    if n < 0:
+        raise ValueError("n must be non-negative")
+    count = 0
+    divisor = 5
+    while divisor <= n:
+        count += n // divisor
+        divisor *= 5
+    return count
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 05: Factorial Calculator Tests")
@@ -60,4 +72,7 @@ if __name__ == "__main__":
     except ValueError:
         print("\nNegative input validation test: [PASS]")
 
+    assert count_trailing_zeros(5) == 1
+    assert count_trailing_zeros(10) == 2
+    assert count_trailing_zeros(25) == 6
     print("\n[PASS] All Factorial tests passed successfully!")
