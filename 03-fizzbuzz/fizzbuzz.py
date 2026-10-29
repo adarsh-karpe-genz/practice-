@@ -33,6 +33,17 @@ def fizz_buzz(n: int) -> List[str]:
     return result
 
 
+def fizz_buzz_custom(n: int, rules: dict[int, str] | None = None) -> list[str]:
+    """Method 2: Highly extensible dictionary-driven FizzBuzz."""
+    if rules is None:
+        rules = {3: "Fizz", 5: "Buzz"}
+    result = []
+    for i in range(1, n + 1):
+        label = "".join(text for divisor, text in rules.items() if i % divisor == 0)
+        result.append(label if label else str(i))
+    return result
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 03: FizzBuzz Tests")
@@ -48,4 +59,5 @@ if __name__ == "__main__":
         "11", "Fizz", "13", "14", "FizzBuzz"
     ]
     assert res == expected, "FizzBuzz test failed!"
+    assert fizz_buzz_custom(n) == expected, "Custom FizzBuzz failed!"
     print("\n[PASS] All FizzBuzz tests passed successfully!")
