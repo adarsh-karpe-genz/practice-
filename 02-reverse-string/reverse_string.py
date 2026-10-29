@@ -26,6 +26,13 @@ def reverse_loop(s: str) -> str:
     return reversed_str
 
 
+def reverse_recursive(s: str) -> str:
+    """Method 4: Recursive divide-and-conquer string reversal."""
+    if len(s) <= 1:
+        return s
+    return s[-1] + reverse_recursive(s[:-1])
+
+
 def reverse_two_pointers(s: str) -> str:
     """Method 3: In-place list two pointers"""
     chars = list(s)
@@ -49,6 +56,7 @@ if __name__ == "__main__":
         r3 = reverse_two_pointers(word)
         expected = word[::-1]
         print(f"Original: '{word}' -> Reversed: '{r1}'")
-        assert r1 == expected and r2 == expected and r3 == expected
+        r4 = reverse_recursive(word)
+        assert r1 == expected and r2 == expected and r3 == expected and r4 == expected
 
     print("\n[PASS] All Reverse String tests passed successfully!")
