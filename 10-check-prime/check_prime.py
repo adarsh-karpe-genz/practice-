@@ -34,6 +34,19 @@ def is_prime(n: int) -> bool:
     return True
 
 
+def sieve_primes(limit: int) -> list[int]:
+    """Generate all prime numbers up to limit using Sieve of Eratosthenes."""
+    if limit < 2:
+        return []
+    is_p = [True] * (limit + 1)
+    is_p[0] = is_p[1] = False
+    for p in range(2, int(limit**0.5) + 1):
+        if is_p[p]:
+            for multiple in range(p * p, limit + 1, p):
+                is_p[multiple] = False
+    return [i for i, prime in enumerate(is_p) if prime]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 10: Check Prime Number Tests")
@@ -58,4 +71,5 @@ if __name__ == "__main__":
         print(f"Number: {num:3d} -> Prime? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
 
+    assert sieve_primes(30) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]
     print("\n[PASS] All Prime Number tests passed successfully!")
