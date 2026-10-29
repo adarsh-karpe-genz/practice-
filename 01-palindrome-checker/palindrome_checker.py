@@ -18,6 +18,18 @@ def is_palindrome_simple(text: str) -> bool:
     return cleaned == cleaned[::-1]
 
 
+def is_palindrome_recursive(text: str) -> bool:
+    """Method 3: Recursive Approach (Classic CS recursion)."""
+    cleaned = "".join(ch.lower() for ch in str(text) if ch.isalnum())
+    def _helper(s: str) -> bool:
+        if len(s) <= 1:
+            return True
+        if s[0] != s[-1]:
+            return False
+        return _helper(s[1:-1])
+    return _helper(cleaned)
+
+
 def is_palindrome_two_pointer(text: str) -> bool:
     """Method 2: Two Pointers (Interview standard)"""
     cleaned = "".join(ch.lower() for ch in str(text) if ch.isalnum())
@@ -49,5 +61,7 @@ if __name__ == "__main__":
         print(f"Testing '{sample}' -> Result: {res1} | Expected: {expected}")
         assert res1 == expected
         assert res2 == expected
+        res3 = is_palindrome_recursive(sample)
+        assert res3 == expected
 
     print("\n[PASS] All Palindrome tests passed successfully!")
