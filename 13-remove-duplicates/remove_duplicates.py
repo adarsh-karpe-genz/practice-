@@ -32,6 +32,15 @@ def remove_duplicates_dict(items: List[Any]) -> List[Any]:
     return list(dict.fromkeys(items))
 
 
+def remove_duplicates_generator(items: list):
+    """Memory-efficient generator yielding unique items while preserving order."""
+    seen = set()
+    for item in items:
+        if item not in seen:
+            seen.add(item)
+            yield item
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 13: Remove Duplicates Tests")
@@ -51,5 +60,7 @@ if __name__ == "__main__":
         print(f"  -> Result: {r1} | Expected: {expected}")
         assert r1 == expected
         assert r2 == expected
+        r3 = list(remove_duplicates_generator(sample))
+        assert r3 == expected
 
     print("\n[PASS] All Remove Duplicates tests passed successfully!")
