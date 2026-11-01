@@ -31,6 +31,20 @@ def flatten_deep(nested: List[Any]) -> List[Any]:
     return flat
 
 
+def flatten_iterative_stack(nested_list: list) -> list:
+    """Flatten arbitrarily deep nested list iteratively using a LIFO stack."""
+    flat = []
+    stack = [nested_list]
+    while stack:
+        curr = stack.pop()
+        if isinstance(curr, list):
+            for item in reversed(curr):
+                stack.append(item)
+        else:
+            flat.append(curr)
+    return flat
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 17: Flatten List Tests")
@@ -47,5 +61,6 @@ if __name__ == "__main__":
     res2 = flatten_deep(deep_list)
     print(f"Deep List: {deep_list} -> Flat: {res2}")
     assert res2 == [1, 2, 3, 4, 5, 6, 7, 8]
+    assert flatten_iterative_stack(deep_list) == [1, 2, 3, 4, 5, 6, 7, 8]
 
     print("\n[PASS] All Flatten List tests passed successfully!")
