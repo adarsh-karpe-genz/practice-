@@ -25,6 +25,15 @@ def count_characters(text: str) -> Dict[str, int]:
     return freq
 
 
+def unique_character_ratio(text: str) -> float:
+    """Calculate ratio of unique characters to total alphabetic characters."""
+    counts = count_characters(text)
+    total = sum(counts.values())
+    if total == 0:
+        return 0.0
+    return round(len(counts) / total, 4)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 16: Character Count Tests")
@@ -41,5 +50,6 @@ if __name__ == "__main__":
     assert res2["l"] == 3
     assert res2["o"] == 2
     assert " " not in res2
+    assert unique_character_ratio("banana") == round(3 / 6, 4)
 
     print("\n[PASS] All Character Count tests passed successfully!")
