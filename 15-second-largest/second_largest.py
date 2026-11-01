@@ -40,6 +40,16 @@ def find_second_largest_set(numbers: List[int]) -> Optional[int]:
     return unique_nums[-2]
 
 
+import heapq
+
+def find_second_largest_heap(numbers: list[int | float]) -> int | float | None:
+    """Find second largest element using min-heap of distinct numbers."""
+    unique = list(set(numbers))
+    if len(unique) < 2:
+        return None
+    return heapq.nlargest(2, unique)[1]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 15: Second Largest Tests")
@@ -59,5 +69,7 @@ if __name__ == "__main__":
         print(f"List: {nums} -> Second Largest: {res1} | Expected: {expected}")
         assert res1 == expected, f"Single-pass failed for {nums}"
         assert res2 == expected, f"Set method failed for {nums}"
+        res3 = find_second_largest_heap(nums)
+        assert res3 == expected, f"Heap method failed for {nums}"
 
     print("\n[PASS] All Second Largest tests passed successfully!")
