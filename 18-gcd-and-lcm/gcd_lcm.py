@@ -41,6 +41,22 @@ def gcd_and_lcm(a: int, b: int) -> Tuple[int, int]:
     return g, l
 
 
+from functools import reduce
+
+def gcd_multiple(numbers: list[int]) -> int:
+    """Compute the greatest common divisor of an entire list of numbers."""
+    if not numbers:
+        return 0
+    return reduce(compute_gcd, numbers)
+
+
+def lcm_multiple(numbers: list[int]) -> int:
+    """Compute the least common multiple of an entire list of numbers."""
+    if not numbers:
+        return 0
+    return reduce(compute_lcm, numbers)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 18: GCD & LCM Tests")
@@ -60,5 +76,7 @@ if __name__ == "__main__":
         assert res == expected, f"Failed for {n1}, {n2}"
         # Verify against math.gcd
         assert compute_gcd(n1, n2) == math.gcd(n1, n2)
+    assert gcd_multiple([12, 18, 24]) == 6
+    assert lcm_multiple([4, 6, 8]) == 24
 
     print("\n[PASS] All GCD & LCM tests passed successfully!")
