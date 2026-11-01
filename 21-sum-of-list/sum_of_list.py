@@ -35,6 +35,16 @@ def sum_builtin(numbers: List[int | float]) -> int | float:
     return sum(numbers)
 
 
+def prefix_sums(numbers: list[int | float]) -> list[int | float]:
+    """Calculate running cumulative prefix sums of a list."""
+    running = 0
+    res = []
+    for num in numbers:
+        running += num
+        res.append(running)
+    return res
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 21: Sum of List Tests")
@@ -54,5 +64,6 @@ if __name__ == "__main__":
         r3 = sum_builtin(nums)
         print(f"List: {nums} -> Sum: {r1} | Expected: {expected}")
         assert r1 == expected and r2 == expected and r3 == expected
+    assert prefix_sums([1, 2, 3, 4]) == [1, 3, 6, 10]
 
     print("\n[PASS] All Sum of List tests passed successfully!")
