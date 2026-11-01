@@ -29,6 +29,14 @@ def is_leap_year(year: int) -> bool:
     return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
 
 
+def next_leap_year(start_year: int) -> int:
+    """Return the very next leap year strictly greater than start_year."""
+    year = start_year + 1
+    while not is_leap_year(year):
+        year += 1
+    return year
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 20: Leap Year Tests")
@@ -51,5 +59,7 @@ if __name__ == "__main__":
         assert res == expected, f"Failed for year {y}"
         # Validate against calendar module
         assert res == calendar.isleap(y)
+    assert next_leap_year(2020) == 2024
+    assert next_leap_year(2024) == 2028
 
     print("\n[PASS] All Leap Year tests passed successfully!")
