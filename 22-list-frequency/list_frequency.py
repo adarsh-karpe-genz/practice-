@@ -30,6 +30,15 @@ def count_frequency_counter(items: List[Any]) -> Dict[Any, int]:
     return dict(Counter(items))
 
 
+def find_mode(items: list) -> list:
+    """Return all elements that appear with the maximum frequency (mode)."""
+    if not items:
+        return []
+    freq = count_frequency_manual(items)
+    max_count = max(freq.values())
+    return [elem for elem, count in freq.items() if count == max_count]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 22: List Frequency Tests")
@@ -49,5 +58,6 @@ if __name__ == "__main__":
         print(f"  -> Frequency: {res1} | Expected: {expected}")
         assert res1 == expected
         assert res2 == expected
+    assert find_mode([1, 2, 2, 3, 3]) == [2, 3]
 
     print("\n[PASS] All List Frequency tests passed successfully!")
