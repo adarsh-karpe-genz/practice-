@@ -50,6 +50,11 @@ def is_armstrong_string(n: int) -> bool:
     return sum(int(digit) ** k for digit in s) == n
 
 
+def find_armstrong_numbers(start: int, end: int) -> list[int]:
+    """Find and return all Armstrong numbers in the inclusive range [start, end]."""
+    return [x for x in range(start, end + 1) if is_armstrong_math(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 19: Armstrong Number Tests")
@@ -75,4 +80,5 @@ if __name__ == "__main__":
         assert res1 == expected, f"Math method failed for {num}"
         assert res2 == expected, f"String method failed for {num}"
 
+    assert find_armstrong_numbers(0, 153) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153]
     print("\n[PASS] All Armstrong Number tests passed successfully!")
