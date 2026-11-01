@@ -25,6 +25,12 @@ def word_frequency_manual(text: str) -> Dict[str, int]:
     return freq
 
 
+def top_k_words(text: str, k: int = 3) -> list[tuple[str, int]]:
+    """Return the top-k most frequent words ordered by descending frequency."""
+    freq = word_frequency_manual(text)
+    return sorted(freq.items(), key=lambda item: item[1], reverse=True)[:k]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 12: Word Frequency Counter Tests")
@@ -39,5 +45,7 @@ if __name__ == "__main__":
     assert res["is"] == 2
     assert res["great"] == 1
     assert res["learn"] == 1
+    top2 = top_k_words(sample, 2)
+    assert top2 == [("python", 2), ("is", 2)]
 
     print("\n[PASS] All Word Frequency tests passed successfully!")
