@@ -25,6 +25,11 @@ def linear_search(items: List[Any], target: Any) -> int:
     return -1
 
 
+def linear_search_all_indices(arr: list, target) -> list[int]:
+    """Return all 0-based indices where target occurs in arr."""
+    return [i for i, val in enumerate(arr) if val == target]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 23: Linear Search Tests")
@@ -43,5 +48,6 @@ if __name__ == "__main__":
         res = linear_search(nums, tgt)
         print(f"List: {nums}, Target: {tgt} -> Found Index: {res:<2} | Expected: {expected:<2}")
         assert res == expected, f"Failed for target {tgt}"
+    assert linear_search_all_indices([10, 20, 30, 20, 40], 20) == [1, 3]
 
     print("\n[PASS] All Linear Search tests passed successfully!")
