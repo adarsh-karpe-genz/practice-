@@ -27,6 +27,23 @@ def count_case(text: str) -> Dict[str, int]:
     return counts
 
 
+def count_detailed_categories(s: str) -> dict[str, int]:
+    """Count uppercase, lowercase, digits, whitespace, and special punctuation."""
+    stats = {"uppercase": 0, "lowercase": 0, "digits": 0, "spaces": 0, "special": 0}
+    for ch in s:
+        if ch.isupper():
+            stats["uppercase"] += 1
+        elif ch.islower():
+            stats["lowercase"] += 1
+        elif ch.isdigit():
+            stats["digits"] += 1
+        elif ch.isspace():
+            stats["spaces"] += 1
+        else:
+            stats["special"] += 1
+    return stats
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 28: Upper/Lower Count Tests")
@@ -46,5 +63,7 @@ if __name__ == "__main__":
         print(f"Input: '{s}'")
         print(f"  -> Counts: {res} | Expected: {expected}")
         assert res == expected, f"Failed for '{s}'"
+    d_stats = count_detailed_categories("Hello 123!")
+    assert d_stats["uppercase"] == 1 and d_stats["lowercase"] == 4 and d_stats["digits"] == 3
 
     print("\n[PASS] All Upper/Lower Count tests passed successfully!")
