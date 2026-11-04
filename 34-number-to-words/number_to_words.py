@@ -49,6 +49,18 @@ def number_to_words(n: int) -> str:
     return " ".join(parts)
 
 
+def number_to_words_extended(num: int) -> str:
+    """Extended number to words supporting negative numbers and values up to thousands."""
+    if num < 0:
+        return f"minus {number_to_words_extended(-num)}"
+    if num >= 1000:
+        thousands = num // 1000
+        rem = num % 1000
+        t_word = f"{number_to_words(thousands)} thousand"
+        return f"{t_word} {number_to_words(rem)}" if rem else t_word
+    return number_to_words(num)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 34: Number to Words Tests")
@@ -69,5 +81,8 @@ if __name__ == "__main__":
         res = number_to_words(num)
         print(f"{num:4d} -> '{res}' | Expected: '{expected}'")
         assert res == expected, f"Failed for {num}: got '{res}'"
+    assert number_to_words_extended(-42) == "minus forty two"
+    assert number_to_words_extended(1000) == "one thousand"
+    assert number_to_words_extended(2026) == "two thousand twenty six"
 
     print("\n[PASS] All Number to Words tests passed successfully!")
