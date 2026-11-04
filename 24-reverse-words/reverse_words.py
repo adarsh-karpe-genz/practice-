@@ -27,6 +27,11 @@ def reverse_words_manual(sentence: str) -> str:
     return " ".join(reversed(words))
 
 
+def reverse_individual_words_only(s: str) -> str:
+    """Reverse each individual word while preserving sentence word order."""
+    return " ".join(word[::-1] for word in s.split())
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 24: Reverse Words Tests")
@@ -46,5 +51,6 @@ if __name__ == "__main__":
         print(f"Original: '{s}' -> Reversed Words: '{res1}' | Expected: '{expected}'")
         assert res1 == expected, f"Failed for '{s}'"
         assert res2 == expected, f"Failed for '{s}'"
+    assert reverse_individual_words_only("hello world") == "olleh dlrow"
 
     print("\n[PASS] All Reverse Words tests passed successfully!")
