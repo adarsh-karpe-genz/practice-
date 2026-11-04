@@ -33,6 +33,25 @@ def is_balanced(s: str) -> bool:
     return len(stack) == 0
 
 
+def max_nesting_depth(s: str) -> int:
+    """Return maximum depth of nested parentheses/brackets in balanced string."""
+    open_brackets = {"(", "[", "{"}
+    close_brackets = {")": "(", "]": "[", "}": "{"}
+    depth = 0
+    max_d = 0
+    stack = []
+    for ch in s:
+        if ch in open_brackets:
+            stack.append(ch)
+            depth += 1
+            max_d = max(max_d, depth)
+        elif ch in close_brackets:
+            if stack and stack[-1] == close_brackets[ch]:
+                stack.pop()
+                depth -= 1
+    return max_d
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 26: Balanced Parentheses Tests")
@@ -54,5 +73,7 @@ if __name__ == "__main__":
         status = "[OK]" if res == expected else "[FAIL]"
         print(f"{status} '{s}' -> Balanced? {res} | Expected: {expected}")
         assert res == expected, f"Failed for '{s}'"
+    assert max_nesting_depth("((()))") == 3
+    assert max_nesting_depth("{[()]}") == 3
 
     print("\n[PASS] All Balanced Parentheses tests passed successfully!")
