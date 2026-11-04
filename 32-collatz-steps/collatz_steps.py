@@ -30,6 +30,18 @@ def collatz_steps(n: int) -> int:
     return steps
 
 
+def collatz_trajectory_and_peak(n: int) -> tuple[list[int], int]:
+    """Return the entire Collatz sequence path and the maximum peak value reached."""
+    if n < 1:
+        raise ValueError("N must be a positive integer")
+    path = [n]
+    curr = n
+    while curr != 1:
+        curr = curr // 2 if curr % 2 == 0 else 3 * curr + 1
+        path.append(curr)
+    return path, max(path)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 32: Collatz Steps Tests")
@@ -48,5 +60,8 @@ if __name__ == "__main__":
         res = collatz_steps(n)
         print(f"N = {n:4d} -> Steps: {res:4d} | Expected: {expected:4d}")
         assert res == expected, f"Failed for N={n}"
+    traj, peak = collatz_trajectory_and_peak(6)
+    assert traj == [6, 3, 10, 5, 16, 8, 4, 2, 1]
+    assert peak == 16
 
     print("\n[PASS] All Collatz Steps tests passed successfully!")
