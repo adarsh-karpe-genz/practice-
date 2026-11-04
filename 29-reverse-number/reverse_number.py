@@ -38,6 +38,14 @@ def reverse_number_string(n: int) -> int:
     return sign * reversed_num
 
 
+def reverse_number_32bit(n: int) -> int:
+    """Reverse digits of signed 32-bit integer, returning 0 if overflow outside [-2^31, 2^31 - 1]."""
+    rev = reverse_number_math(n)
+    if rev < -2**31 or rev > 2**31 - 1:
+        return 0
+    return rev
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 29: Reverse Number Tests")
@@ -59,5 +67,7 @@ if __name__ == "__main__":
         print(f"Input: {num:6d} -> Reversed: {r1:6d} | Expected: {expected:6d}")
         assert r1 == expected, f"Math method failed for {num}"
         assert r2 == expected, f"String method failed for {num}"
+    assert reverse_number_32bit(1534236469) == 0  # overflows 32-bit int
+    assert reverse_number_32bit(123) == 321
 
     print("\n[PASS] All Reverse Number tests passed successfully!")
