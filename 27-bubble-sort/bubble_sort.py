@@ -38,6 +38,31 @@ def bubble_sort(nums: List[int]) -> List[int]:
     return arr
 
 
+def cocktail_shaker_sort(arr: list) -> list:
+    """Bidirectional bubble sort (cocktail shaker sort) sorting both ends each pass."""
+    a = arr.copy()
+    n = len(a)
+    start = 0
+    end = n - 1
+    swapped = True
+    while swapped:
+        swapped = False
+        for i in range(start, end):
+            if a[i] > a[i + 1]:
+                a[i], a[i + 1] = a[i + 1], a[i]
+                swapped = True
+        if not swapped:
+            break
+        swapped = False
+        end -= 1
+        for i in range(end - 1, start - 1, -1):
+            if a[i] > a[i + 1]:
+                a[i], a[i + 1] = a[i + 1], a[i]
+                swapped = True
+        start += 1
+    return a
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 27: Bubble Sort Tests")
@@ -58,5 +83,6 @@ if __name__ == "__main__":
         print(f"Input: {nums}")
         print(f"  -> Sorted: {res} | Expected: {expected}")
         assert res == expected, f"Failed for {nums}"
+        assert cocktail_shaker_sort(nums) == expected
 
     print("\n[PASS] All Bubble Sort tests passed successfully!")
