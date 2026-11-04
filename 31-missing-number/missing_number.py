@@ -31,6 +31,18 @@ def missing_number_xor(nums: List[int]) -> int:
     return result
 
 
+def missing_in_arithmetic_progression(arr: list[int]) -> int | None:
+    """Find the single missing number in an AP series with constant difference d."""
+    n = len(arr)
+    if n < 2:
+        return None
+    d = (arr[-1] - arr[0]) // n
+    for i in range(n - 1):
+        if arr[i + 1] - arr[i] != d:
+            return arr[i] + d
+    return None
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 31: Missing Number Tests")
@@ -50,5 +62,7 @@ if __name__ == "__main__":
         print(f"Array: {nums} -> Missing: {r1} | Expected: {expected}")
         assert r1 == expected, f"Gauss failed for {nums}"
         assert r2 == expected, f"XOR failed for {nums}"
+    assert missing_in_arithmetic_progression([2, 4, 8, 10]) == 6
+    assert missing_in_arithmetic_progression([1, 4, 7, 13]) == 10
 
     print("\n[PASS] All Missing Number tests passed successfully!")
