@@ -34,6 +34,23 @@ def find_pairs_with_sum(nums: List[int], target: int) -> List[Tuple[int, int]]:
     return sorted(pairs)
 
 
+def find_pairs_two_pointer(sorted_nums: list[int], target: int) -> list[tuple[int, int]]:
+    """O(n) two-pointer search for pairs with sum in an already sorted array."""
+    pairs = set()
+    left, right = 0, len(sorted_nums) - 1
+    while left < right:
+        curr = sorted_nums[left] + sorted_nums[right]
+        if curr == target:
+            pairs.add((sorted_nums[left], sorted_nums[right]))
+            left += 1
+            right -= 1
+        elif curr < target:
+            left += 1
+        else:
+            right -= 1
+    return sorted(list(pairs))
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 33: Pairs with Sum Tests")
@@ -52,5 +69,6 @@ if __name__ == "__main__":
         print(f"nums={nums}, target={target}")
         print(f"  -> Pairs: {res} | Expected: {expected}")
         assert res == expected, f"Failed for {nums}, target={target}"
+    assert find_pairs_two_pointer([1, 2, 3, 4, 5], 6) == [(1, 5), (2, 4)]
 
     print("\n[PASS] All Pairs with Sum tests passed successfully!")
