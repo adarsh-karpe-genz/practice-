@@ -50,6 +50,20 @@ def binary_search_recursive(nums: List[int], target: int, left: int = 0, right: 
         return binary_search_recursive(nums, target, left, mid - 1)
 
 
+def search_insert_position(arr: list[int], target: int) -> int:
+    """Return index of target if found, or index where it would be inserted in order."""
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return low
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 25: Binary Search Tests")
@@ -75,5 +89,8 @@ if __name__ == "__main__":
     assert binary_search_iterative([], 5) == -1
     assert binary_search_iterative([7], 7) == 0
     assert binary_search_iterative([7], 1) == -1
+    assert search_insert_position([1, 3, 5, 6], 5) == 2
+    assert search_insert_position([1, 3, 5, 6], 2) == 1
+    assert search_insert_position([1, 3, 5, 6], 7) == 4
 
     print("\n[PASS] All Binary Search tests passed successfully!")
