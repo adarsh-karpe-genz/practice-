@@ -32,6 +32,14 @@ def compress_string(text: str) -> str:
     return "".join(compressed)
 
 
+import re
+
+def decompress_string(compressed: str) -> str:
+    """Inverse of compress_string: decode run-length pairs like 'a2b3' into 'aabbb'."""
+    tokens = re.findall(r'([a-zA-Z])(\d+)', compressed)
+    return "".join(ch * int(count) for ch, count in tokens)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 51: String Compression Tests")
@@ -49,5 +57,6 @@ if __name__ == "__main__":
         res = compress_string(s)
         print(f"Input: '{s}' -> Compressed: '{res}' | Expected: '{expected}'")
         assert res == expected, f"Failed for '{s}'"
+    assert decompress_string("a3b2c1") == "aaabbc"
 
     print("\n[PASS] All String Compression tests passed successfully!")
