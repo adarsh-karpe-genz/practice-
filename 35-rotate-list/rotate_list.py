@@ -48,6 +48,14 @@ def rotate_right_reversal(nums: List[int], k: int) -> List[int]:
     return arr
 
 
+def rotate_left(nums: list, k: int) -> list:
+    """Rotate list to the left by k positions."""
+    if not nums:
+        return []
+    k = k % len(nums)
+    return nums[k:] + nums[:k]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 35: Rotate List Tests")
@@ -68,5 +76,6 @@ if __name__ == "__main__":
         print(f"nums={nums}, k={k} -> {r1} | Expected: {expected}")
         assert r1 == expected, f"Slicing failed for {nums}, k={k}"
         assert r2 == expected, f"Reversal failed for {nums}, k={k}"
+    assert rotate_left([1, 2, 3, 4, 5], 2) == [3, 4, 5, 1, 2]
 
     print("\n[PASS] All Rotate List tests passed successfully!")
