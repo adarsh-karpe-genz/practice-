@@ -27,6 +27,11 @@ def format_multiplication_table(n: int, up_to: int = 10) -> List[str]:
     return [f"{n} x {i} = {n * i}" for i in range(1, up_to + 1)]
 
 
+def multiplication_matrix(size: int) -> list[list[int]]:
+    """Generate size x size multiplication table as a 2D matrix."""
+    return [[i * j for j in range(1, size + 1)] for i in range(1, size + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 48: Multiplication Table Tests")
@@ -42,4 +47,5 @@ if __name__ == "__main__":
     for line in formatted:
         print(f"  {line}")
 
+    assert multiplication_matrix(3) == [[1, 2, 3], [2, 4, 6], [3, 6, 9]]
     print("\n[PASS] All Multiplication Table tests passed successfully!")
