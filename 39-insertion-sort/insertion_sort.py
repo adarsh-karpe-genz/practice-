@@ -35,6 +35,19 @@ def insertion_sort(nums: List[int]) -> List[int]:
     return arr
 
 
+import bisect
+
+def binary_insertion_sort(arr: list) -> list:
+    """Insertion sort using binary search for insertion index in O(log n) comparisons."""
+    a = arr.copy()
+    for i in range(1, len(a)):
+        val = a[i]
+        j = bisect.bisect_right(a, val, 0, i)
+        a[j + 1:i + 1] = a[j:i]
+        a[j] = val
+    return a
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 39: Insertion Sort Tests")
@@ -55,5 +68,6 @@ if __name__ == "__main__":
         print(f"Input:  {nums}")
         print(f"Sorted: {res} | Expected: {expected}")
         assert res == expected, f"Failed for {nums}"
+        assert binary_insertion_sort(nums) == expected
 
     print("\n[PASS] All Insertion Sort tests passed successfully!")
