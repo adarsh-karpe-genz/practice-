@@ -34,6 +34,22 @@ def binary_to_decimal(b_str: str) -> int:
     return decimal_val
 
 
+def decimal_to_base(n: int, base: int) -> str:
+    """Convert decimal integer to arbitrary base representation (up to base 16)."""
+    if n == 0:
+        return "0"
+    digits = "0123456789ABCDEF"
+    res = []
+    neg = n < 0
+    n = abs(n)
+    while n > 0:
+        res.append(digits[n % base])
+        n //= base
+    if neg:
+        res.append("-")
+    return "".join(reversed(res))
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 50: Binary Decimal Converter Tests")
@@ -47,5 +63,6 @@ if __name__ == "__main__":
         print(f"Dec: {num:3d} <-> Bin: {b:>8} | Roundtrip Dec: {d:3d}")
         assert b == bin(num)[2:], f"Binary conversion failed for {num}"
         assert d == num, f"Decimal roundtrip failed for {num}"
+        assert decimal_to_base(num, 2) == b
 
     print("\n[PASS] All Binary Decimal Converter tests passed successfully!")
