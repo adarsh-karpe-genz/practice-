@@ -30,6 +30,15 @@ def is_sorted_pythonic(nums: List[int]) -> bool:
     return all(x <= y for x, y in zip(nums, nums[1:]))
 
 
+def is_strictly_monotonic(nums: list) -> bool:
+    """Return True if list is strictly increasing or strictly decreasing without duplicate adjacent values."""
+    if len(nums) <= 1:
+        return True
+    inc = all(nums[i] < nums[i + 1] for i in range(len(nums) - 1))
+    dec = all(nums[i] > nums[i + 1] for i in range(len(nums) - 1))
+    return inc or dec
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 45: Check Sorted List Tests")
@@ -50,5 +59,8 @@ if __name__ == "__main__":
         r2 = is_sorted_pythonic(nums)
         print(f"List: {nums} -> Sorted? {r1} | Expected: {expected}")
         assert r1 == expected and r2 == expected
+    assert is_strictly_monotonic([1, 2, 3, 4]) is True
+    assert is_strictly_monotonic([4, 3, 2, 1]) is True
+    assert is_strictly_monotonic([1, 2, 2, 3]) is False
 
     print("\n[PASS] All Check Sorted List tests passed successfully!")
