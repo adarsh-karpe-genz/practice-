@@ -43,6 +43,13 @@ def is_power_of_two_math(n: int) -> bool:
     return log_val == int(log_val)
 
 
+def next_power_of_two(n: int) -> int:
+    """Return smallest power of two greater than or equal to n."""
+    if n <= 1:
+        return 1
+    return 1 << (n - 1).bit_length()
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 41: Power of Two Tests")
@@ -69,5 +76,8 @@ if __name__ == "__main__":
         assert r1 == expected, f"Bitwise failed for {n}"
         assert r2 == expected, f"Loop failed for {n}"
         assert r3 == expected, f"Math failed for {n}"
+    assert next_power_of_two(5) == 8
+    assert next_power_of_two(16) == 16
+    assert next_power_of_two(17) == 32
 
     print("\n[PASS] All Power of Two tests passed successfully!")
