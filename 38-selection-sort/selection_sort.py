@@ -36,6 +36,28 @@ def selection_sort(nums: List[int]) -> List[int]:
     return arr
 
 
+def double_selection_sort(arr: list) -> list:
+    """Sort list by simultaneously placing minimum and maximum in each pass."""
+    a = arr.copy()
+    left = 0
+    right = len(a) - 1
+    while left < right:
+        min_idx = left
+        max_idx = left
+        for i in range(left, right + 1):
+            if a[i] < a[min_idx]:
+                min_idx = i
+            if a[i] > a[max_idx]:
+                max_idx = i
+        a[left], a[min_idx] = a[min_idx], a[left]
+        if max_idx == left:
+            max_idx = min_idx
+        a[right], a[max_idx] = a[max_idx], a[right]
+        left += 1
+        right -= 1
+    return a
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 38: Selection Sort Tests")
@@ -56,5 +78,6 @@ if __name__ == "__main__":
         print(f"Input:  {nums}")
         print(f"Sorted: {res} | Expected: {expected}")
         assert res == expected, f"Failed for {nums}"
+        assert double_selection_sort(nums) == expected
 
     print("\n[PASS] All Selection Sort tests passed successfully!")
