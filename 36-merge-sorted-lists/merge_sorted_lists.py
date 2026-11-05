@@ -43,6 +43,24 @@ def merge_sorted_pythonic(list1: List[int], list2: List[int]) -> List[int]:
     return sorted(list1 + list2)
 
 
+import heapq
+
+def merge_k_sorted_lists(lists: list[list[int]]) -> list[int]:
+    """Merge k sorted lists into a single sorted list using heapq."""
+    merged = []
+    min_heap = []
+    for i, lst in enumerate(lists):
+        if lst:
+            heapq.heappush(min_heap, (lst[0], i, 0))
+    while min_heap:
+        val, list_idx, elem_idx = heapq.heappop(min_heap)
+        merged.append(val)
+        if elem_idx + 1 < len(lists[list_idx]):
+            next_val = lists[list_idx][elem_idx + 1]
+            heapq.heappush(min_heap, (next_val, list_idx, elem_idx + 1))
+    return merged
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 36: Merge Sorted Lists Tests")
@@ -63,5 +81,6 @@ if __name__ == "__main__":
         print(f"list1={l1}, list2={l2} -> {r1} | Expected: {expected}")
         assert r1 == expected, f"Two-pointer failed"
         assert r2 == expected, f"Pythonic failed"
+    assert merge_k_sorted_lists([[1, 4, 7], [2, 5, 8], [3, 6, 9]]) == list(range(1, 10))
 
     print("\n[PASS] All Merge Sorted Lists tests passed successfully!")
