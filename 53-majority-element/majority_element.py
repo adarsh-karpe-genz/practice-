@@ -44,6 +44,15 @@ def majority_element_dict(nums: List[int]) -> int:
     return nums[0]
 
 
+from collections import Counter
+
+def elements_appearing_more_than_n_over_k(nums: list, k: int) -> list:
+    """Return all elements appearing strictly more than len(nums) // k times."""
+    threshold = len(nums) // k
+    counts = Counter(nums)
+    return [x for x, c in counts.items() if c > threshold]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 53: Majority Element Tests")
@@ -62,5 +71,6 @@ if __name__ == "__main__":
         print(f"Nums: {nums} -> Majority: {r1} | Expected: {expected}")
         assert r1 == expected
         assert r2 == expected
+    assert elements_appearing_more_than_n_over_k([1, 1, 1, 3, 3, 2, 2, 2], 3) == [1, 2]
 
     print("\n[PASS] All Majority Element tests passed successfully!")
