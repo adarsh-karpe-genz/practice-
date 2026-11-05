@@ -28,6 +28,15 @@ def is_rotation(s1: str, s2: str) -> bool:
     return s2 in (s1 + s1)
 
 
+def rotation_offset(s1: str, s2: str) -> int:
+    """Return index offset k such that s1 rotated by k equals s2, or -1 if not rotations."""
+    if len(s1) != len(s2) or not s1:
+        return 0 if s1 == s2 else -1
+    doubled = s1 + s1
+    idx = doubled.find(s2)
+    return idx if (0 <= idx < len(s1)) else -1
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 40: String Rotation Tests")
@@ -48,5 +57,7 @@ if __name__ == "__main__":
         res = is_rotation(s1, s2)
         print(f"s1='{s1}', s2='{s2}' -> Rotation? {res} | Expected: {expected}")
         assert res == expected, f"Failed for s1='{s1}', s2='{s2}'"
+    assert rotation_offset("waterbottle", "erbottlewat") == 3
+    assert rotation_offset("abc", "bca") == 1
 
     print("\n[PASS] All String Rotation tests passed successfully!")
