@@ -43,6 +43,14 @@ def count_digits_math(n: int) -> int:
     return math.floor(math.log10(abs(n))) + 1
 
 
+def count_digits_recursive(n: int) -> int:
+    """Count number of digits in n recursively."""
+    n = abs(n)
+    if n < 10:
+        return 1
+    return 1 + count_digits_recursive(n // 10)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 37: Count Digits Tests")
@@ -65,5 +73,6 @@ if __name__ == "__main__":
         assert r1 == expected, f"Loop failed for {num}"
         assert r2 == expected, f"String failed for {num}"
         assert r3 == expected, f"Math failed for {num}"
+        assert count_digits_recursive(num) == expected
 
     print("\n[PASS] All Count Digits tests passed successfully!")
