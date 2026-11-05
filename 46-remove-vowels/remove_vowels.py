@@ -19,6 +19,13 @@ def remove_vowels(text: str) -> str:
     return "".join(ch for ch in text if ch not in vowels)
 
 
+import re
+
+def remove_vowels_regex(s: str) -> str:
+    """Remove vowels from string using regular expressions."""
+    return re.sub(r'[aeiouAEIOU]', '', s)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 46: Remove Vowels Tests")
@@ -37,5 +44,6 @@ if __name__ == "__main__":
         res = remove_vowels(s)
         print(f"Input: '{s}' -> Result: '{res}' | Expected: '{expected}'")
         assert res == expected, f"Failed for '{s}'"
+        assert remove_vowels_regex(s) == expected
 
     print("\n[PASS] All Remove Vowels tests passed successfully!")
