@@ -33,6 +33,17 @@ def find_longest_word(sentence: str) -> str:
     return max(words, key=len)
 
 
+import re
+
+def find_all_longest_words(sentence: str) -> list[str]:
+    """Return all words tied for maximum length after removing punctuation."""
+    words = re.findall(r'[a-zA-Z0-9]+', sentence)
+    if not words:
+        return []
+    max_len = max(len(w) for w in words)
+    return [w for w in words if len(w) == max_len]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 43: Longest Word Tests")
@@ -51,5 +62,6 @@ if __name__ == "__main__":
         res = find_longest_word(s)
         print(f"Input: '{s}' -> Longest: '{res}' | Expected: '{expected}'")
         assert res == expected, f"Failed for '{s}'"
+    assert find_all_longest_words("The quick brown fox jumps") == ["quick", "brown", "jumps"]
 
     print("\n[PASS] All Longest Word tests passed successfully!")
