@@ -31,6 +31,12 @@ def union(list1: List[int], list2: List[int]) -> List[int]:
     return sorted(set(list1) | set(list2))
 
 
+def symmetric_difference(list1: list, list2: list) -> list:
+    """Return elements present in either list but not in both, preserving order."""
+    s1, s2 = set(list1), set(list2)
+    return [x for x in list1 if x not in s2] + [x for x in list2 if x not in s1]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 42: Intersection & Union Tests")
@@ -52,5 +58,6 @@ if __name__ == "__main__":
         print(f"  Union:        {res_union} | Expected: {exp_union}")
         assert res_inter == exp_inter, f"Intersection failed"
         assert res_union == exp_union, f"Union failed"
+    assert symmetric_difference([1, 2, 3], [2, 3, 4]) == [1, 4]
 
     print("\n[PASS] All Intersection & Union tests passed successfully!")
