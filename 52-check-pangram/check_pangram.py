@@ -24,6 +24,14 @@ def is_pangram(sentence: str) -> bool:
     return alphabet_set.issubset(clean_chars)
 
 
+import string
+
+def get_missing_pangram_letters(sentence: str) -> str:
+    """Return all missing lowercase letters needed to complete a pangram."""
+    present = set(sentence.lower())
+    return "".join(ch for ch in string.ascii_lowercase if ch not in present)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 52: Check Pangram Tests")
@@ -42,5 +50,6 @@ if __name__ == "__main__":
         res = is_pangram(s)
         print(f"Sentence: '{s[:30]}...' -> Pangram? {res} | Expected: {expected}")
         assert res == expected, f"Failed for '{s}'"
+    assert get_missing_pangram_letters("abcdefghijklmnopqrstuvwxy") == "z"
 
     print("\n[PASS] All Pangram tests passed successfully!")
