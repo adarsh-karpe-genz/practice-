@@ -34,6 +34,16 @@ def is_sparse_matrix(matrix: List[List[int]]) -> bool:
     return zero_count > (total_elements / 2)
 
 
+def to_dok_sparse(matrix: list[list[int]]) -> dict[tuple[int, int], int]:
+    """Compress matrix into Dictionary of Keys (DOK) format storing only non-zero entries."""
+    dok = {}
+    for r, row in enumerate(matrix):
+        for c, val in enumerate(row):
+            if val != 0:
+                dok[(r, c)] = val
+    return dok
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 56: Sparse Matrix Tests")
@@ -55,6 +65,8 @@ if __name__ == "__main__":
     assert is_sparse_matrix(dense_sample) is False
     assert is_sparse_matrix([[0]]) is True
     assert is_sparse_matrix([[1]]) is False
+    dok = to_dok_sparse([[0, 0, 3], [4, 0, 0]])
+    assert dok == {(0, 2): 3, (1, 0): 4}
 
     print("Sparse Matrix Sample -> True")
     print("Dense Matrix Sample  -> False")
