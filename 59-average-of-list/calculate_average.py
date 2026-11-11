@@ -23,6 +23,16 @@ def calculate_average(nums: List[int | float]) -> float:
     return sum(nums) / len(nums)
 
 
+def calculate_median(numbers: list[int | float]) -> float:
+    """Calculate the median of a list of numbers."""
+    if not numbers:
+        return 0.0
+    s = sorted(numbers)
+    n = len(s)
+    mid = n // 2
+    return float(s[mid]) if n % 2 != 0 else (s[mid - 1] + s[mid]) / 2.0
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 59: Average of List Tests")
@@ -40,5 +50,7 @@ if __name__ == "__main__":
         res = calculate_average(nums)
         print(f"Nums: {nums} -> Average: {res} | Expected: {expected}")
         assert res == expected, f"Failed for {nums}"
+    assert calculate_median([1, 3, 2]) == 2.0
+    assert calculate_median([1, 2, 3, 4]) == 2.5
 
     print("\n[PASS] All Average of List tests passed successfully!")
