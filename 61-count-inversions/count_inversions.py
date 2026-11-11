@@ -26,6 +26,32 @@ def count_inversions_simple(nums: List[int]) -> int:
     return count
 
 
+def count_inversions_merge_sort(nums: list[int]) -> int:
+    """Count inversions in O(n log n) time using enhanced merge sort."""
+    def _sort(arr):
+        if len(arr) <= 1:
+            return arr, 0
+        mid = len(arr) // 2
+        left, inv_l = _sort(arr[:mid])
+        right, inv_r = _sort(arr[mid:])
+        merged = []
+        i, j = 0, 0
+        inv_split = 0
+        while i < len(left) and j < len(right):
+            if left[i] <= right[j]:
+                merged.append(left[i])
+                i += 1
+            else:
+                merged.append(right[j])
+                inv_split += len(left) - i
+                j += 1
+        merged.extend(left[i:])
+        merged.extend(right[j:])
+        return merged, inv_l + inv_r + inv_split
+    _, total_inv = _sort(nums)
+    return total_inv
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 61: Count Inversions Tests")
@@ -43,5 +69,6 @@ if __name__ == "__main__":
         res = count_inversions_simple(nums)
         print(f"Nums: {nums} -> Inversions: {res} | Expected: {expected}")
         assert res == expected, f"Failed for {nums}"
+        assert count_inversions_merge_sort(nums) == expected
 
     print("\n[PASS] All Count Inversions tests passed successfully!")
