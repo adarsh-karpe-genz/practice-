@@ -23,6 +23,17 @@ def are_disjoint(list1: List[Any], list2: List[Any]) -> bool:
     return set1.isdisjoint(list2)
 
 
+def are_mutually_disjoint(sets: list[set | list]) -> bool:
+    """Return True if all sets in collection are mutually disjoint."""
+    seen = set()
+    for s in sets:
+        for item in s:
+            if item in seen:
+                return False
+            seen.add(item)
+    return True
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 58: Disjoint Sets Tests")
@@ -40,5 +51,7 @@ if __name__ == "__main__":
         res = are_disjoint(l1, l2)
         print(f"Lists: {l1} & {l2} -> Disjoint? {res} | Expected: {expected}")
         assert res == expected, f"Failed for {l1}, {l2}"
+    assert are_mutually_disjoint([[1, 2], [3, 4], [5, 6]]) is True
+    assert are_mutually_disjoint([[1, 2], [2, 3], [4, 5]]) is False
 
     print("\n[PASS] All Disjoint Sets tests passed successfully!")
