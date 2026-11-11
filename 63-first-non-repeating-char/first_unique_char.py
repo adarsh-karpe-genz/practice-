@@ -27,6 +27,16 @@ def first_non_repeating_char(s: str) -> Optional[str]:
     return None
 
 
+def first_unique_char_index(s: str) -> int:
+    """Return 0-based index of first non-repeating character, or -1 if none exists."""
+    from collections import Counter
+    counts = Counter(s)
+    for i, ch in enumerate(s):
+        if counts[ch] == 1:
+            return i
+    return -1
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 63: First Non-Repeating Char Tests")
@@ -45,5 +55,8 @@ if __name__ == "__main__":
         res = first_non_repeating_char(s)
         print(f"String: '{s}' -> First Unique: '{res}' | Expected: '{expected}'")
         assert res == expected, f"Failed for '{s}'"
+    assert first_unique_char_index("leetcode") == 0
+    assert first_unique_char_index("loveleetcode") == 2
+    assert first_unique_char_index("aabb") == -1
 
     print("\n[PASS] All First Non-Repeating Char tests passed successfully!")
