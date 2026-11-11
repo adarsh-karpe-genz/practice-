@@ -21,6 +21,19 @@ def list_difference(a: List[int], b: List[int]) -> List[int]:
     return sorted(set(a) - set(b))
 
 
+def list_difference_multiset(a: list, b: list) -> list:
+    """Subtract items of b from a one-by-one preserving exact remaining duplicates."""
+    from collections import Counter
+    b_counts = Counter(b)
+    res = []
+    for item in a:
+        if b_counts[item] > 0:
+            b_counts[item] -= 1
+        else:
+            res.append(item)
+    return res
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 67: List Difference Tests")
@@ -38,5 +51,6 @@ if __name__ == "__main__":
         res = list_difference(a, b)
         print(f"A={a}, B={b} -> A - B: {res} | Expected: {expected}")
         assert res == expected, f"Failed for A={a}, B={b}"
+    assert list_difference_multiset([1, 2, 2, 3], [2]) == [1, 2, 3]
 
     print("\n[PASS] All List Difference tests passed successfully!")
