@@ -25,6 +25,17 @@ def sum_natural_loop(n: int) -> int:
     return sum(range(1, n + 1))
 
 
+def sum_squares_natural(n: int) -> int:
+    """Return sum of squares 1^2 + 2^2 + ... + n^2 = n(n+1)(2n+1)/6."""
+    return n * (n + 1) * (2 * n + 1) // 6
+
+
+def sum_cubes_natural(n: int) -> int:
+    """Return sum of cubes 1^3 + 2^3 + ... + n^3 = (n(n+1)/2)^2."""
+    s = n * (n + 1) // 2
+    return s * s
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 62: Sum of Natural Numbers Tests")
@@ -41,5 +52,7 @@ if __name__ == "__main__":
     assert sum_natural_formula(5) == 15
     assert sum_natural_formula(10) == 55
     assert sum_natural_formula(100) == 5050
+    assert sum_squares_natural(3) == 14  # 1 + 4 + 9
+    assert sum_cubes_natural(3) == 36    # 1 + 8 + 27
 
     print("\n[PASS] All Sum of Natural Numbers tests passed successfully!")
