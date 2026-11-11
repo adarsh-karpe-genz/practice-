@@ -24,6 +24,20 @@ def is_subsequence(s: str, t: str) -> bool:
     return i == len(s)
 
 
+def find_subsequence_indices(s: str, t: str) -> list[int] | None:
+    """Return list of indices in t matching characters of s, or None if not subsequence."""
+    indices = []
+    t_idx = 0
+    for ch in s:
+        while t_idx < len(t) and t[t_idx] != ch:
+            t_idx += 1
+        if t_idx == len(t):
+            return None
+        indices.append(t_idx)
+        t_idx += 1
+    return indices
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 60: Check Subsequence Tests")
@@ -41,5 +55,6 @@ if __name__ == "__main__":
         res = is_subsequence(s, t)
         print(f"s='{s}', t='{t}' -> Is Subsequence? {res} | Expected: {expected}")
         assert res == expected, f"Failed for s='{s}', t='{t}'"
+    assert find_subsequence_indices("ace", "abcde") == [0, 2, 4]
 
     print("\n[PASS] All Check Subsequence tests passed successfully!")
