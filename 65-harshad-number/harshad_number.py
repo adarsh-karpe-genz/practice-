@@ -28,6 +28,11 @@ def is_harshad_number(n: int) -> bool:
     return n % digit_sum == 0
 
 
+def harshad_numbers_in_range(start: int, end: int) -> list[int]:
+    """Return all Harshad numbers within [start, end]."""
+    return [x for x in range(start, end + 1) if is_harshad_number(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 65: Harshad Number Tests")
@@ -48,5 +53,6 @@ if __name__ == "__main__":
         res = is_harshad_number(num)
         print(f"Number: {num:4d} -> Harshad? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert harshad_numbers_in_range(1, 20) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 18, 20]
 
     print("\n[PASS] All Harshad Number tests passed successfully!")
