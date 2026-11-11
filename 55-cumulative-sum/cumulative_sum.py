@@ -33,6 +33,11 @@ def cumulative_sum_itertools(nums: List[int | float]) -> List[int | float]:
     return list(itertools.accumulate(nums))
 
 
+def range_sum(prefix: list[int], left: int, right: int) -> int:
+    """Return sum of elements from index left to right inclusive in O(1)."""
+    return prefix[right] - (prefix[left - 1] if left > 0 else 0)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 55: Cumulative Sum Tests")
@@ -53,5 +58,7 @@ if __name__ == "__main__":
         print(f"Input: {nums} -> Cumulative: {r1} | Expected: {expected}")
         assert r1 == expected
         assert r2 == expected
+    pref = cumulative_sum_loop([1, 2, 3, 4, 5])
+    assert range_sum(pref, 1, 3) == 9  # 2 + 3 + 4 = 9
 
     print("\n[PASS] All Cumulative Sum tests passed successfully!")
