@@ -23,6 +23,18 @@ def symmetric_difference(list1: List[int], list2: List[int]) -> List[int]:
     return sorted(set(list1) ^ set(list2))
 
 
+from collections import Counter
+
+def multiset_symmetric_difference(list1: list, list2: list) -> list:
+    """Return symmetric difference for multisets accounting for counts."""
+    c1, c2 = Counter(list1), Counter(list2)
+    diff = []
+    for k in (c1.keys() | c2.keys()):
+        count = abs(c1[k] - c2[k])
+        diff.extend([k] * count)
+    return sorted(diff)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 64: Symmetric Difference Tests")
@@ -40,5 +52,6 @@ if __name__ == "__main__":
         res = symmetric_difference(l1, l2)
         print(f"Lists: {l1} & {l2} -> Sym Diff: {res} | Expected: {expected}")
         assert res == expected, f"Failed for {l1}, {l2}"
+    assert multiset_symmetric_difference([1, 1, 2], [1, 2, 2]) == [1, 2]
 
     print("\n[PASS] All Symmetric Difference tests passed successfully!")
