@@ -21,6 +21,20 @@ def count_words(text: str) -> int:
     return len(words)
 
 
+import re
+
+def word_statistics(text: str) -> dict[str, float | int]:
+    """Calculate total words, unique words, and average word length."""
+    words = re.findall(r'\b\w+\b', text.lower())
+    if not words:
+        return {"total": 0, "unique": 0, "avg_len": 0.0}
+    return {
+        "total": len(words),
+        "unique": len(set(words)),
+        "avg_len": round(sum(len(w) for w in words) / len(words), 2)
+    }
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 66: Count Words Tests")
@@ -38,5 +52,7 @@ if __name__ == "__main__":
         res = count_words(s)
         print(f"String: '{s.strip()[:25]}' -> Word Count: {res} | Expected: {expected}")
         assert res == expected, f"Failed for '{s}'"
+    stats = word_statistics("Python is fun and Python is easy")
+    assert stats["total"] == 7 and stats["unique"] == 5
 
     print("\n[PASS] All Count Words tests passed successfully!")
