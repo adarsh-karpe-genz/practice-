@@ -43,6 +43,13 @@ def move_zeroes_pythonic(nums: List[int]) -> List[int]:
     return non_zeroes + zeroes
 
 
+def move_zeroes_to_front(nums: list[int]) -> list[int]:
+    """Move all zeroes to the front while maintaining relative order of non-zeroes."""
+    zeroes = [x for x in nums if x == 0]
+    non_zeroes = [x for x in nums if x != 0]
+    return zeroes + non_zeroes
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 57: Move Zeroes Tests")
@@ -63,5 +70,6 @@ if __name__ == "__main__":
         print(f"Original: {nums} -> Moved: {r1} | Expected: {expected}")
         assert r1 == expected
         assert r2 == expected
+    assert move_zeroes_to_front([0, 1, 0, 3, 12]) == [0, 0, 1, 3, 12]
 
     print("\n[PASS] All Move Zeroes tests passed successfully!")
