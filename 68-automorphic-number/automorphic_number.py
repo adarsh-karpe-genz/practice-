@@ -25,6 +25,11 @@ def is_automorphic(n: int) -> bool:
     return str(square).endswith(str(n))
 
 
+def automorphic_numbers_up_to(limit: int) -> list[int]:
+    """Return all automorphic numbers in [0, limit]."""
+    return [x for x in range(limit + 1) if is_automorphic(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 68: Automorphic Number Tests")
@@ -45,5 +50,6 @@ if __name__ == "__main__":
         res = is_automorphic(num)
         print(f"Number: {num:3d} (Square: {num*num:5d}) -> Automorphic? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert automorphic_numbers_up_to(100) == [0, 1, 5, 6, 25, 76]
 
     print("\n[PASS] All Automorphic Number tests passed successfully!")
