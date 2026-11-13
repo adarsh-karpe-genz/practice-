@@ -27,6 +27,11 @@ def is_pronic(n: int) -> bool:
     k = math.isqrt(n)
     return k * (k + 1) == n
 
+def pronic_numbers_sequence(count: int) -> list[int]:
+    """Generate the first count Pronic numbers k*(k+1) starting from k=0."""
+    return [k * (k + 1) for k in range(count)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 76: Pronic Number Tests")
@@ -48,5 +53,6 @@ if __name__ == "__main__":
         res = is_pronic(num)
         print(f"Num: {num:3d} -> Pronic? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert pronic_numbers_sequence(6) == [0, 2, 6, 12, 20, 30]
 
     print("\n[PASS] All Pronic Number tests passed successfully!")
