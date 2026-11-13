@@ -25,6 +25,20 @@ def is_duck_number(s: str) -> bool:
         return False
     return "0" in s[1:]
 
+def is_duck_number_math(num: int) -> bool:
+    """Check if positive integer num is a Duck number purely via arithmetic division."""
+    if num <= 0:
+        return False
+    has_zero = False
+    temp = num
+    while temp > 0:
+        if temp % 10 == 0:
+            has_zero = True
+            break
+        temp //= 10
+    return has_zero
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 80: Duck Number Tests")
@@ -43,5 +57,7 @@ if __name__ == "__main__":
         res = is_duck_number(s)
         print(f"Str: '{s}' -> Duck? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {s}"
+        if s.isdigit() and not s.startswith("0"):
+            assert is_duck_number_math(int(s)) == expected
 
     print("\n[PASS] All Duck Number tests passed successfully!")
