@@ -26,6 +26,11 @@ def is_disarium(n: int) -> bool:
     return total == n
 
 
+def disarium_numbers_up_to(limit: int) -> list[int]:
+    """Return all Disarium numbers up to limit."""
+    return [x for x in range(1, limit + 1) if is_disarium(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 75: Disarium Number Tests")
@@ -45,5 +50,6 @@ if __name__ == "__main__":
         res = is_disarium(num)
         print(f"Number: {num:4d} -> Disarium? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert disarium_numbers_up_to(100) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 89]
 
     print("\n[PASS] All Disarium Number tests passed successfully!")
