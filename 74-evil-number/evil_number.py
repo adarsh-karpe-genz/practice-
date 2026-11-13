@@ -25,6 +25,16 @@ def is_evil_number(n: int) -> bool:
     return set_bits_count % 2 == 0
 
 
+def is_odious_number(n: int) -> bool:
+    """An Odious number has an odd number of 1s in its binary expansion (complement of Evil)."""
+    return not is_evil_number(n)
+
+
+def evil_numbers_up_to(limit: int) -> list[int]:
+    """Return all Evil numbers up to limit."""
+    return [x for x in range(limit + 1) if is_evil_number(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 74: Evil Number Tests")
@@ -46,5 +56,7 @@ if __name__ == "__main__":
         res = is_evil_number(num)
         print(f"Number: {num:2d} ({bin(num):>6}) -> Evil? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+        assert is_odious_number(num) == (not expected)
+    assert evil_numbers_up_to(10) == [0, 3, 5, 6, 9, 10]
 
     print("\n[PASS] All Evil Number tests passed successfully!")
