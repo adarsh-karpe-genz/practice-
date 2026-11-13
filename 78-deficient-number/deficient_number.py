@@ -32,6 +32,14 @@ def is_deficient(n: int) -> bool:
                 divisor_sum += n // i
     return divisor_sum < n
 
+def deficiency_value(n: int) -> int:
+    """Return 2n - sigma(n) (the deficiency of n), where sigma(n) is sum of all divisors."""
+    if n <= 0:
+        return 0
+    sigma = sum(d for d in range(1, n + 1) if n % d == 0)
+    return 2 * n - sigma
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 78: Deficient Number Tests")
@@ -51,5 +59,7 @@ if __name__ == "__main__":
         res = is_deficient(num)
         print(f"Num: {num:3d} -> Deficient? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert deficiency_value(15) == 6  # 2*15 - (1+3+5+15) = 30 - 24 = 6
+    assert deficiency_value(8) == 1   # 2*8 - (1+2+4+8) = 16 - 15 = 1
 
     print("\n[PASS] All Deficient Number tests passed successfully!")
