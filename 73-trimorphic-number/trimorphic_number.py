@@ -24,6 +24,11 @@ def is_trimorphic(n: int) -> bool:
     return str(cube).endswith(str(n))
 
 
+def trimorphic_numbers_up_to(limit: int) -> list[int]:
+    """Return all Trimorphic numbers up to limit."""
+    return [x for x in range(limit + 1) if is_trimorphic(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 73: Trimorphic Number Tests")
@@ -45,5 +50,6 @@ if __name__ == "__main__":
         res = is_trimorphic(num)
         print(f"Number: {num:3d} (Cube: {num**3:7d}) -> Trimorphic? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert trimorphic_numbers_up_to(100) == [0, 1, 4, 5, 6, 9, 24, 25, 49, 51, 75, 76, 99]
 
     print("\n[PASS] All Trimorphic Number tests passed successfully!")
