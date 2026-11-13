@@ -30,6 +30,14 @@ def is_abundant(n: int) -> bool:
                 divisor_sum += n // i
     return divisor_sum > n
 
+def abundance_degree(n: int) -> int:
+    """Return how much sum of proper divisors exceeds n (abundance degree), or 0 if not abundant."""
+    if n <= 0:
+        return 0
+    prop_sum = sum(d for d in range(1, n) if n % d == 0)
+    return max(0, prop_sum - n)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 77: Abundant Number Tests")
@@ -49,5 +57,7 @@ if __name__ == "__main__":
         res = is_abundant(num)
         print(f"Num: {num:3d} -> Abundant? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert abundance_degree(12) == 4  # 1+2+3+4+6 = 16 -> 16 - 12 = 4
+    assert abundance_degree(16) == 0
 
     print("\n[PASS] All Abundant Number tests passed successfully!")
