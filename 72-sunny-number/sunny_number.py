@@ -28,6 +28,11 @@ def is_sunny_number(n: int) -> bool:
     return root * root == target
 
 
+def sunny_numbers_up_to(limit: int) -> list[int]:
+    """Return all Sunny numbers up to limit (n such that n+1 is a perfect square)."""
+    return [x for x in range(limit + 1) if is_sunny_number(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 72: Sunny Number Tests")
@@ -48,5 +53,6 @@ if __name__ == "__main__":
         res = is_sunny_number(num)
         print(f"Number: {num:2d} -> Sunny? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert sunny_numbers_up_to(25) == [0, 3, 8, 15, 24]
 
     print("\n[PASS] All Sunny Number tests passed successfully!")
