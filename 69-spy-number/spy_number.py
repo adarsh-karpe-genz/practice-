@@ -36,6 +36,11 @@ def is_spy_number(n: int) -> bool:
     return digit_sum == digit_prod
 
 
+def spy_numbers_in_range(start: int, end: int) -> list[int]:
+    """Return all Spy numbers within the range [start, end]."""
+    return [x for x in range(start, end + 1) if is_spy_number(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 69: Spy Number Tests")
@@ -55,5 +60,6 @@ if __name__ == "__main__":
         res = is_spy_number(num)
         print(f"Number: {num:4d} -> Spy Number? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert spy_numbers_in_range(100, 150) == [123, 132, 1124] if 1124 in range(100, 150) else [123, 132]
 
     print("\n[PASS] All Spy Number tests passed successfully!")
