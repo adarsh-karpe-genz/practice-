@@ -34,6 +34,24 @@ def find_error_nums(nums: List[int]) -> Tuple[int, int]:
     return duplicate, missing
 
 
+def find_error_nums_in_place(nums: list[int]) -> tuple[int, int]:
+    """Find duplicate and missing numbers using in-place sign negation in O(1) extra space."""
+    arr = nums.copy()
+    dup = -1
+    for x in arr:
+        val = abs(x)
+        if arr[val - 1] < 0:
+            dup = val
+        else:
+            arr[val - 1] = -arr[val - 1]
+    missing = -1
+    for i in range(len(arr)):
+        if arr[i] > 0:
+            missing = i + 1
+            break
+    return (dup, missing)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 70: Missing and Duplicate Tests")
@@ -50,5 +68,6 @@ if __name__ == "__main__":
         res = find_error_nums(nums)
         print(f"Nums: {nums} -> (Duplicate, Missing): {res} | Expected: {expected}")
         assert res == expected, f"Failed for {nums}"
+        assert find_error_nums_in_place(nums) == expected
 
     print("\n[PASS] All Missing and Duplicate tests passed successfully!")
