@@ -25,6 +25,11 @@ def is_fascinating(n: int) -> bool:
     return "".join(sorted(concat_str)) == "123456789"
 
 
+def fascinating_numbers_in_range(start: int, end: int) -> list[int]:
+    """Return all Fascinating numbers in [start, end]."""
+    return [x for x in range(start, end + 1) if is_fascinating(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 79: Fascinating Number Tests")
@@ -44,5 +49,6 @@ if __name__ == "__main__":
         res = is_fascinating(num)
         print(f"Number: {num:3d} -> Fascinating? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert fascinating_numbers_in_range(100, 300) == [192, 219, 273]
 
     print("\n[PASS] All Fascinating Number tests passed successfully!")
