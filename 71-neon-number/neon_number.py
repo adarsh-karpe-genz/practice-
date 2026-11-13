@@ -26,6 +26,11 @@ def is_neon_number(n: int) -> bool:
     return digit_sum == n
 
 
+def neon_numbers_up_to(limit: int) -> list[int]:
+    """Return all Neon numbers up to limit (only 0, 1, 9 exist in integers)."""
+    return [x for x in range(limit + 1) if is_neon_number(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 71: Neon Number Tests")
@@ -44,5 +49,6 @@ if __name__ == "__main__":
         res = is_neon_number(num)
         print(f"Number: {num:2d} -> Neon? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert neon_numbers_up_to(1000) == [0, 1, 9]
 
     print("\n[PASS] All Neon Number tests passed successfully!")
