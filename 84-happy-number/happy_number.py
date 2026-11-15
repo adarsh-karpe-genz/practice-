@@ -26,6 +26,22 @@ def is_happy(n: int) -> bool:
         n = sum(int(d) ** 2 for d in str(n))
     return n == 1
 
+def happy_path(n: int) -> list[int]:
+    """Return the step-by-step sum-of-squares trajectory until reaching 1 or cycling."""
+    def _next(x: int) -> int:
+        return sum(int(d) ** 2 for d in str(x))
+    path = [n]
+    seen = {n}
+    curr = n
+    while curr != 1:
+        curr = _next(curr)
+        path.append(curr)
+        if curr in seen:
+            break
+        seen.add(curr)
+    return path
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 84: Happy Number Tests")
@@ -43,5 +59,6 @@ if __name__ == "__main__":
         res = is_happy(num)
         print(f"Num: {num:2d} -> Happy? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert happy_path(19)[-1] == 1
 
     print("\n[PASS] All Happy Number tests passed successfully!")
