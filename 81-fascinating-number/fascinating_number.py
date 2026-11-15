@@ -25,6 +25,14 @@ def is_fascinating(n: int) -> bool:
     concat_str = str(n) + str(n * 2) + str(n * 3)
     return "".join(sorted(concat_str)) == "123456789"
 
+def is_fascinating_detailed(n: int) -> tuple[bool, str]:
+    """Check if n is fascinating and return the concatenated string representation."""
+    if n < 100:
+        return False, ""
+    cat = f"{n}{n * 2}{n * 3}"
+    return (len(cat) == 9 and set(cat) == set("123456789")), cat
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 81: Fascinating Number Tests")
@@ -43,5 +51,6 @@ if __name__ == "__main__":
         res = is_fascinating(num)
         print(f"Num: {num:3d} -> Fascinating? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+        assert is_fascinating_detailed(num)[0] == expected
 
     print("\n[PASS] All Fascinating Number tests passed successfully!")
