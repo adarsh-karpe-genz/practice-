@@ -39,6 +39,17 @@ def is_mersenne_prime(n: int) -> bool:
     p = target.bit_length() - 1
     return is_prime(p)
 
+def lucas_lehmer_test(p: int) -> bool:
+    """Deterministic Lucas-Lehmer primality test for 2^p - 1 (p must be odd prime)."""
+    if p == 2:
+        return True
+    s = 4
+    m = (1 << p) - 1
+    for _ in range(p - 2):
+        s = (s * s - 2) % m
+    return s == 0
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 88: Mersenne Prime Tests")
@@ -58,5 +69,9 @@ if __name__ == "__main__":
         res = is_mersenne_prime(num)
         print(f"Num: {num:3d} -> Mersenne Prime? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert lucas_lehmer_test(3) is True   # 2^3 - 1 = 7
+    assert lucas_lehmer_test(5) is True   # 2^5 - 1 = 31
+    assert lucas_lehmer_test(7) is True   # 2^7 - 1 = 127
+    assert lucas_lehmer_test(11) is False # 2^11 - 1 = 2047 = 23 * 89
 
     print("\n[PASS] All Mersenne Prime tests passed successfully!")
