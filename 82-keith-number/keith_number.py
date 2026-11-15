@@ -33,6 +33,19 @@ def is_keith_number(n: int) -> bool:
     return terms[-1] == n
 
 
+def get_keith_sequence(n: int) -> list[int]:
+    """Generate the sequence of numbers leading up to or exceeding n in Keith recurrence."""
+    digits = [int(d) for d in str(n)]
+    if len(digits) < 2:
+        return digits
+    seq = digits.copy()
+    k = len(digits)
+    while seq[-1] < n:
+        next_val = sum(seq[-k:])
+        seq.append(next_val)
+    return seq
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 82: Keith Number Tests")
@@ -52,5 +65,6 @@ if __name__ == "__main__":
         res = is_keith_number(num)
         print(f"Number: {num:3d} -> Keith? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert get_keith_sequence(14) == [1, 4, 5, 9, 14]
 
     print("\n[PASS] All Keith Number tests passed successfully!")
