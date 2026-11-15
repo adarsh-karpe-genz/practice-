@@ -37,6 +37,11 @@ def is_keith_number(n: int) -> bool:
             return False
         seq.append(next_val)
 
+def keith_numbers_up_to(limit: int) -> list[int]:
+    """Return all Keith numbers in range [10, limit]."""
+    return [x for x in range(10, limit + 1) if is_keith_number(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 83: Keith Number Tests")
@@ -55,5 +60,6 @@ if __name__ == "__main__":
         res = is_keith_number(num)
         print(f"Num: {num:3d} -> Keith Number? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert keith_numbers_up_to(100) == [14, 19, 28, 47, 61, 75]
 
     print("\n[PASS] All Keith Number tests passed successfully!")
