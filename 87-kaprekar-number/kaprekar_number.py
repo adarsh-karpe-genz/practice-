@@ -38,6 +38,11 @@ def is_kaprekar_number(n: int) -> bool:
 
     return (left_val + right_val == n) and (right_val > 0)
 
+def kaprekar_numbers_in_range(start: int, end: int) -> list[int]:
+    """Return all Kaprekar numbers in [start, end]."""
+    return [x for x in range(start, end + 1) if is_kaprekar_number(x)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 87: Kaprekar Number Tests")
@@ -58,5 +63,6 @@ if __name__ == "__main__":
         res = is_kaprekar_number(num)
         print(f"Num: {num:3d} -> Kaprekar? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert kaprekar_numbers_in_range(1, 100) == [1, 9, 45, 55, 99]
 
     print("\n[PASS] All Kaprekar Number tests passed successfully!")
