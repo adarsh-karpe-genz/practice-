@@ -38,6 +38,30 @@ def is_lucas_number(val: int) -> bool:
         a, b = b, a + b
     return b == val
 
+def get_lucas_matrix(n: int) -> int:
+    """Compute nth Lucas number in O(log n) time using matrix exponentiation."""
+    if n == 0:
+        return 2
+    if n == 1:
+        return 1
+    def _mult(A, B):
+        return [
+            [A[0][0]*B[0][0] + A[0][1]*B[1][0], A[0][0]*B[0][1] + A[0][1]*B[1][1]],
+            [A[1][0]*B[0][0] + A[1][1]*B[1][0], A[1][0]*B[0][1] + A[1][1]*B[1][1]]
+        ]
+    def _pow(M, p):
+        res = [[1, 0], [0, 1]]
+        base = M
+        while p > 0:
+            if p % 2 == 1:
+                res = _mult(res, base)
+            base = _mult(base, base)
+            p //= 2
+        return res
+    T = _pow([[1, 1], [1, 0]], n - 1)
+    return T[0][0] * 1 + T[0][1] * 2
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 90: Lucas Number Tests")
@@ -62,5 +86,7 @@ if __name__ == "__main__":
     assert is_lucas_number(5) is False
     assert is_lucas_number(6) is False
     assert is_lucas_number(29) is True
+    assert get_lucas_matrix(5) == 11
+    assert get_lucas_matrix(7) == 29
 
     print("\n[PASS] All Lucas Number tests passed successfully!")
