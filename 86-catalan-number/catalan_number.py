@@ -37,6 +37,16 @@ def is_catalan_number(val: int) -> bool:
             return False
         n += 1
 
+def catalan_sequence(count: int) -> list[int]:
+    """Generate first count Catalan numbers starting from C(0) using recurrence C(n) = C(n-1)*2(2n-1)/(n+1)."""
+    if count <= 0:
+        return []
+    res = [1]
+    for n in range(1, count):
+        res.append(res[-1] * 2 * (2 * n - 1) // (n + 1))
+    return res
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 86: Catalan Number Tests")
@@ -60,5 +70,6 @@ if __name__ == "__main__":
 
     assert is_catalan_number(7) is False
     assert is_catalan_number(10) is False
+    assert catalan_sequence(6) == [1, 1, 2, 5, 14, 42]
 
     print("\n[PASS] All Catalan Number tests passed successfully!")
