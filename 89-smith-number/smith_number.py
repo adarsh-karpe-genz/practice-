@@ -47,6 +47,23 @@ def is_smith_number(n: int) -> bool:
     sum_factors = sum(sum_digits(f) for f in factors)
     return sum_orig == sum_factors
 
+def smith_factorization_details(n: int) -> tuple[int, list[int], int]:
+    """Return (sum of digits of n, prime factors, sum of digits of factors)."""
+    def _sum_digits(x: int) -> int:
+        return sum(int(d) for d in str(x))
+    factors = []
+    temp = n
+    d = 2
+    while d * d <= temp:
+        while temp % d == 0:
+            factors.append(d)
+            temp //= d
+        d += 1
+    if temp > 1:
+        factors.append(temp)
+    return _sum_digits(n), factors, sum(_sum_digits(f) for f in factors)
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 89: Smith Number Tests")
@@ -66,5 +83,7 @@ if __name__ == "__main__":
         res = is_smith_number(num)
         print(f"Num: {num:3d} -> Smith Number? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    d_sum, factors, f_sum = smith_factorization_details(22)
+    assert d_sum == f_sum == 4 and factors == [2, 11]
 
     print("\n[PASS] All Smith Number tests passed successfully!")
