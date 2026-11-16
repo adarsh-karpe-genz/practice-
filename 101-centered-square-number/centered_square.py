@@ -47,6 +47,11 @@ def is_centered_square(val: int) -> bool:
     numerator = 2 + r
     return numerator % 4 == 0 and numerator // 4 >= 1
 
+def centered_square_sequence(count: int) -> list[int]:
+    """Generate first count centered square numbers n^2 + (n-1)^2 starting from n=1."""
+    return [get_centered_square(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 101: Centered Square Number Tests")
@@ -71,5 +76,6 @@ if __name__ == "__main__":
     assert is_centered_square(2) is False
     assert is_centered_square(10) is False
     assert is_centered_square(20) is False
+    assert centered_square_sequence(5) == [1, 5, 13, 25, 41]
 
     print("\n[PASS] All Centered Square Number tests passed successfully!")
