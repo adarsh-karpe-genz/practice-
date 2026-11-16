@@ -39,6 +39,11 @@ def is_tribonacci_number(val: int) -> bool:
         a, b, c = b, c, a + b + c
     return c == val
 
+def tribonacci_sequence(count: int) -> list[int]:
+    """Generate first count Tribonacci numbers starting from n=0."""
+    return [get_tribonacci_number(i) for i in range(count)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 98: Tribonacci Number Tests")
@@ -65,5 +70,6 @@ if __name__ == "__main__":
     assert is_tribonacci_number(3) is False
     assert is_tribonacci_number(5) is False
     assert is_tribonacci_number(6) is False
+    assert tribonacci_sequence(8) == [0, 1, 1, 2, 4, 7, 13, 24]
 
     print("\n[PASS] All Tribonacci Number tests passed successfully!")
