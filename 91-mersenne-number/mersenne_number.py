@@ -25,6 +25,18 @@ def is_mersenne_number(n: int) -> bool:
     target = n + 1
     return (target & (target - 1)) == 0
 
+def mersenne_exponent(n: int) -> int | None:
+    """Return exponent p such that n = 2^p - 1, or None if n is not a Mersenne number."""
+    if n <= 0 or (n & (n + 1)) != 0:
+        return None
+    return (n + 1).bit_length() - 1
+
+
+def mersenne_sequence(count: int) -> list[int]:
+    """Generate first count Mersenne numbers starting from p=1."""
+    return [(1 << p) - 1 for p in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 91: Mersenne Number Tests")
@@ -46,5 +58,8 @@ if __name__ == "__main__":
         res = is_mersenne_number(num)
         print(f"Num: {num:2d} -> Mersenne? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert mersenne_sequence(5) == [1, 3, 7, 15, 31]
+    assert mersenne_exponent(31) == 5
+    assert mersenne_exponent(10) is None
 
     print("\n[PASS] All Mersenne Number tests passed successfully!")
