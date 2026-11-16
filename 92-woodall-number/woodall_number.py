@@ -31,6 +31,25 @@ def is_woodall_number(val: int) -> bool:
             return False
         n += 1
 
+def woodall_sequence(count: int) -> list[int]:
+    """Generate first count Woodall numbers n * 2^n - 1 starting from n=1."""
+    return [n * (1 << n) - 1 for n in range(1, count + 1)]
+
+
+def get_woodall_index(w: int) -> int | None:
+    """Return n such that w = n * 2^n - 1, or None if not a Woodall number."""
+    if w < 1:
+        return None
+    n = 1
+    while True:
+        val = n * (1 << n) - 1
+        if val == w:
+            return n
+        if val > w:
+            return None
+        n += 1
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 92: Woodall Number Tests")
@@ -51,5 +70,8 @@ if __name__ == "__main__":
         res = is_woodall_number(num)
         print(f"Num: {num:3d} -> Woodall? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert woodall_sequence(4) == [1, 7, 23, 63]
+    assert get_woodall_index(23) == 3
+    assert get_woodall_index(20) is None
 
     print("\n[PASS] All Woodall Number tests passed successfully!")
