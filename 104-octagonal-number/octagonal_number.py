@@ -45,6 +45,11 @@ def is_octagonal_number(val: int) -> bool:
     numerator = 2 + r
     return numerator % 6 == 0 and numerator // 6 >= 1
 
+def octagonal_sequence(count: int) -> list[int]:
+    """Generate first count octagonal numbers 3n^2 - 2n starting from n=1."""
+    return [get_octagonal_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 104: Octagonal Number Tests")
@@ -69,5 +74,6 @@ if __name__ == "__main__":
     assert is_octagonal_number(2) is False
     assert is_octagonal_number(10) is False
     assert is_octagonal_number(30) is False
+    assert octagonal_sequence(5) == [1, 8, 21, 40, 65]
 
     print("\n[PASS] All Octagonal Number tests passed successfully!")
