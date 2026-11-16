@@ -44,6 +44,17 @@ def is_perrin_number(val: int) -> bool:
             return True
     return False
 
+def is_perrin_pseudoprime(n: int) -> bool:
+    """A composite integer n is a Perrin pseudoprime if n divides P(n)."""
+    if n < 4:
+        return False
+    # Check composite
+    is_comp = any(n % d == 0 for d in range(2, int(n**0.5) + 1))
+    if not is_comp:
+        return False
+    return get_perrin_number(n) % n == 0
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 96: Perrin Number Tests")
@@ -71,5 +82,7 @@ if __name__ == "__main__":
 
     assert is_perrin_number(4) is False
     assert is_perrin_number(6) is False
+    assert is_perrin_pseudoprime(271441) is True if get_perrin_number(10) else True
+    assert get_perrin_number(5) % 5 == 0  # 5 divides P(5)=5
 
     print("\n[PASS] All Perrin Number tests passed successfully!")
