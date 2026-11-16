@@ -48,6 +48,11 @@ def is_centered_triangular(val: int) -> bool:
     numerator = -3 + r
     return numerator >= 0 and numerator % 6 == 0
 
+def centered_triangular_sequence(count: int) -> list[int]:
+    """Generate first count centered triangular numbers (3n^2 + 3n + 2)//2 starting from n=0."""
+    return [get_centered_triangular(i) for i in range(count)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 100: Centered Triangular Number Tests")
@@ -72,5 +77,6 @@ if __name__ == "__main__":
     assert is_centered_triangular(2) is False
     assert is_centered_triangular(5) is False
     assert is_centered_triangular(20) is False
+    assert centered_triangular_sequence(5) == [1, 4, 10, 19, 31]
 
     print("\n[PASS] All Problem 100 Centered Triangular Number tests passed successfully!")
