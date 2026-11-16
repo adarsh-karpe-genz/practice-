@@ -49,6 +49,19 @@ def is_bell_number(val: int) -> bool:
             return False
         n += 1
 
+def bell_triangle_row(n: int) -> list[int]:
+    """Return the nth row of Bell's triangle (Aitken's array)."""
+    if n <= 0:
+        return [1]
+    row = [1]
+    for _ in range(n):
+        next_row = [row[-1]]
+        for val in row:
+            next_row.append(next_row[-1] + val)
+        row = next_row
+    return row
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 95: Bell Number Tests")
@@ -71,5 +84,7 @@ if __name__ == "__main__":
 
     assert is_bell_number(3) is False
     assert is_bell_number(10) is False
+    assert bell_triangle_row(3) == [5, 7, 10, 15]
+    assert bell_triangle_row(0) == [1]
 
     print("\n[PASS] All Bell Number tests passed successfully!")
