@@ -47,6 +47,11 @@ def is_centered_hexagonal(val: int) -> bool:
     numerator = 3 + r
     return numerator % 6 == 0 and numerator // 6 >= 1
 
+def centered_hexagonal_sequence(count: int) -> list[int]:
+    """Generate first count centered hexagonal numbers 3n(n-1) + 1 starting from n=1."""
+    return [get_centered_hexagonal(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 102: Centered Hexagonal Number Tests")
@@ -71,5 +76,6 @@ if __name__ == "__main__":
     assert is_centered_hexagonal(2) is False
     assert is_centered_hexagonal(8) is False
     assert is_centered_hexagonal(20) is False
+    assert centered_hexagonal_sequence(5) == [1, 7, 19, 37, 61]
 
     print("\n[PASS] All Centered Hexagonal Number tests passed successfully!")
