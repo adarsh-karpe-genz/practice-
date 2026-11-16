@@ -40,6 +40,11 @@ def is_padovan_number(val: int) -> bool:
             return True
     return False
 
+def padovan_sequence(count: int) -> list[int]:
+    """Generate first count Padovan numbers starting from n=0."""
+    return [get_padovan_number(i) for i in range(count)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 97: Padovan Number Tests")
@@ -67,5 +72,6 @@ if __name__ == "__main__":
 
     assert is_padovan_number(6) is False
     assert is_padovan_number(8) is False
+    assert padovan_sequence(8) == [1, 1, 1, 2, 2, 3, 4, 5]
 
     print("\n[PASS] All Padovan Number tests passed successfully!")
