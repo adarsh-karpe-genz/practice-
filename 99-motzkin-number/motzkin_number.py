@@ -49,6 +49,11 @@ def is_motzkin_number(val: int) -> bool:
             return False
         n += 1
 
+def motzkin_sequence(count: int) -> list[int]:
+    """Generate first count Motzkin numbers starting from M(0)."""
+    return [get_motzkin_number(i) for i in range(count)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 99: Motzkin Number Tests")
@@ -73,5 +78,6 @@ if __name__ == "__main__":
 
     assert is_motzkin_number(3) is False
     assert is_motzkin_number(10) is False
+    assert motzkin_sequence(6) == [1, 1, 2, 4, 9, 21]
 
     print("\n[PASS] All Motzkin Number tests passed successfully!")
