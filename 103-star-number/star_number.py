@@ -47,6 +47,11 @@ def is_star_number(val: int) -> bool:
     m = math.isqrt(k)
     return m * (m + 1) == k
 
+def star_number_sequence(count: int) -> list[int]:
+    """Generate first count star numbers 6n(n-1) + 1 starting from n=1."""
+    return [get_star_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 103: Star Number Tests")
@@ -71,5 +76,6 @@ if __name__ == "__main__":
     assert is_star_number(2) is False
     assert is_star_number(12) is False
     assert is_star_number(50) is False
+    assert star_number_sequence(5) == [1, 13, 37, 73, 121]
 
     print("\n[PASS] All Star Number tests passed successfully!")
