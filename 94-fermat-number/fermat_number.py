@@ -30,6 +30,24 @@ def is_fermat_number(val: int) -> bool:
     exp = target.bit_length() - 1
     return exp > 0 and (exp & (exp - 1)) == 0
 
+def fermat_sequence(count: int) -> list[int]:
+    """Generate first count Fermat numbers F_n = 2^(2^n) + 1 starting from n=0."""
+    return [(1 << (1 << n)) + 1 for n in range(count)]
+
+
+def get_fermat_index(val: int) -> int | None:
+    """Return n such that val = 2^(2^n) + 1, or None if not a Fermat number."""
+    if val < 3:
+        return None
+    temp = val - 1
+    if (temp & (temp - 1)) != 0:
+        return None
+    power_of_two = temp.bit_length() - 1
+    if (power_of_two & (power_of_two - 1)) != 0:
+        return None
+    return power_of_two.bit_length() - 1
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 94: Fermat Number Tests")
@@ -50,5 +68,8 @@ if __name__ == "__main__":
         res = is_fermat_number(num)
         print(f"Num: {num:5d} -> Fermat? {res:<5} | Expected: {expected}")
         assert res == expected, f"Failed for {num}"
+    assert fermat_sequence(5) == [3, 5, 17, 257, 65537]
+    assert get_fermat_index(257) == 3
+    assert get_fermat_index(33) is None
 
     print("\n[PASS] All Fermat Number tests passed successfully!")
