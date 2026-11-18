@@ -43,6 +43,11 @@ def is_decagonal_number(val: int) -> bool:
     numerator = 3 + r
     return numerator % 8 == 0 and numerator // 8 >= 1
 
+def decagonal_sequence(count: int) -> list[int]:
+    """Generate first count decagonal numbers 4n^2 - 3n starting from n=1."""
+    return [get_decagonal_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 118: Decagonal Number Tests")
@@ -66,5 +71,6 @@ if __name__ == "__main__":
     assert is_decagonal_number(2) is False
     assert is_decagonal_number(11) is False
     assert is_decagonal_number(40) is False
+    assert decagonal_sequence(5) == [1, 10, 27, 52, 85]
 
     print("\n[PASS] All Decagonal Number tests passed successfully!")
