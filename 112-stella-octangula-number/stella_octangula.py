@@ -40,6 +40,11 @@ def is_stella_octangula(val: int) -> bool:
             return False
         n += 1
 
+def stella_octangula_sequence(count: int) -> list[int]:
+    """Generate first count Stella Octangula numbers n(2n^2 - 1) starting from n=1."""
+    return [get_stella_octangula(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 112: Stella Octangula Number Tests")
@@ -63,5 +68,6 @@ if __name__ == "__main__":
     assert is_stella_octangula(2) is False
     assert is_stella_octangula(15) is False
     assert is_stella_octangula(100) is False
+    assert stella_octangula_sequence(5) == [1, 14, 51, 124, 245]
 
     print("\n[PASS] All Stella Octangula Number tests passed successfully!")
