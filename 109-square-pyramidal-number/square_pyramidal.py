@@ -39,6 +39,11 @@ def is_square_pyramidal(val: int) -> bool:
             return False
         n += 1
 
+def square_pyramidal_sequence(count: int) -> list[int]:
+    """Generate first count square pyramidal numbers n(n + 1)(2n + 1)//6 starting from n=1."""
+    return [get_square_pyramidal(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 109: Square Pyramidal Number Tests")
@@ -63,5 +68,6 @@ if __name__ == "__main__":
     assert is_square_pyramidal(2) is False
     assert is_square_pyramidal(10) is False
     assert is_square_pyramidal(25) is False
+    assert square_pyramidal_sequence(5) == [1, 5, 14, 30, 55]
 
     print("\n[PASS] All Square Pyramidal Number tests passed successfully!")
