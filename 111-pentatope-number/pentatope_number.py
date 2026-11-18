@@ -40,6 +40,11 @@ def is_pentatope_number(val: int) -> bool:
             return False
         n += 1
 
+def pentatope_sequence(count: int) -> list[int]:
+    """Generate first count pentatope numbers n(n + 1)(n + 2)(n + 3)//24 starting from n=1."""
+    return [get_pentatope_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 111: Pentatope Number Tests")
@@ -64,5 +69,6 @@ if __name__ == "__main__":
     assert is_pentatope_number(2) is False
     assert is_pentatope_number(10) is False
     assert is_pentatope_number(50) is False
+    assert pentatope_sequence(5) == [1, 5, 15, 35, 70]
 
     print("\n[PASS] All Pentatope Number tests passed successfully!")
