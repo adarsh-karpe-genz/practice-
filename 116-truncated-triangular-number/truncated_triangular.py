@@ -43,6 +43,11 @@ def is_truncated_triangular(val: int) -> bool:
     r = math.isqrt(disc)
     return r * r == disc and (-1 + r) % 2 == 0 and (-1 + r) // 2 >= 1
 
+def truncated_triangular_sequence(count: int) -> list[int]:
+    """Generate first count truncated triangular numbers 3*T(n-1) = 3n(n-1)//2 starting from n=2."""
+    return [get_truncated_triangular(i) for i in range(2, count + 2)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 116: Truncated Triangular Number Tests")
@@ -66,5 +71,6 @@ if __name__ == "__main__":
     assert is_truncated_triangular(4) is False
     assert is_truncated_triangular(10) is False
     assert is_truncated_triangular(20) is False
+    assert truncated_triangular_sequence(5) == [3, 9, 18, 30, 45]
 
     print("\n[PASS] All Truncated Triangular Number tests passed successfully!")
