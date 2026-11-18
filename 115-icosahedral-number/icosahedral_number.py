@@ -39,6 +39,11 @@ def is_icosahedral_number(val: int) -> bool:
             return False
         n += 1
 
+def icosahedral_sequence(count: int) -> list[int]:
+    """Generate first count icosahedral numbers n(5n^2 - 5n + 2)//2 starting from n=1."""
+    return [get_icosahedral_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 115: Icosahedral Number Tests")
@@ -61,5 +66,6 @@ if __name__ == "__main__":
     assert is_icosahedral_number(2) is False
     assert is_icosahedral_number(20) is False
     assert is_icosahedral_number(50) is False
+    assert icosahedral_sequence(5) == [1, 12, 48, 124, 255]
 
     print("\n[PASS] All Icosahedral Number tests passed successfully!")
