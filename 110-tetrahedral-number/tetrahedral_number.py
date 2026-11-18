@@ -39,6 +39,11 @@ def is_tetrahedral(val: int) -> bool:
             return False
         n += 1
 
+def tetrahedral_sequence(count: int) -> list[int]:
+    """Generate first count tetrahedral numbers n(n + 1)(n + 2)//6 starting from n=1."""
+    return [get_tetrahedral(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 110: Tetrahedral Number Tests")
@@ -63,5 +68,6 @@ if __name__ == "__main__":
     assert is_tetrahedral(2) is False
     assert is_tetrahedral(5) is False
     assert is_tetrahedral(15) is False
+    assert tetrahedral_sequence(5) == [1, 4, 10, 20, 35]
 
     print("\n[PASS] All Tetrahedral Number tests passed successfully!")
