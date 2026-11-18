@@ -44,6 +44,11 @@ def is_heptagonal_number(val: int) -> bool:
     numerator = 3 + r
     return numerator % 10 == 0 and numerator // 10 >= 1
 
+def heptagonal_sequence(count: int) -> list[int]:
+    """Generate first count heptagonal numbers (5n^2 - 3n)//2 starting from n=1."""
+    return [get_heptagonal_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 105: Heptagonal Number Tests")
@@ -68,5 +73,6 @@ if __name__ == "__main__":
     assert is_heptagonal_number(2) is False
     assert is_heptagonal_number(10) is False
     assert is_heptagonal_number(25) is False
+    assert heptagonal_sequence(5) == [1, 7, 18, 34, 55]
 
     print("\n[PASS] All Heptagonal Number tests passed successfully!")
