@@ -44,6 +44,11 @@ def is_triangular_number(val: int) -> bool:
     numerator = -1 + r
     return numerator % 2 == 0 and numerator // 2 >= 1
 
+def triangular_sequence(count: int) -> list[int]:
+    """Generate first count triangular numbers n(n + 1)//2 starting from n=1."""
+    return [get_triangular_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 108: Triangular Number Tests")
@@ -68,5 +73,6 @@ if __name__ == "__main__":
     assert is_triangular_number(2) is False
     assert is_triangular_number(5) is False
     assert is_triangular_number(12) is False
+    assert triangular_sequence(5) == [1, 3, 6, 10, 15]
 
     print("\n[PASS] All Triangular Number tests passed successfully!")
