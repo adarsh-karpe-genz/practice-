@@ -39,6 +39,11 @@ def is_dodecahedral_number(val: int) -> bool:
             return False
         n += 1
 
+def dodecahedral_sequence(count: int) -> list[int]:
+    """Generate first count dodecahedral numbers n(3n - 1)(3n - 2)//2 starting from n=1."""
+    return [get_dodecahedral_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 114: Dodecahedral Number Tests")
@@ -61,5 +66,6 @@ if __name__ == "__main__":
     assert is_dodecahedral_number(2) is False
     assert is_dodecahedral_number(15) is False
     assert is_dodecahedral_number(50) is False
+    assert dodecahedral_sequence(5) == [1, 20, 84, 220, 455]
 
     print("\n[PASS] All Dodecahedral Number tests passed successfully!")
