@@ -46,6 +46,11 @@ def is_hexagonal_number(val: int) -> bool:
     numerator = 1 + r
     return numerator % 4 == 0 and numerator // 4 >= 1
 
+def hexagonal_sequence(count: int) -> list[int]:
+    """Generate first count hexagonal numbers n(2n - 1) starting from n=1."""
+    return [get_hexagonal_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 106: Hexagonal Number Tests")
@@ -70,5 +75,6 @@ if __name__ == "__main__":
     assert is_hexagonal_number(2) is False
     assert is_hexagonal_number(5) is False
     assert is_hexagonal_number(20) is False
+    assert hexagonal_sequence(5) == [1, 6, 15, 28, 45]
 
     print("\n[PASS] All Hexagonal Number tests passed successfully!")
