@@ -40,6 +40,11 @@ def is_octahedral_number(val: int) -> bool:
             return False
         n += 1
 
+def octahedral_sequence(count: int) -> list[int]:
+    """Generate first count octahedral numbers n(2n^2 + 1)//3 starting from n=1."""
+    return [get_octahedral_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 113: Octahedral Number Tests")
@@ -63,5 +68,6 @@ if __name__ == "__main__":
     assert is_octahedral_number(2) is False
     assert is_octahedral_number(7) is False
     assert is_octahedral_number(50) is False
+    assert octahedral_sequence(5) == [1, 6, 19, 44, 85]
 
     print("\n[PASS] All Octahedral Number tests passed successfully!")
