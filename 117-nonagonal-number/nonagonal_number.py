@@ -43,6 +43,11 @@ def is_nonagonal_number(val: int) -> bool:
     numerator = 5 + r
     return numerator % 14 == 0 and numerator // 14 >= 1
 
+def nonagonal_sequence(count: int) -> list[int]:
+    """Generate first count nonagonal numbers n(7n - 5)//2 starting from n=1."""
+    return [get_nonagonal_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 117: Nonagonal Number Tests")
@@ -66,5 +71,6 @@ if __name__ == "__main__":
     assert is_nonagonal_number(2) is False
     assert is_nonagonal_number(10) is False
     assert is_nonagonal_number(30) is False
+    assert nonagonal_sequence(5) == [1, 9, 24, 46, 75]
 
     print("\n[PASS] All Nonagonal Number tests passed successfully!")
