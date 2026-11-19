@@ -16,6 +16,15 @@ def quintic_range(count: int) -> list[int]:
     """Return the first count quintic numbers starting from 1."""
     return [i ** 5 for i in range(1, count + 1)]
 
+def quintic_root(n: int) -> int | None:
+    """Return integer k such that k^5 = n, or None if n is not a fifth power."""
+    if n == 0:
+        return 0
+    sign = -1 if n < 0 else 1
+    root = round(abs(n) ** 0.2)
+    return sign * root if (sign * root) ** 5 == n else None
+
+
 if __name__ == "__main__":
     assert is_quintic(32) is True
     assert is_quintic(243) is True
@@ -23,4 +32,7 @@ if __name__ == "__main__":
     assert is_quintic(0) is True
     assert is_quintic(-32) is True
     assert quintic_range(5) == [1, 32, 243, 1024, 3125]
+    assert quintic_root(32) == 2
+    assert quintic_root(-243) == -3
+    assert quintic_root(100) is None
     print("[PASS] Problem 127: quintic number passed all tests.")
