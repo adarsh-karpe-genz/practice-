@@ -41,6 +41,11 @@ def is_quartic_number(val: int) -> bool:
     r2 = math.isqrt(r1)
     return r2 * r2 == r1
 
+def quartic_sequence(count: int) -> list[int]:
+    """Generate first count quartic numbers n^4 starting from n=1."""
+    return [get_quartic_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 126: Quartic Number Tests")
@@ -66,5 +71,6 @@ if __name__ == "__main__":
     assert is_quartic_number(4) is False   # 4 is square but not fourth power
     assert is_quartic_number(8) is False
     assert is_quartic_number(25) is False
+    assert quartic_sequence(5) == [1, 16, 81, 256, 625]
 
     print("\n[PASS] All Quartic Number tests passed successfully!")
