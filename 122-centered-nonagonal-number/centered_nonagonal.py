@@ -43,6 +43,11 @@ def is_centered_nonagonal(val: int) -> bool:
     numerator = 9 + r
     return numerator % 18 == 0 and numerator // 18 >= 1
 
+def centered_nonagonal_sequence(count: int) -> list[int]:
+    """Generate first count centered nonagonal numbers (9n^2 - 9n + 2)//2 starting from n=1."""
+    return [get_centered_nonagonal(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 122: Centered Nonagonal Number Tests")
@@ -66,5 +71,6 @@ if __name__ == "__main__":
     assert is_centered_nonagonal(2) is False
     assert is_centered_nonagonal(15) is False
     assert is_centered_nonagonal(40) is False
+    assert centered_nonagonal_sequence(5) == [1, 10, 28, 55, 91]
 
     print("\n[PASS] All Centered Nonagonal Number tests passed successfully!")
