@@ -43,6 +43,11 @@ def is_centered_heptagonal(val: int) -> bool:
     numerator = 7 + r
     return numerator % 14 == 0 and numerator // 14 >= 1
 
+def centered_heptagonal_sequence(count: int) -> list[int]:
+    """Generate first count centered heptagonal numbers (7n^2 - 7n + 2)//2 starting from n=1."""
+    return [get_centered_heptagonal(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 120: Centered Heptagonal Number Tests")
@@ -66,5 +71,6 @@ if __name__ == "__main__":
     assert is_centered_heptagonal(2) is False
     assert is_centered_heptagonal(10) is False
     assert is_centered_heptagonal(30) is False
+    assert centered_heptagonal_sequence(5) == [1, 8, 22, 43, 71]
 
     print("\n[PASS] All Centered Heptagonal Number tests passed successfully!")
