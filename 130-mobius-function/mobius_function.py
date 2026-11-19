@@ -28,6 +28,11 @@ def mobius(n: int) -> int:
         
     return -1 if (prime_factors % 2 == 1) else 1
 
+def mertens_function(n: int) -> int:
+    """Compute Mertens function M(n): sum of mu(k) for 1 <= k <= n."""
+    return sum(mobius(k) for k in range(1, n + 1))
+
+
 if __name__ == "__main__":
     assert mobius(1) == 1
     assert mobius(2) == -1
@@ -35,4 +40,7 @@ if __name__ == "__main__":
     assert mobius(6) == 1   # 2 * 3 -> 2 primes -> (-1)^2 = 1
     assert mobius(30) == -1 # 2 * 3 * 5 -> 3 primes -> (-1)^3 = -1
     assert mobius(12) == 0  # 4 divides 12
+    # mu(1..5) = 1, -1, -1, 0, -1 -> M(5) = -2
+    assert mertens_function(5) == -2
+    assert mertens_function(1) == 1
     print("[PASS] Problem 130: mobius function passed all tests.")
