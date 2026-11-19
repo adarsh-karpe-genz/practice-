@@ -41,6 +41,11 @@ def is_centered_decagonal(val: int) -> bool:
     m = math.isqrt(k)
     return m * (m + 1) == k
 
+def centered_decagonal_sequence(count: int) -> list[int]:
+    """Generate first count centered decagonal numbers 5(n-1)n + 1 starting from n=1."""
+    return [get_centered_decagonal(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 123: Centered Decagonal Number Tests")
@@ -64,5 +69,6 @@ if __name__ == "__main__":
     assert is_centered_decagonal(2) is False
     assert is_centered_decagonal(12) is False
     assert is_centered_decagonal(50) is False
+    assert centered_decagonal_sequence(5) == [1, 11, 31, 61, 101]
 
     print("\n[PASS] All Centered Decagonal Number tests passed successfully!")
