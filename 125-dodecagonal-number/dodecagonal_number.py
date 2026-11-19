@@ -42,6 +42,11 @@ def is_dodecagonal_number(val: int) -> bool:
     numerator = 4 + r
     return numerator % 10 == 0 and numerator // 10 >= 1
 
+def dodecagonal_sequence(count: int) -> list[int]:
+    """Generate first count dodecagonal numbers 5n^2 - 4n starting from n=1."""
+    return [get_dodecagonal_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 125: Dodecagonal Number Tests")
@@ -65,5 +70,6 @@ if __name__ == "__main__":
     assert is_dodecagonal_number(2) is False
     assert is_dodecagonal_number(13) is False
     assert is_dodecagonal_number(50) is False
+    assert dodecagonal_sequence(5) == [1, 12, 33, 64, 105]
 
     print("\n[PASS] All Dodecagonal Number tests passed successfully!")
