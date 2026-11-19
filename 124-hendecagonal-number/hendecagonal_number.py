@@ -43,6 +43,11 @@ def is_hendecagonal_number(val: int) -> bool:
     numerator = 7 + r
     return numerator % 18 == 0 and numerator // 18 >= 1
 
+def hendecagonal_sequence(count: int) -> list[int]:
+    """Generate first count hendecagonal numbers (9n^2 - 7n)//2 starting from n=1."""
+    return [get_hendecagonal_number(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 124: Hendecagonal Number Tests")
@@ -66,5 +71,6 @@ if __name__ == "__main__":
     assert is_hendecagonal_number(2) is False
     assert is_hendecagonal_number(12) is False
     assert is_hendecagonal_number(40) is False
+    assert hendecagonal_sequence(5) == [1, 11, 30, 58, 95]
 
     print("\n[PASS] All Hendecagonal Number tests passed successfully!")
