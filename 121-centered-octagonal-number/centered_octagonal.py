@@ -36,6 +36,11 @@ def is_centered_octagonal(val: int) -> bool:
     r = math.isqrt(val)
     return r * r == val and r % 2 != 0
 
+def centered_octagonal_sequence(count: int) -> list[int]:
+    """Generate first count centered octagonal numbers (2n - 1)^2 starting from n=1."""
+    return [get_centered_octagonal(i) for i in range(1, count + 1)]
+
+
 if __name__ == "__main__":
     print("=" * 50)
     print("Running Problem 121: Centered Octagonal Number Tests")
@@ -59,5 +64,6 @@ if __name__ == "__main__":
     assert is_centered_octagonal(4) is False   # Even square
     assert is_centered_octagonal(16) is False  # Even square
     assert is_centered_octagonal(10) is False
+    assert centered_octagonal_sequence(5) == [1, 9, 25, 49, 81]
 
     print("\n[PASS] All Centered Octagonal Number tests passed successfully!")
