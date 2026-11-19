@@ -29,6 +29,26 @@ def powerful_numbers(limit: int) -> list[int]:
     """Return all powerful numbers up to limit."""
     return [i for i in range(1, limit + 1) if is_powerful(i)]
 
+def powerful_prime_factors(n: int) -> dict[int, int] | None:
+    """Return prime factors and exponents if n is powerful, else None."""
+    if not is_powerful(n):
+        return None
+    factors = {}
+    temp = n
+    d = 2
+    while d * d <= temp:
+        if temp % d == 0:
+            count = 0
+            while temp % d == 0:
+                count += 1
+                temp //= d
+            factors[d] = count
+        d += 1
+    if temp > 1:
+        factors[temp] = 1
+    return factors
+
+
 if __name__ == "__main__":
     assert is_powerful(1) is True
     assert is_powerful(4) is True
@@ -38,4 +58,6 @@ if __name__ == "__main__":
     assert is_powerful(16) is True
     assert is_powerful(36) is True
     assert powerful_numbers(36) == [1, 4, 8, 9, 16, 25, 27, 32, 36]
+    assert powerful_prime_factors(72) == {2: 3, 3: 2}
+    assert powerful_prime_factors(12) is None
     print("[PASS] Problem 128: powerful number passed all tests.")
