@@ -31,6 +31,11 @@ def is_superabundant(n: int) -> bool:
             return False
     return True
 
+def superabundant_numbers_up_to(limit: int) -> list[int]:
+    """Return all superabundant numbers up to limit."""
+    return [x for x in range(1, limit + 1) if is_superabundant(x)]
+
+
 if __name__ == "__main__":
     # The first few superabundant numbers are 1, 2, 4, 6, 12, 24, 36, 48, 60, 120
     assert is_superabundant(1) is True
@@ -39,4 +44,5 @@ if __name__ == "__main__":
     assert is_superabundant(6) is True
     assert is_superabundant(12) is True
     assert is_superabundant(8) is False
+    assert superabundant_numbers_up_to(25) == [1, 2, 4, 6, 12, 24]
     print("[PASS] Problem 135: superabundant number passed all tests.")
