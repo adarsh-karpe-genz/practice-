@@ -38,6 +38,11 @@ def is_extravagant(n: int) -> bool:
         return False
     return len(str(n)) < factorization_digits_count(n)
 
+def extravagant_numbers_up_to(limit: int) -> list[int]:
+    """Return all extravagant numbers up to limit."""
+    return [x for x in range(1, limit + 1) if is_extravagant(x)]
+
+
 if __name__ == "__main__":
     assert is_extravagant(4) is True   # 4 (1 digit) vs 2^2 (2 digits)
     assert is_extravagant(6) is True   # 6 (1 digit) vs 2 * 3 (2 digits)
@@ -45,4 +50,5 @@ if __name__ == "__main__":
     assert is_extravagant(9) is True   # 9 (1 digit) vs 3^2 (2 digits)
     assert is_extravagant(12) is True  # 12 (2 digits) vs 2^2 * 3 (3 digits)
     assert is_extravagant(10) is False # Equidigital (2 digits == 2 digits)
+    assert extravagant_numbers_up_to(12) == [4, 6, 8, 9, 12]
     print("[PASS] Problem 143: extravagant number passed all tests.")
