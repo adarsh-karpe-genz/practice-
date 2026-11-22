@@ -25,6 +25,11 @@ def is_untouchable_up_to(n: int, search_limit: int = 1000) -> bool:
             return False
     return True
 
+def untouchable_numbers_up_to(limit: int, search_depth: int = 500) -> list[int]:
+    """Return all untouchable numbers up to limit."""
+    return [x for x in range(2, limit + 1) if is_untouchable_up_to(x, search_depth)]
+
+
 if __name__ == "__main__":
     # 2, 5, 52, 88, 96, 120 are famous untouchable numbers
     assert aliquot_sum(6) == 6
@@ -32,4 +37,6 @@ if __name__ == "__main__":
     assert is_untouchable_up_to(2, 500) is True
     assert is_untouchable_up_to(5, 500) is True
     assert is_untouchable_up_to(4, 500) is False # aliquot_sum(9) = 1 + 3 = 4
+    assert 2 in untouchable_numbers_up_to(10)
+    assert 5 in untouchable_numbers_up_to(10)
     print("[PASS] Problem 138: untouchable number passed all tests.")
