@@ -47,6 +47,24 @@ def is_zeisel(n: int) -> bool:
             return False
     return True
 
+def zeisel_coefficients(n: int) -> tuple[int, int] | None:
+    """Return (A, B) such that p_{i+1} = A * p_i + B for prime factors of n, or None."""
+    factors = get_prime_factors(n)
+    if factors is None or len(factors) < 3:
+        return None
+    p1, p2, p3 = factors[0], factors[1], factors[2]
+    diff1 = p2 - p1
+    diff2 = p3 - p2
+    if diff1 == 0 or diff2 % diff1 != 0:
+        return None
+    A = diff2 // diff1
+    B = p2 - A * p1
+    for i in range(len(factors) - 1):
+        if factors[i + 1] != A * factors[i] + B:
+            return None
+    return A, B
+
+
 if __name__ == "__main__":
     # 105 = 3 * 5 * 7: diffs are 2, 2 => A=1, B=2. Zeisel!
     assert is_zeisel(105) is True
@@ -57,4 +75,6 @@ if __name__ == "__main__":
     assert is_zeisel(30) is True
     assert is_zeisel(12) is False # Not square-free
     assert is_zeisel(7) is False  # Prime (fewer than 3 prime factors)
+    assert zeisel_coefficients(105) == (1, 2)
+    assert zeisel_coefficients(30) == (2, -1)
     print("[PASS] Problem 145: zeisel number passed all tests.")
