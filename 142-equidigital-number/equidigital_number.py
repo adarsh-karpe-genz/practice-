@@ -38,6 +38,11 @@ def is_equidigital(n: int) -> bool:
         return False
     return len(str(n)) == factorization_digits_count(n)
 
+def equidigital_numbers_in_range(start: int, end: int) -> list[int]:
+    """Return all equidigital numbers in [start, end]."""
+    return [x for x in range(start, end + 1) if is_equidigital(x)]
+
+
 if __name__ == "__main__":
     # Primes are equidigital because p has len(str(p)) and its factorization is just p
     assert is_equidigital(2) is True
@@ -45,4 +50,5 @@ if __name__ == "__main__":
     assert is_equidigital(10) is True  # 10 (2 digits) = 2 * 5 (2 digits)
     assert is_equidigital(14) is True  # 14 = 2 * 7
     assert is_equidigital(125) is False # Frugal
+    assert equidigital_numbers_in_range(2, 10) == [2, 3, 5, 7, 10]
     print("[PASS] Problem 142: equidigital number passed all tests.")
