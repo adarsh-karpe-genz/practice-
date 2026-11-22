@@ -28,6 +28,11 @@ def is_highly_composite(n: int) -> bool:
             return False
     return True
 
+def highly_composite_numbers_up_to(limit: int) -> list[int]:
+    """Return all highly composite numbers up to limit."""
+    return [x for x in range(1, limit + 1) if is_highly_composite(x)]
+
+
 if __name__ == "__main__":
     # The first few highly composite numbers are 1, 2, 4, 6, 12, 24, 36, 48, 60, 120
     assert is_highly_composite(1) is True
@@ -37,4 +42,5 @@ if __name__ == "__main__":
     assert is_highly_composite(12) is True
     assert is_highly_composite(8) is False  # d(8) = 4, but d(6) = 4 so not strictly greater
     assert is_highly_composite(10) is False
+    assert highly_composite_numbers_up_to(25) == [1, 2, 4, 6, 12, 24]
     print("[PASS] Problem 134: highly composite number passed all tests.")
