@@ -38,6 +38,12 @@ def is_sociable_cycle(cycle: list[int]) -> bool:
     """A sociable cycle must have length > 2."""
     return cycle is not None and len(cycle) > 2
 
+def get_sociable_cycle_length(start: int) -> int:
+    """Return period of sociable cycle if > 2, else 0."""
+    cycle = find_aliquot_cycle(start)
+    return len(cycle) if is_sociable_cycle(cycle) else 0
+
+
 if __name__ == "__main__":
     # Famous 5-cycle sociable numbers: 12496, 14288, 15472, 14536, 14264
     cycle_12496 = find_aliquot_cycle(12496)
@@ -45,4 +51,6 @@ if __name__ == "__main__":
     assert is_sociable_cycle(cycle_12496) is True
     # Amicable cycle has length 2, not sociable
     assert is_sociable_cycle([220, 284]) is False
+    assert get_sociable_cycle_length(12496) == 5
+    assert get_sociable_cycle_length(220) == 0
     print("[PASS] Problem 140: sociable numbers passed all tests.")
