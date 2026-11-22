@@ -32,6 +32,11 @@ def is_giuga(n: int) -> bool:
             return False
     return True
 
+def giuga_residues(n: int) -> list[int]:
+    """Return list of (n // p - 1) % p for each prime factor p of n."""
+    return [(n // p - 1) % p for p in prime_factors(n)]
+
+
 if __name__ == "__main__":
     # Smallest Giuga number is 30: prime factors 2, 3, 5:
     # 30/2 - 1 = 14 (divisible by 2)
@@ -40,4 +45,5 @@ if __name__ == "__main__":
     assert is_giuga(30) is True
     assert is_giuga(6) is False  # 6/2 - 1 = 2 (div by 2), but 6/3 - 1 = 1 (not div by 3)
     assert is_giuga(12) is False
+    assert all(r == 0 for r in giuga_residues(30))
     print("[PASS] Problem 144: giuga number passed all tests.")
