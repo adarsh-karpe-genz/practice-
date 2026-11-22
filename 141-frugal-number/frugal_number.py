@@ -40,9 +40,16 @@ def is_frugal(n: int) -> bool:
     digits_factors = factorization_digits_count(n)
     return digits_n > digits_factors
 
+def frugal_numbers_up_to(limit: int) -> list[int]:
+    """Return all frugal numbers up to limit."""
+    return [x for x in range(1, limit + 1) if is_frugal(x)]
+
+
 if __name__ == "__main__":
     assert is_frugal(125) is True   # 125 (3 digits) vs 5^3 (2 digits)
     assert is_frugal(128) is True   # 128 (3 digits) vs 2^7 (2 digits)
     assert is_frugal(243) is True   # 243 (3 digits) vs 3^5 (2 digits)
     assert is_frugal(12) is False   # 12 (2 digits) vs 2^2 * 3 (3 digits: 2, 2, 3)
+    assert 125 in frugal_numbers_up_to(200)
+    assert 128 in frugal_numbers_up_to(200)
     print("[PASS] Problem 141: frugal number passed all tests.")
