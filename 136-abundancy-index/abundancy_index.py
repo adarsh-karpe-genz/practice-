@@ -36,10 +36,20 @@ def classify_abundancy(n: int) -> str:
     else:
         return "abundant"
 
+def are_friendly_numbers(a: int, b: int) -> bool:
+    """Two numbers are friendly if they share the exact same abundancy index sigma(n)/n."""
+    if a <= 0 or b <= 0:
+        return False
+    # Use exact integer cross-multiplication: sigma(a)*b == sigma(b)*a
+    return sum_of_divisors(a) * b == sum_of_divisors(b) * a
+
+
 if __name__ == "__main__":
     assert abundancy_index(6) == 2.0
     assert classify_abundancy(6) == "perfect"
     assert classify_abundancy(28) == "perfect"
     assert classify_abundancy(12) == "abundant" # (1+2+3+4+6+12)/12 = 28/12 > 2
     assert classify_abundancy(8) == "deficient" # (1+2+4+8)/8 = 15/8 < 2
+    assert are_friendly_numbers(6, 28) is True  # both perfect (index = 2)
+    assert are_friendly_numbers(30, 140) is True  # both share index 12/5 = 2.4
     print("[PASS] Problem 136: abundancy index passed all tests.")
