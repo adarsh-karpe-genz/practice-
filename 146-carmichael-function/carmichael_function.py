@@ -50,10 +50,26 @@ def carmichael_lambda(n: int) -> int:
         res = lcm(res, lambda_prime_power(p, k))
     return res
 
+def euler_totient(n: int) -> int:
+    """Euler phi function for comparison with Carmichael lambda."""
+    factors = prime_factorization(n)
+    res = n
+    for p, _ in factors:
+        res = res * (p - 1) // p
+    return res
+
+
+def totient_carmichael_ratio(n: int) -> float:
+    """Ratio phi(n) / lambda(n), which is always an integer >= 1."""
+    return euler_totient(n) / carmichael_lambda(n)
+
+
 if __name__ == "__main__":
     assert carmichael_lambda(1) == 1
     assert carmichael_lambda(8) == 2   # phi(8)=4, but lambda(8)=2 (since 1^2, 3^2, 5^2, 7^2 == 1 mod 8)
     assert carmichael_lambda(12) == 2  # lcm(lambda(4), lambda(3)) = lcm(2, 2) = 2
     assert carmichael_lambda(15) == 4  # lcm(lambda(3), lambda(5)) = lcm(2, 4) = 4
     assert carmichael_lambda(35) == 12 # lcm(4, 6) = 12
+    assert totient_carmichael_ratio(8) == 2.0  # phi(8)=4, lambda(8)=2
+    assert totient_carmichael_ratio(15) == 2.0 # phi(15)=8, lambda(15)=4
     print("[PASS] Problem 146: carmichael function passed all tests.")
