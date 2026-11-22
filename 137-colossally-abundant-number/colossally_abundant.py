@@ -28,10 +28,16 @@ def is_colossally_abundant_candidate(n: int, epsilon: float, limit: int = 100) -
             return False
     return True
 
+def colossally_abundant_score(n: int, epsilon: float) -> float:
+    """Return quotient sigma(n) / n^(1 + epsilon)."""
+    return sum_divisors(n) / (n ** (1.0 + epsilon))
+
+
 if __name__ == "__main__":
     # 2, 6, 12, 60, 120 are known colossally abundant numbers
     # For epsilon = 0.24, 6 maximizes the quotient up to 50:
     assert is_colossally_abundant_candidate(6, epsilon=0.24, limit=50) is True
     assert sum_divisors(12) == 28
     assert sum_divisors(6) == 12
+    assert colossally_abundant_score(6, 0.24) > colossally_abundant_score(2, 0.24)
     print("[PASS] Problem 137: colossally abundant number passed all tests.")
