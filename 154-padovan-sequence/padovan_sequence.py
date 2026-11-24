@@ -1,27 +1,40 @@
 """
-Problem 154: Padovan Sequence Generator
-The Padovan sequence P_n is defined by:
-P_0 = 1, P_1 = 1, P_2 = 1, and P_n = P_{n-2} + P_{n-3} for n >= 3.
+Problem 154: Padovan Sequence
+Description:
+P(0) = 1, P(1) = 1, P(2) = 1
+P(n) = P(n-2) + P(n-3) for n >= 3.
 """
 
-def padovan_number(n: int) -> int:
-    """Return the n-th Padovan number."""
-    if n < 0:
-        raise ValueError("n must be non-negative")
-    if n in (0, 1, 2):
-        return 1
-    a, b, c = 1, 1, 1
-    for _ in range(3, n + 1):
-        a, b, c = b, c, a + b
-    return c
+def padovan_sequence(n: int) -> list[int]:
+    """Generates the first n numbers of the Padovan sequence."""
+    if n <= 0:
+        return []
+    base = [1, 1, 1]
+    if n <= 3:
+        return base[:n]
+    seq = [1, 1, 1]
+    for _ in range(3, n):
+        seq.append(seq[-2] + seq[-3])
+    return seq
 
-def padovan_range(count: int) -> list[int]:
-    """Return first count Padovan numbers starting from P_0."""
-    return [padovan_number(i) for i in range(count)]
+
+def padovan_ratio_convergence(n: int) -> float:
+    """
+    Computes the ratio P(n) / P(n-1) which converges to the plastic number
+    rho ≈ 1.3247179572...
+    """
+    seq = padovan_sequence(n + 1)
+    if len(seq) < 2 or seq[-2] == 0:
+        return 0.0
+    return seq[-1] / seq[-2]
+
 
 if __name__ == "__main__":
-    expected = [1, 1, 1, 2, 2, 3, 4, 5, 7, 9]
-    assert padovan_range(10) == expected
-    assert padovan_number(5) == 3
-    assert padovan_number(8) == 7
-    print("[PASS] Problem 154: padovan sequence passed all tests.")
+    seq = padovan_sequence(15)
+    expected = [1, 1, 1, 2, 2, 3, 4, 5, 7, 9, 12, 16, 21, 28, 37]
+    assert seq == expected
+
+    ratio = padovan_ratio_convergence(40)
+    assert abs(ratio - 1.324718) < 1e-4
+
+    print("[PASS] Problem 154: Padovan sequence and plastic number ratio tests passed successfully.")
