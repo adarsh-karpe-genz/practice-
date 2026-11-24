@@ -1,39 +1,53 @@
 """
-Problem 163: Ulam Numbers Generator
-Ulam sequence starts with U_1 = 1, U_2 = 2.
-Each subsequent term is the smallest integer > previous that can be written as
-the sum of two distinct earlier terms in UNIQUE way.
+Problem 163: Ulam Numbers
+Description:
+U(1) = 1, U(2) = 2.
+Subsequent terms are the smallest integer greater than the previous term that
+can be written uniquely as the sum of two distinct earlier terms.
 """
 
-def ulam_sequence(count: int) -> list[int]:
-    """Generate the first count Ulam numbers."""
-    if count <= 0:
+def ulam_sequence(n: int) -> list[int]:
+    """Generates the first n Ulam numbers."""
+    if n <= 0:
         return []
-    if count == 1:
+    if n == 1:
         return [1]
-    if count == 2:
-        return [1, 2]
-    
     ulam = [1, 2]
-    ulam_set = {1, 2}
     candidate = 3
-    while len(ulam) < count:
-        ways = 0
-        for i in range(len(ulam)):
-            a = ulam[i]
-            b = candidate - a
-            if b > a and b in ulam_set:
-                ways += 1
-                if ways > 1:
+    while len(ulam) < n:
+        count = 0
+        left, right = 0, len(ulam) - 1
+        while left < right:
+            s = ulam[left] + ulam[right]
+            if s == candidate:
+                count += 1
+                if count > 1:
                     break
-        if ways == 1:
+                left += 1
+                right -= 1
+            elif s < candidate:
+                left += 1
+            else:
+                right -= 1
+        if count == 1:
             ulam.append(candidate)
-            ulam_set.add(candidate)
         candidate += 1
     return ulam
 
+
+def is_ulam_number(num: int, search_limit: int = 50) -> bool:
+    """Checks if a given number num is within the first search_limit Ulam numbers."""
+    seq = ulam_sequence(search_limit)
+    return num in seq
+
+
 if __name__ == "__main__":
-    expected = [1, 2, 3, 4, 6, 8, 11, 13, 16]
-    assert ulam_sequence(9) == expected
-    assert ulam_sequence(2) == [1, 2]
-    print("[PASS] Problem 163: ulam numbers passed all tests.")
+    seq = ulam_sequence(15)
+    expected = [1, 2, 3, 4, 6, 8, 11, 13, 16, 18, 26, 28, 36, 38, 47]
+    assert seq == expected
+
+    assert is_ulam_number(26) is True
+    assert is_ulam_number(5) is False
+    assert is_ulam_number(7) is False
+
+    print("[PASS] Problem 163: Ulam numbers sequence and membership checker tests passed successfully.")
