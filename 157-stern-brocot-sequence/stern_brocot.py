@@ -1,33 +1,55 @@
 """
-Problem 157: Stern-Brocot (Stern's Diatomic) Sequence
-Defined by:
-s_0 = 0, s_1 = 1
-s_{2n} = s_n
-s_{2n+1} = s_n + s_{n+1}
-Every positive rational number p/q appears as s_n / s_{n+1} in lowest terms.
+Problem 157: Stern-Brocot Sequence
+Description:
+s(0) = 1, s(1) = 1
+s(2n) = s(n)
+s(2n+1) = s(n) + s(n+1)
+Generates all positive rational numbers as s(n) / s(n+1).
 """
 
-def stern_sequence(n_terms: int) -> list[int]:
-    """Generate the first n_terms of the Stern-Brocot sequence."""
-    if n_terms <= 0:
+from math import gcd
+
+def stern_brocot_sequence(n: int) -> list[int]:
+    """Generates the first n terms of the Stern-Brocot sequence."""
+    if n <= 0:
         return []
-    if n_terms == 1:
-        return [0]
-    
-    seq = [0, 1]
-    while len(seq) < n_terms:
-        n = len(seq)
-        if n % 2 == 0:
-            seq.append(seq[n // 2])
+    if n == 1:
+        return [1]
+    seq = [1, 1]
+    while len(seq) < n:
+        i = len(seq)
+        if i % 2 == 0:
+            seq.append(seq[i // 2])
         else:
-            half = n // 2
-            seq.append(seq[half] + seq[half + 1])
-    return seq[:n_terms]
+            k = i // 2
+            seq.append(seq[k] + seq[k + 1])
+    return seq[:n]
+
+
+def find_stern_rational_index(p: int, q: int, max_search: int = 1000) -> int | None:
+    """
+    Finds index i such that seq[i] / seq[i+1] == p / q.
+    """
+    g = gcd(p, q)
+    p, q = p // g, q // g
+    seq = stern_brocot_sequence(max_search)
+    for i in range(len(seq) - 1):
+        if seq[i] == p and seq[i + 1] == q:
+            return i
+    return None
+
 
 if __name__ == "__main__":
-    expected = [0, 1, 1, 2, 1, 3, 2, 3, 1, 4]
-    res = stern_sequence(10)
-    assert res == expected
-    assert stern_sequence(1) == [0]
-    assert stern_sequence(2) == [0, 1]
-    print("[PASS] Problem 157: stern brocot sequence passed all tests.")
+    seq = stern_brocot_sequence(15)
+    expected = [1, 1, 1, 2, 1, 3, 2, 3, 1, 4, 3, 5, 2, 5, 3]
+    assert seq == expected
+
+    # Consecutive terms must be coprime
+    for i in range(len(seq) - 1):
+        assert gcd(seq[i], seq[i + 1]) == 1
+
+    # Search for rational 3/5
+    idx = find_stern_rational_index(3, 5)
+    assert idx is not None and seq[idx] == 3 and seq[idx + 1] == 5
+
+    print("[PASS] Problem 157: Stern-Brocot sequence and rational index search tests passed successfully.")
