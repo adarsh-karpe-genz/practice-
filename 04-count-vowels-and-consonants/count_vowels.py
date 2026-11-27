@@ -16,28 +16,40 @@ from typing import Dict
 
 
 def count_vowels_and_consonants(text: str) -> Dict[str, int]:
-    """Counts vowels and consonants in given string."""
+    """Counts total vowels and consonants in text."""
     vowels = set("aeiou")
-    counts = {"vowels": 0, "consonants": 0}
+    v_count = 0
+    c_count = 0
 
-    for char in text.lower():
-        if char.isalpha():
-            if char in vowels:
-                counts["vowels"] += 1
+    for ch in text.lower():
+        if ch.isalpha():
+            if ch in vowels:
+                v_count += 1
             else:
-                counts["consonants"] += 1
+                c_count += 1
 
-    return counts
+    return {"vowels": v_count, "consonants": c_count}
 
 
-def count_vowel_frequencies(text: str) -> dict[str, int]:
-    """Calculate frequency breakdown for each individual vowel (a, e, i, o, u)."""
+def count_vowel_frequencies(text: str) -> Dict[str, int]:
+    """Returns frequency distribution for each vowel a, e, i, o, u."""
     vowels = "aeiou"
     counts = {v: 0 for v in vowels}
     for ch in text.lower():
         if ch in counts:
             counts[ch] += 1
     return counts
+
+
+def vowel_to_consonant_ratio(text: str) -> float | None:
+    """
+    Calculates the ratio of vowels to consonants.
+    Returns None if consonants count is zero.
+    """
+    counts = count_vowels_and_consonants(text)
+    if counts["consonants"] == 0:
+        return None
+    return counts["vowels"] / counts["consonants"]
 
 
 if __name__ == "__main__":
@@ -47,13 +59,15 @@ if __name__ == "__main__":
 
     sample = "Hello World! 123"
     result = count_vowels_and_consonants(sample)
-    print(f"Input: '{sample}'")
-    print(f"Counts: {result}")
 
-    # 'Hello World' -> vowels: e, o, o (3) | consonants: H, l, l, W, r, l, d (7)
     assert result["vowels"] == 3
     assert result["consonants"] == 7
     v_freq = count_vowel_frequencies(sample)
     assert sum(v_freq.values()) == result["vowels"]
 
-    print("\n[PASS] All Count Vowels tests passed successfully!")
+    # Test ratio
+    ratio = vowel_to_consonant_ratio(sample)
+    assert ratio is not None and abs(ratio - 3 / 7) < 1e-6
+    assert vowel_to_consonant_ratio("aeiou") is None
+
+    print("[PASS] All Count Vowels tests passed successfully!")
