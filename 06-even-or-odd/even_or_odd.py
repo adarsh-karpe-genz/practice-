@@ -18,15 +18,27 @@ def is_even_modulo(n: int) -> bool:
 
 
 def is_even_bitwise(n: int) -> bool:
-    """Method 2: Using bitwise AND (Checks the lowest significant bit)"""
+    """Method 2: Using bitwise AND operator (&)"""
     return (n & 1) == 0
 
 
 def partition_even_odd(numbers: list[int]) -> tuple[list[int], list[int]]:
-    """Partition a list of integers into (evens, odds)."""
+    """Partitions a list of integers into (evens, odds)."""
     evens = [x for x in numbers if is_even_bitwise(x)]
     odds = [x for x in numbers if not is_even_bitwise(x)]
     return evens, odds
+
+
+def parity_sign_classification(n: int) -> str:
+    """
+    Classifies integer by parity and sign:
+    e.g. 'positive even', 'negative odd', 'zero'.
+    """
+    if n == 0:
+        return "zero"
+    parity = "even" if is_even_bitwise(n) else "odd"
+    sign = "positive" if n > 0 else "negative"
+    return f"{sign} {parity}"
 
 
 if __name__ == "__main__":
@@ -43,13 +55,15 @@ if __name__ == "__main__":
     ]
 
     for num, expected in test_cases:
-        res1 = is_even_modulo(num)
-        res2 = is_even_bitwise(num)
-        print(f"Number: {num:2d} -> Even? {res1} | Expected: {expected}")
-        assert res1 == expected
-        assert res2 == expected
+        assert is_even_modulo(num) == expected
+        assert is_even_bitwise(num) == expected
 
     evens, odds = partition_even_odd([1, 2, 3, 4, 5, 6])
     assert evens == [2, 4, 6]
     assert odds == [1, 3, 5]
-    print("\n[PASS] All Even/Odd tests passed successfully!")
+
+    assert parity_sign_classification(4) == "positive even"
+    assert parity_sign_classification(-3) == "negative odd"
+    assert parity_sign_classification(0) == "zero"
+
+    print("[PASS] All Even/Odd tests passed successfully!")
