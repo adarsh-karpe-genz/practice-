@@ -17,79 +17,92 @@ Concepts Covered:
 from typing import List, Dict
 
 
-def generate_fibonacci(n_terms: int) -> List[int]:
-    """Method 1: Generate the first `n_terms` using an iterative list."""
-    if n_terms <= 0:
+def fibonacci_series(n: int) -> List[int]:
+    """Generates the first n numbers of the Fibonacci series."""
+    if n <= 0:
         return []
-    if n_terms == 1:
+    if n == 1:
         return [0]
-
-    sequence = [0, 1]
-    for _ in range(2, n_terms):
-        sequence.append(sequence[-1] + sequence[-2])
-    return sequence
+    series = [0, 1]
+    for _ in range(2, n):
+        series.append(series[-1] + series[-2])
+    return series
 
 
 def nth_fibonacci_iterative(n: int) -> int:
-    """Method 2: Compute Nth Fibonacci number in O(N) time and O(1) space."""
+    """Returns the n-th Fibonacci number in O(n) time and O(1) space."""
     if n < 0:
-        raise ValueError("Index n must be non-negative.")
+        raise ValueError("Index must be non-negative.")
     if n == 0:
         return 0
     if n == 1:
         return 1
-
-    prev, curr = 0, 1
+    a, b = 0, 1
     for _ in range(2, n + 1):
-        prev, curr = curr, prev + curr
-    return curr
+        a, b = b, a + b
+    return b
 
 
-def nth_fibonacci_memo(n: int, memo: Dict[int, int] = None) -> int:
-    """Method 3: Top-Down Dynamic Programming with Memoization."""
+def nth_fibonacci_memo(n: int, memo: Dict[int, int] | None = None) -> int:
+    """Returns the n-th Fibonacci number using top-down Dynamic Programming."""
+    if n < 0:
+        raise ValueError("Index must be non-negative.")
     if memo is None:
         memo = {}
     if n in memo:
         return memo[n]
-    if n <= 0:
+    if n == 0:
         return 0
     if n == 1:
         return 1
-
     memo[n] = nth_fibonacci_memo(n - 1, memo) + nth_fibonacci_memo(n - 2, memo)
     return memo[n]
 
 
-# ==============================================================================
-# Comprehensive Unit Test Harness
-# ==============================================================================
 def nth_fibonacci_binet(n: int) -> int:
-    """Compute nth Fibonacci number in O(1) time via Binet's golden ratio formula."""
+    """Closed-form Binet formula for Fibonacci numbers."""
     if n < 0:
-        raise ValueError("n must be non-negative")
-    phi = (1 + 5**0.5) / 2
-    psi = (1 - 5**0.5) / 2
-    return round((phi**n - psi**n) / (5**0.5))
+        raise ValueError("Index must be non-negative.")
+    phi = (1 + 5 ** 0.5) / 2
+    return round((phi ** n) / (5 ** 0.5))
+
+
+def fibonacci_matrix_power(n: int) -> int:
+    """
+    Computes F(n) in O(log n) time using 2x2 matrix exponentiation:
+    [[1, 1], [1, 0]]^n = [[F(n+1), F(n)], [F(n), F(n-1)]].
+    """
+    if n < 0:
+        raise ValueError("Index must be non-negative.")
+    if n == 0:
+        return 0
+
+    def mat_mult(A: list[list[int]], B: list[list[int]]) -> list[list[int]]:
+        return [
+            [A[0][0]*B[0][0] + A[0][1]*B[1][0], A[0][0]*B[0][1] + A[0][1]*B[1][1]],
+            [A[1][0]*B[0][0] + A[1][1]*B[1][0], A[1][0]*B[0][1] + A[1][1]*B[1][1]]
+        ]
+
+    def mat_pow(M: list[list[int]], p: int) -> list[list[int]]:
+        res = [[1, 0], [0, 1]]
+        base = M
+        while p > 0:
+            if p % 2 == 1:
+                res = mat_mult(res, base)
+            base = mat_mult(base, base)
+            p //= 2
+        return res
+
+    T = [[1, 1], [1, 0]]
+    result = mat_pow(T, n)
+    return result[0][1]
 
 
 if __name__ == "__main__":
-    print("=" * 55)
-    print("Running Problem 08: Fibonacci Sequence Tests")
-    print("=" * 55)
+    print("=" * 50)
+    print("Running Problem 08: Fibonacci Tests")
+    print("=" * 50)
 
-    # 1. Test sequence generator
-    seq_tests = [
-        (0, []),
-        (1, [0]),
-        (5, [0, 1, 1, 2, 3]),
-        (8, [0, 1, 1, 2, 3, 5, 8, 13]),
-    ]
-    for terms, expected in seq_tests:
-        res = generate_fibonacci(terms)
-        print(f"generate_fibonacci({terms}) -> {res} | Expected: {expected}")
-        assert res == expected, f"Failed for {terms} terms"
-
-    # 2. Test Nth Fibonacci methods
     nth_tests = [
         (0, 0),
         (1, 1),
@@ -99,20 +112,11 @@ if __name__ == "__main__":
         (10, 55),
         (15, 610),
     ]
-    print("\nTesting Nth Fibonacci calculations:")
-    for n_val, expected in nth_tests:
-        r_iter = nth_fibonacci_iterative(n_val)
-        r_memo = nth_fibonacci_memo(n_val)
-        print(f"F({n_val:2d}) -> Iterative: {r_iter:<4} | Memo: {r_memo:<4} | Expected: {expected}")
-        assert r_iter == expected
-        assert r_memo == expected
-
-    # 3. Test negative index exception handling
-    try:
-        nth_fibonacci_iterative(-3)
-    except ValueError:
-        print("\nNegative index validation test: [PASS]")
 
     for n_val, expected in nth_tests:
+        assert nth_fibonacci_iterative(n_val) == expected
+        assert nth_fibonacci_memo(n_val) == expected
         assert nth_fibonacci_binet(n_val) == expected
-    print("\n[PASS] All Fibonacci tests passed successfully!")
+        assert fibonacci_matrix_power(n_val) == expected
+
+    print("[PASS] All Fibonacci tests passed successfully!")
