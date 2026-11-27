@@ -18,22 +18,34 @@ def sum_of_digits_math(n: int) -> int:
     n = abs(n)
     total = 0
     while n > 0:
-        total += n % 10  # extract last digit
-        n //= 10         # remove last digit
+        total += n % 10
+        n //= 10
     return total
 
 
 def sum_of_digits_string(n: int) -> int:
-    """Method 2: String conversion (Pythonic one-liner)"""
+    """Method 2: String conversion with generator sum()"""
     return sum(int(digit) for digit in str(abs(n)))
 
 
 def digital_root(n: int) -> int:
-    """Repeatedly sum digits until single digit remains (digital root)."""
+    """Computes digital root via repeated summation (modulo 9 formula)."""
     n = abs(n)
     if n == 0:
         return 0
     return 1 + (n - 1) % 9
+
+
+def product_of_digits(n: int) -> int:
+    """Computes product of all digits of non-negative integer n."""
+    n = abs(n)
+    if n == 0:
+        return 0
+    prod = 1
+    while n > 0:
+        prod *= (n % 10)
+        n //= 10
+    return prod
 
 
 if __name__ == "__main__":
@@ -51,13 +63,16 @@ if __name__ == "__main__":
     ]
 
     for num, expected in test_cases:
-        res1 = sum_of_digits_math(num)
-        res2 = sum_of_digits_string(num)
-        print(f"Number: {num:6d} -> Sum: {res1:2d} | Expected: {expected:2d}")
-        assert res1 == expected, f"Math method failed for {num}"
-        assert res2 == expected, f"String method failed for {num}"
+        assert sum_of_digits_math(num) == expected
+        assert sum_of_digits_string(num) == expected
 
-    assert digital_root(38) == 2  # 3+8=11 -> 1+1=2
+    assert digital_root(38) == 2
     assert digital_root(0) == 0
     assert digital_root(493193) == 2
-    print("\n[PASS] All Sum of Digits tests passed successfully!")
+
+    # Test product of digits
+    assert product_of_digits(1234) == 24
+    assert product_of_digits(905) == 0
+    assert product_of_digits(7) == 7
+
+    print("[PASS] All Sum of Digits tests passed successfully!")
