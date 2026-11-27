@@ -15,7 +15,7 @@ Concepts:
 """
 
 def factorial_iterative(n: int) -> int:
-    """Method 1: Iterative Loop (O(N) time, O(1) space)"""
+    """Method 1: Iterative Loop"""
     if n < 0:
         raise ValueError("Factorial is not defined for negative numbers.")
     result = 1
@@ -25,7 +25,7 @@ def factorial_iterative(n: int) -> int:
 
 
 def factorial_recursive(n: int) -> int:
-    """Method 2: Recursion (O(N) time, O(N) stack space)"""
+    """Method 2: Recursive approach"""
     if n < 0:
         raise ValueError("Factorial is not defined for negative numbers.")
     if n in (0, 1):
@@ -34,20 +34,33 @@ def factorial_recursive(n: int) -> int:
 
 
 def count_trailing_zeros(n: int) -> int:
-    """Compute number of trailing zeros in n! using Legendre's formula."""
-    if n < 0:
-        raise ValueError("n must be non-negative")
+    """Calculates number of trailing zeros in n! using Legendre formula."""
     count = 0
-    divisor = 5
-    while divisor <= n:
-        count += n // divisor
-        divisor *= 5
+    k = 5
+    while k <= n:
+        count += n // k
+        k *= 5
     return count
+
+
+def double_factorial(n: int) -> int:
+    """
+    Computes double factorial n!! = n * (n-2) * (n-4) ...
+    Examples: 5!! = 5 * 3 * 1 = 15; 6!! = 6 * 4 * 2 = 48.
+    """
+    if n < 0:
+        raise ValueError("Double factorial is not defined for negative numbers.")
+    if n in (0, 1):
+        return 1
+    res = 1
+    for i in range(n, 0, -2):
+        res *= i
+    return res
 
 
 if __name__ == "__main__":
     print("=" * 50)
-    print("Running Problem 05: Factorial Calculator Tests")
+    print("Running Problem 05: Factorial Tests")
     print("=" * 50)
 
     test_cases = [
@@ -60,19 +73,22 @@ if __name__ == "__main__":
     ]
 
     for num, expected in test_cases:
-        res_iter = factorial_iterative(num)
-        res_rec = factorial_recursive(num)
-        print(f"Factorial of {num:2d} -> Iterative: {res_iter:<8} | Recursive: {res_rec:<8} | Expected: {expected}")
-        assert res_iter == expected, f"Iterative failed for {num}"
-        assert res_rec == expected, f"Recursive failed for {num}"
+        assert factorial_iterative(num) == expected
+        assert factorial_recursive(num) == expected
 
     # Test negative error handling
     try:
         factorial_iterative(-5)
     except ValueError:
-        print("\nNegative input validation test: [PASS]")
+        pass
 
     assert count_trailing_zeros(5) == 1
     assert count_trailing_zeros(10) == 2
     assert count_trailing_zeros(25) == 6
-    print("\n[PASS] All Factorial tests passed successfully!")
+
+    # Test double factorial
+    assert double_factorial(5) == 15
+    assert double_factorial(6) == 48
+    assert double_factorial(0) == 1
+
+    print("[PASS] All Factorial tests passed successfully!")
