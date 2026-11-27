@@ -17,45 +17,50 @@ from typing import List, Tuple
 
 
 def find_max_min_manual(numbers: List[int]) -> Tuple[int, int]:
-    """Method 1: Single-pass manual loop (O(N) time, O(1) space)"""
+    """Method 1: Single pass linear scan O(N) comparisons"""
     if not numbers:
         raise ValueError("List cannot be empty.")
-
-    current_max = numbers[0]
-    current_min = numbers[0]
-
+    max_val = numbers[0]
+    min_val = numbers[0]
     for num in numbers[1:]:
-        if num > current_max:
-            current_max = num
-        if num < current_min:
-            current_min = num
-
-    return current_max, current_min
+        if num > max_val:
+            max_val = num
+        elif num < min_val:
+            min_val = num
+    return (max_val, min_val)
 
 
 def find_max_min_builtin(numbers: List[int]) -> Tuple[int, int]:
-    """Method 2: Using Python built-in functions"""
+    """Method 2: Using built-in max() and min()"""
     if not numbers:
         raise ValueError("List cannot be empty.")
-    return max(numbers), min(numbers)
+    return (max(numbers), min(numbers))
 
 
-def find_min_max_divide_and_conquer(numbers: list[int | float]) -> tuple[int | float, int | float]:
-    """Find max and min using tournament divide-and-conquer in 3n/2 - 2 comparisons."""
+def find_min_max_divide_and_conquer(numbers: List[int]) -> Tuple[int, int]:
+    """Method 3: Tournament divide and conquer algorithm"""
     if not numbers:
-        raise ValueError("numbers list cannot be empty")
-    def _helper(low: int, high: int):
+        raise ValueError("List cannot be empty.")
+
+    def _helper(low: int, high: int) -> Tuple[int, int]:
         if low == high:
-            return numbers[low], numbers[low]
+            return (numbers[low], numbers[low])
         if high == low + 1:
             if numbers[low] > numbers[high]:
-                return numbers[low], numbers[high]
-            return numbers[high], numbers[low]
+                return (numbers[low], numbers[high])
+            return (numbers[high], numbers[low])
         mid = (low + high) // 2
         max1, min1 = _helper(low, mid)
         max2, min2 = _helper(mid + 1, high)
-        return max(max1, max2), min(min1, min2)
+        return (max(max1, max2), min(min1, min2))
+
     return _helper(0, len(numbers) - 1)
+
+
+def min_max_range_spread(numbers: List[int]) -> int:
+    """Calculates spread / range: max(numbers) - min(numbers)."""
+    mx, mn = find_max_min_manual(numbers)
+    return mx - mn
 
 
 if __name__ == "__main__":
@@ -73,10 +78,13 @@ if __name__ == "__main__":
     for nums, expected in test_lists:
         res1 = find_max_min_manual(nums)
         res2 = find_max_min_builtin(nums)
-        print(f"List: {nums} -> (Max, Min): {res1} | Expected: {expected}")
         assert res1 == expected
         assert res2 == expected
         res3 = find_min_max_divide_and_conquer(nums)
         assert res3 == expected
 
-    print("\n[PASS] All Max/Min tests passed successfully!")
+    # Test spread range
+    assert min_max_range_spread([3, 1, 9, 7, 5, 2]) == 8
+    assert min_max_range_spread([42]) == 0
+
+    print("[PASS] All Max/Min tests passed successfully!")
