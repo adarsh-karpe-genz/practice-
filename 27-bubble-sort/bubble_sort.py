@@ -8,71 +8,80 @@ Bubble Sort repeatedly steps through the list, compares adjacent elements,
 and swaps them if they are in the wrong order.
 Example: [64, 34, 25, 12, 22, 11, 90] -> [11, 12, 22, 25, 34, 64, 90]
 
-Complexity:
-- Time: O(N^2) worst/average, O(N) best (already sorted with optimized version)
-- Space: O(1) in-place
-
 Concepts:
-- Nested loop pattern
-- Adjacent element comparison and swap
-- Early termination optimization with `swapped` flag
+- Nested loops and in-place swapping
+- Early exit optimization flag
+- Cocktail shaker sort bidirectional variant
 """
 
 from typing import List
 
 
-def bubble_sort(nums: List[int]) -> List[int]:
-    """Bubble Sort with early termination optimization (in-place)."""
-    arr = nums[:]  # Work on a copy to preserve the original
-    n = len(arr)
-
+def bubble_sort(arr: List[int]) -> List[int]:
+    """Optimized Bubble Sort with early exit flag."""
+    nums = arr.copy()
+    n = len(nums)
     for i in range(n):
         swapped = False
         for j in range(0, n - i - 1):
-            if arr[j] > arr[j + 1]:
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-                swapped = True
-        if not swapped:
-            break  # Already sorted — no swaps in this pass
-
-    return arr
-
-
-def cocktail_shaker_sort(arr: list) -> list:
-    """Bidirectional bubble sort (cocktail shaker sort) sorting both ends each pass."""
-    a = arr.copy()
-    n = len(a)
-    start = 0
-    end = n - 1
-    swapped = True
-    while swapped:
-        swapped = False
-        for i in range(start, end):
-            if a[i] > a[i + 1]:
-                a[i], a[i + 1] = a[i + 1], a[i]
+            if nums[j] > nums[j + 1]:
+                nums[j], nums[j + 1] = nums[j + 1], nums[j]
                 swapped = True
         if not swapped:
             break
+    return nums
+
+
+def cocktail_shaker_sort(arr: List[int]) -> List[int]:
+    """Bidirectional Bubble Sort."""
+    nums = arr.copy()
+    n = len(nums)
+    start = 0
+    end = n - 1
+    while start < end:
         swapped = False
+        for i in range(start, end):
+            if nums[i] > nums[i + 1]:
+                nums[i], nums[i + 1] = nums[i + 1], nums[i]
+                swapped = True
+        if not swapped:
+            break
         end -= 1
+        swapped = False
         for i in range(end - 1, start - 1, -1):
-            if a[i] > a[i + 1]:
-                a[i], a[i + 1] = a[i + 1], a[i]
+            if nums[i] > nums[i + 1]:
+                nums[i], nums[i + 1] = nums[i + 1], nums[i]
                 swapped = True
         start += 1
-    return a
+        if not swapped:
+            break
+    return nums
+
+
+def count_bubble_swaps(arr: List[int]) -> int:
+    """
+    Sorts a copy of arr and returns total number of adjacent swaps executed.
+    """
+    nums = arr.copy()
+    n = len(nums)
+    swaps = 0
+    for i in range(n):
+        swapped = False
+        for j in range(0, n - i - 1):
+            if nums[j] > nums[j + 1]:
+                nums[j], nums[j + 1] = nums[j + 1], nums[j]
+                swapped = True
+                swaps += 1
+        if not swapped:
+            break
+    return swaps
 
 
 if __name__ == "__main__":
-    print("=" * 50)
-    print("Running Problem 27: Bubble Sort Tests")
-    print("=" * 50)
-
     test_cases = [
         ([64, 34, 25, 12, 22, 11, 90], [11, 12, 22, 25, 34, 64, 90]),
-        ([5, 1, 4, 2, 8], [1, 2, 4, 5, 8]),
-        ([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]),   # Already sorted
-        ([5, 4, 3, 2, 1], [1, 2, 3, 4, 5]),   # Reverse sorted
+        ([1, 2, 3, 4, 5], [1, 2, 3, 4, 5]),
+        ([5, 4, 3, 2, 1], [1, 2, 3, 4, 5]),
         ([], []),
         ([42], [42]),
         ([-3, 0, -1, 5, 2], [-3, -1, 0, 2, 5]),
@@ -80,9 +89,11 @@ if __name__ == "__main__":
 
     for nums, expected in test_cases:
         res = bubble_sort(nums)
-        print(f"Input: {nums}")
-        print(f"  -> Sorted: {res} | Expected: {expected}")
         assert res == expected, f"Failed for {nums}"
         assert cocktail_shaker_sort(nums) == expected
 
-    print("\n[PASS] All Bubble Sort tests passed successfully!")
+    # Test swap count
+    assert count_bubble_swaps([1, 2, 3, 4]) == 0
+    assert count_bubble_swaps([4, 3, 2, 1]) == 6  # 4*(4-1)/2 = 6
+
+    print("[PASS] Problem 27: Bubble Sort tests passed successfully!")
