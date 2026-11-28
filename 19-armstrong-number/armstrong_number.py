@@ -1,72 +1,74 @@
 """
-Problem 19: Check Armstrong Number (Narcissistic Number)
+Problem 19: Armstrong Number Checker (Narcissistic Number)
 Difficulty: Beginner / Easy
 
 Problem Statement:
-An Armstrong number (or narcissistic number) of `k` digits is an integer such that
-the sum of its digits each raised to the power of `k` is equal to the number itself.
-Examples:
-- 153 is an Armstrong number because 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153 (k=3)
-- 9474 is an Armstrong number because 9^4 + 4^4 + 7^4 + 4^4 = 6561 + 256 + 2401 + 256 = 9474 (k=4)
-- 10 is NOT an Armstrong number because 1^2 + 0^2 = 1 != 10 (k=2)
+An Armstrong number is an n-digit number that is equal to the sum
+of its digits each raised to the power of n.
+Example 1: 153 is a 3-digit number -> 1^3 + 5^3 + 3^3 = 1 + 125 + 27 = 153 (True)
+Example 2: 9474 is a 4-digit number -> 9^4 + 4^4 + 7^4 + 4^4 = 9474 (True)
 
 Concepts:
-- Mathematical digit extraction & powers
-- String representation vs pure arithmetic loop
-- Handling 0 and single digit numbers
+- Digit extraction via modulo / string
+- Power computation `digit ** num_digits`
 """
 
+from typing import List
+
+
 def is_armstrong_math(n: int) -> bool:
-    """Method 1: Mathematical digit extraction (O(log10(N)) time, O(1) space)"""
+    """Mathematical modulo-based extraction."""
     if n < 0:
         return False
     if n == 0:
         return True
-
-    # Count number of digits k
     temp = n
-    k = 0
+    num_digits = 0
     while temp > 0:
-        k += 1
+        num_digits += 1
         temp //= 10
-
-    # Calculate sum of digits raised to power k
-    temp = n
     total = 0
+    temp = n
     while temp > 0:
         digit = temp % 10
-        total += digit ** k
+        total += digit ** num_digits
         temp //= 10
-
     return total == n
 
 
 def is_armstrong_string(n: int) -> bool:
-    """Method 2: String conversion (Pythonic one-liner)"""
+    """String-based digit power summation."""
     if n < 0:
         return False
     s = str(n)
-    k = len(s)
-    return sum(int(digit) ** k for digit in s) == n
+    power = len(s)
+    return sum(int(d) ** power for d in s) == n
 
 
-def find_armstrong_numbers(start: int, end: int) -> list[int]:
-    """Find and return all Armstrong numbers in the inclusive range [start, end]."""
-    return [x for x in range(start, end + 1) if is_armstrong_math(x)]
+def find_armstrong_numbers(start: int, end: int) -> List[int]:
+    """Finds all Armstrong numbers in range [start, end]."""
+    return [x for x in range(start, end + 1) if is_armstrong_string(x)]
+
+
+def armstrong_sum_discrepancy(n: int) -> int:
+    """
+    Computes the discrepancy: sum(d^k) - n.
+    Returns 0 if and only if n is an Armstrong number.
+    """
+    s = str(abs(n))
+    power = len(s)
+    digit_sum = sum(int(d) ** power for d in s)
+    return digit_sum - abs(n)
 
 
 if __name__ == "__main__":
-    print("=" * 50)
-    print("Running Problem 19: Armstrong Number Tests")
-    print("=" * 50)
-
     test_cases = [
         (153, True),
+        (9474, True),
         (370, True),
         (371, True),
         (407, True),
-        (9474, True),
-        (9, True),
+        (1, True),
         (0, True),
         (10, False),
         (123, False),
@@ -76,9 +78,13 @@ if __name__ == "__main__":
     for num, expected in test_cases:
         res1 = is_armstrong_math(num)
         res2 = is_armstrong_string(num)
-        print(f"Number: {num:5d} -> Armstrong? {res1:<5} | Expected: {expected}")
         assert res1 == expected, f"Math method failed for {num}"
         assert res2 == expected, f"String method failed for {num}"
 
     assert find_armstrong_numbers(0, 153) == [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 153]
-    print("\n[PASS] All Armstrong Number tests passed successfully!")
+
+    # Test discrepancy
+    assert armstrong_sum_discrepancy(153) == 0
+    assert armstrong_sum_discrepancy(10) == (1**2 + 0**2) - 10  # 1 - 10 = -9
+
+    print("[PASS] Problem 19: Armstrong Number tests passed successfully!")
