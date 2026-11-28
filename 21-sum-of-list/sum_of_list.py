@@ -1,22 +1,22 @@
 """
-Problem 21: Sum of List Elements
+Problem 21: Sum of Elements in a List
 Difficulty: Beginner / Easy
 
 Problem Statement:
-Given a list of numbers, calculate and return the sum of all elements.
+Given a list of numbers, compute the total sum of all its elements.
 Example: [1, 2, 3, 4, 5] -> 15
 
 Concepts:
-- Accumulator loop pattern
-- Basic recursion
-- Python built-in sum()
+- Accumulator variable in a loop
+- Recursion fundamentals: base case (empty list) and step (head + rest)
+- Built-in sum() function
 """
 
 from typing import List
 
 
 def sum_loop(numbers: List[int | float]) -> int | float:
-    """Method 1: Manual Accumulator Loop (O(N) time, O(1) space)"""
+    """Iterative accumulator."""
     total = 0
     for num in numbers:
         total += num
@@ -24,34 +24,41 @@ def sum_loop(numbers: List[int | float]) -> int | float:
 
 
 def sum_recursive(numbers: List[int | float]) -> int | float:
-    """Method 2: Recursive Sum"""
+    """Recursive sum."""
     if not numbers:
         return 0
     return numbers[0] + sum_recursive(numbers[1:])
 
 
 def sum_builtin(numbers: List[int | float]) -> int | float:
-    """Method 3: Built-in sum()"""
+    """Built-in sum."""
     return sum(numbers)
 
 
-def prefix_sums(numbers: list[int | float]) -> list[int | float]:
-    """Calculate running cumulative prefix sums of a list."""
+def prefix_sums(numbers: List[int | float]) -> List[int | float]:
+    """Cumulative prefix sum sequence."""
     running = 0
-    res = []
-    for num in numbers:
-        running += num
-        res.append(running)
-    return res
+    result = []
+    for x in numbers:
+        running += x
+        result.append(running)
+    return result
+
+
+def range_sum(numbers: List[int | float], left: int, right: int) -> int | float:
+    """
+    Computes range sum sum(numbers[left : right+1]) using prefix sum array in O(1) time.
+    """
+    if not numbers or left > right or left < 0 or right >= len(numbers):
+        return 0
+    pref = prefix_sums(numbers)
+    return pref[right] - (pref[left - 1] if left > 0 else 0)
 
 
 if __name__ == "__main__":
-    print("=" * 50)
-    print("Running Problem 21: Sum of List Tests")
-    print("=" * 50)
-
     test_cases = [
         ([1, 2, 3, 4, 5], 15),
+        ([-1, -2, -3, -4], -10),
         ([10, -5, 20, -15], 10),
         ([42], 42),
         ([], 0),
@@ -62,8 +69,11 @@ if __name__ == "__main__":
         r1 = sum_loop(nums)
         r2 = sum_recursive(nums)
         r3 = sum_builtin(nums)
-        print(f"List: {nums} -> Sum: {r1} | Expected: {expected}")
         assert r1 == expected and r2 == expected and r3 == expected
     assert prefix_sums([1, 2, 3, 4]) == [1, 3, 6, 10]
 
-    print("\n[PASS] All Sum of List tests passed successfully!")
+    # Test range sum
+    assert range_sum([1, 2, 3, 4, 5], 1, 3) == 9  # 2 + 3 + 4
+    assert range_sum([10, 20, 30], 0, 2) == 60
+
+    print("[PASS] Problem 21: Sum of List tests passed successfully!")
