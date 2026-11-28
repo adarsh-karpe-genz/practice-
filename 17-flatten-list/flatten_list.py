@@ -8,22 +8,23 @@ flatten it into a single 1D list containing all elements.
 Example: [[1, 2], [3, 4], [5]] -> [1, 2, 3, 4, 5]
 
 Concepts:
-- Nested loops & List Comprehension
-- Recursive flattening for deep nesting
+- Nested loops and list comprehensions
+- Recursive depth traversal
+- Iterative stack-based flattening
 """
 
 from typing import List, Any
 
 
-def flatten_2d_list(nested: List[List[Any]]) -> List[Any]:
-    """Method 1: List comprehension for 2D lists (Pythonic standard)"""
-    return [item for sublist in nested for item in sublist]
+def flatten_2d_list(nested_list: List[List[Any]]) -> List[Any]:
+    """Flattens a 2D list into a 1D list using comprehension."""
+    return [item for sublist in nested_list for item in sublist]
 
 
-def flatten_deep(nested: List[Any]) -> List[Any]:
-    """Method 2: Recursive flattening for arbitrarily deep lists"""
+def flatten_deep(nested_list: List[Any]) -> List[Any]:
+    """Recursively flattens an arbitrarily nested list."""
     flat = []
-    for item in nested:
+    for item in nested_list:
         if isinstance(item, list):
             flat.extend(flatten_deep(item))
         else:
@@ -31,36 +32,46 @@ def flatten_deep(nested: List[Any]) -> List[Any]:
     return flat
 
 
-def flatten_iterative_stack(nested_list: list) -> list:
-    """Flatten arbitrarily deep nested list iteratively using a LIFO stack."""
-    flat = []
+def flatten_iterative_stack(nested_list: List[Any]) -> List[Any]:
+    """Iteratively flattens nested lists using an explicit stack."""
     stack = [nested_list]
+    result = []
     while stack:
         curr = stack.pop()
         if isinstance(curr, list):
-            for item in reversed(curr):
-                stack.append(item)
+            for elem in reversed(curr):
+                stack.append(elem)
         else:
-            flat.append(curr)
-    return flat
+            result.append(curr)
+    return result
+
+
+def max_nesting_depth(nested_list: List[Any]) -> int:
+    """
+    Computes the maximum nesting depth of a nested list.
+    Example: [1, [2, [3]]] -> 3; [1, 2] -> 1; [] -> 0.
+    """
+    if not isinstance(nested_list, list):
+        return 0
+    if not nested_list:
+        return 1
+    depths = [max_nesting_depth(item) for item in nested_list]
+    return 1 + max(depths)
 
 
 if __name__ == "__main__":
-    print("=" * 50)
-    print("Running Problem 17: Flatten List Tests")
-    print("=" * 50)
-
-    # 2D test
     list_2d = [[1, 2], [3, 4], [5]]
     res1 = flatten_2d_list(list_2d)
-    print(f"2D List: {list_2d} -> Flat: {res1}")
     assert res1 == [1, 2, 3, 4, 5]
 
-    # Deep nested test
     deep_list = [1, [2, [3, 4], 5], 6, [7, [8]]]
     res2 = flatten_deep(deep_list)
-    print(f"Deep List: {deep_list} -> Flat: {res2}")
     assert res2 == [1, 2, 3, 4, 5, 6, 7, 8]
     assert flatten_iterative_stack(deep_list) == [1, 2, 3, 4, 5, 6, 7, 8]
 
-    print("\n[PASS] All Flatten List tests passed successfully!")
+    # Test nesting depth
+    assert max_nesting_depth([1, 2, 3]) == 1
+    assert max_nesting_depth([[1], [2, [3]]]) == 3
+    assert max_nesting_depth([]) == 1
+
+    print("[PASS] Problem 17: Flatten List tests passed successfully!")
