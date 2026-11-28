@@ -3,35 +3,35 @@ Problem 22: Count Frequency of Elements in a List
 Difficulty: Beginner / Easy
 
 Problem Statement:
-Given a list of items (integers or strings), return a dictionary containing
-the frequency of each unique element.
-Example: ["apple", "banana", "apple", "cherry", "banana", "apple"]
-         -> {"apple": 3, "banana": 2, "cherry": 1}
+Given a list of items, count the occurrences of each unique element
+and return the result as a dictionary mapping elements to their frequencies.
+Example: [1, 2, 2, 3, 3, 3] -> {1: 1, 2: 2, 3: 3}
 
 Concepts:
-- Dictionary accumulation using .get(key, default)
-- collections.Counter
+- Manual dictionary tracking with `.get(key, 0) + 1`
+- `collections.Counter`
+- Mode analysis
 """
 
-from collections import Counter
 from typing import List, Dict, Any
+from collections import Counter
 
 
 def count_frequency_manual(items: List[Any]) -> Dict[Any, int]:
-    """Method 1: Manual dictionary loop (O(N) time, O(U) space)"""
-    freq = {}
+    """Counts element frequency using manual dictionary accumulation."""
+    freq: Dict[Any, int] = {}
     for item in items:
         freq[item] = freq.get(item, 0) + 1
     return freq
 
 
 def count_frequency_counter(items: List[Any]) -> Dict[Any, int]:
-    """Method 2: Using collections.Counter"""
+    """Counts element frequency using Counter."""
     return dict(Counter(items))
 
 
-def find_mode(items: list) -> list:
-    """Return all elements that appear with the maximum frequency (mode)."""
+def find_mode(items: List[Any]) -> List[Any]:
+    """Finds all modes (most frequently occurring elements)."""
     if not items:
         return []
     freq = count_frequency_manual(items)
@@ -39,13 +39,16 @@ def find_mode(items: list) -> list:
     return [elem for elem, count in freq.items() if count == max_count]
 
 
-if __name__ == "__main__":
-    print("=" * 50)
-    print("Running Problem 22: List Frequency Tests")
-    print("=" * 50)
+def filter_by_min_frequency(items: List[Any], min_freq: int) -> List[Any]:
+    """
+    Returns unique elements that appear at least min_freq times.
+    """
+    freq = count_frequency_manual(items)
+    return [k for k, count in freq.items() if count >= min_freq]
 
+
+if __name__ == "__main__":
     test_cases = [
-        (["apple", "banana", "apple", "cherry", "banana", "apple"], {"apple": 3, "banana": 2, "cherry": 1}),
         ([1, 2, 2, 3, 3, 3, 4], {1: 1, 2: 2, 3: 3, 4: 1}),
         ([], {}),
         (["x"], {"x": 1}),
@@ -54,10 +57,12 @@ if __name__ == "__main__":
     for sample, expected in test_cases:
         res1 = count_frequency_manual(sample)
         res2 = count_frequency_counter(sample)
-        print(f"Items: {sample}")
-        print(f"  -> Frequency: {res1} | Expected: {expected}")
         assert res1 == expected
         assert res2 == expected
     assert find_mode([1, 2, 2, 3, 3]) == [2, 3]
 
-    print("\n[PASS] All List Frequency tests passed successfully!")
+    # Test min frequency filter
+    assert filter_by_min_frequency([1, 2, 2, 3, 3, 3, 4], 2) == [2, 3]
+    assert filter_by_min_frequency([1, 2, 3], 2) == []
+
+    print("[PASS] Problem 22: List Frequency tests passed successfully!")
